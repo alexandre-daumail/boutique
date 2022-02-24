@@ -8,18 +8,22 @@
     list-style: none;
 
 }
-
+@font-face {
+    font-family: "Belda Norm Regular";
+    src: url(assets/font/insigne-Belda-Norm-Regular.otf)
+}
 html{
-    font-family: 'Belda Norm', ;
     font-size: 10px;
+    font-family: 'Belda Norm Regular';
 }
 @font-face {
-    font-family: 'Belda Norm ';
+    font-family: 'Belda Norm Regular';
     src: url(assets/font/beldafont.odf);
 }
 
 body {
     overflow-x: hidden;
+    background-image: url(https://voyage-onirique.com/wp-content/uploads/2021/09/univers-planetes.jpg);
 
 }
 /* Header */
@@ -101,6 +105,8 @@ search-area{
     width: 124px;
     margin: 26px;
     border-radius: 5px;
+    background-color: #5B2A86;
+    box-shadow: #A5E6BA 10px 5px 5px;
 }
 
 .icon-area{
