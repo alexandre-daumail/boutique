@@ -1,4 +1,4 @@
-# boutique
+# Boutique
 
 Ce projet sera évalué lors d’un pitch présentant notre démarche :  création de la maquette, conception de la base de données,  réalisation du projet, axes d’amélioration etc…
 
