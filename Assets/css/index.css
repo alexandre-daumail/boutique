@@ -1,0 +1,73 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Belda Norm Regular", sans-serif;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: "insigne-BeldaNormRegular.otf";
+  src: url(assets/font/insigne-BeldaNormRegular.otf);
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  border: none;
+  margin: 30px;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 300px;
+}
+
+#logo-header {
+  height: 150px;
+}
+.left-header {
+}
+
+.middle-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.right-header {
+}
+
+.button {
+  display: flex;
+  align-items: center;
+}
+#icon-profil {
+  height: 30px;
+  margin: 30px;
+}
+#icon-bin {
+  height: 30px;
+  margin: 30px;
+
+}
