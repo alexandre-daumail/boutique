@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/index.css">
-    <title>Document</title>
+    <title>Accueil</title>
 </head>
 
 <body>
     <header>
+        sec
         <div class="logo-area">
             <img src="assets/img/logo-header.png" alt="logo-header">
         </div>
@@ -45,14 +46,11 @@
         <div class="logo-area">
             <img src="assets/img/logo-header.png" alt="logo-header">
         </div>
-        
+
     </header>
     <main>
-    <div class="icon-area">
-            <img id="icon-header" src="assets/img/icon-myaccount.png" alt="icon-myaccount">
-            <img id="icon-header" src="assets/img/icon-cart.png" alt="icon-cart">
 
-        </div>
+        
     </main>
 </body>
 

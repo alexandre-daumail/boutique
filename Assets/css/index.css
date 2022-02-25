@@ -16,15 +16,11 @@ html{
     font-size: 10px;
     font-family: 'Belda Norm Regular';
 }
-@font-face {
-    font-family: 'Belda Norm Regular';
-    src: url(assets/font/beldafont.odf);
-}
+
 
 body {
     overflow-x: hidden;
-    background-image: url(https://voyage-onirique.com/wp-content/uploads/2021/09/univers-planetes.jpg);
-
+    
 }
 /* Header */
 .byline {
@@ -76,12 +72,12 @@ input[type="search"]:focus {
 header{
     display: flex;
     justify-content: center;
-    
+    background-image: url(https://images8.alphacoders.com/601/thumb-1920-601973.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 700px;
 }
 
-.logo-area{
-    
-}
 
 .search-button-area{
     display: flex;
@@ -105,8 +101,9 @@ search-area{
     width: 124px;
     margin: 26px;
     border-radius: 5px;
-    background-color: #5B2A86;
+    
     box-shadow: #A5E6BA 10px 5px 5px;
+    border:2px solid #ffffff;
 }
 
 .icon-area{
@@ -130,3 +127,7 @@ search-area{
 }
 
 /* Fin du Header */
+
+/* Hero */
+ 
+/* Fin du Hero */
