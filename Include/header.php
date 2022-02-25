@@ -1,44 +1,50 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/<?= $css ?>.css">
-    <title><?= $title ?></title>
+    <link rel="stylesheet" href="assets/css/index.css">
+    <title>Accueil</title>
 </head>
 
 <body>
-
     <header>
-
-        <div class="left-header">
-
-            <img id="logo-header" src="assets/img/NOVA SHOP.png" alt="logo">
-
+        sec
+        <div class="logo-area">
+            <img src="assets/img/logo-header.png" alt="logo-header">
         </div>
-        <div class="middle-header">
+        <div class="search-button-area">
 
-            <div class="search-bar">
-                <form id="form">
-                    <input type="search" id="query" name="q" placeholder="Search...">
-                    <button>Search</button>
+            <section class="search-area">
+                <form class="searchbox" action="http://thecodeblock.com">
+                    <input type="search" placeholder="Search" />
+                    <button type="submit" value="search">&nbsp;</button>
                 </form>
-            </div>
+            </section>
+            <section class="button-area">
+                <div>
+                    <button class="header-button">Bouton</button>
+                    <button class="header-button">Bouton</button>
+                    <button class="header-button">Bouton</button>
+                    <button class="header-button">Bouton</button>
+                </div>
+                <div class="under-button">
+                    <img id="under-button" src="assets/img/under-button.png" alt="">
+                    <img id="under-button" src="assets/img/under-button.png" alt="">
+                    <img id="under-button" src="assets/img/under-button.png" alt="">
+                    <img id="under-button" src="assets/img/under-button.png" alt="">
+                </div>
 
-            <div class="button">
-                <button class="">Accueil</button>
-                <button>Les Étoiles</button>
-                <button>Le Registre Internationnal</button>
-                <button>test</button>
-            </div>
+
+
+            </section>
+
 
         </div>
-
-        <div class="right-header">
-            <img id="icon-profil" src="assets/img/icon/gg_profile.png" alt="icon-profil">
-            <img id="icon-bin" src="assets/img/icon/bin.png" alt="icon-bin">
+        <div class="logo-area">
+            <img src="assets/img/logo-header.png" alt="logo-header">
         </div>
 
     </header>
