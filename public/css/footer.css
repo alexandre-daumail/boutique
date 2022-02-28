@@ -15,11 +15,8 @@ a { color:black; }
 
 
 footer {
-    font-family: 'Roboto', sans-serif;
-    /* position: absolute;
-    bottom: 0; */
     width: 100%;
-    background-color: #192b4b;
+    background-color: #192b4bcc;
 }
 
 footer .big_container p {
