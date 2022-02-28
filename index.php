@@ -1,12 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<?php
+$title = "Accueil";
+$css = "index";
+require('process/header.php');
+
+?>
+<main>
+
+    <section class="container">
+
+        <div class="card">
+
+            <img id="product-card" src="public/img/NOVA SHOP.png" alt="">
+
+            <p>texte article</p>
+
+            <button class="header-button">Buy</button>
+
+        </div>
+
+    </section>
+
+</main>
+
+<?php
+
+require('process/footer.php');
+
+?>

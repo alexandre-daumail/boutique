@@ -1,0 +1,61 @@
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+  height: 554px;
+  width: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+}
+
+.cards-img{
+  height: 250px;
+  width: 250px;
+  margin: 10px;
+  background-color: blueviolet;display: flex;
+  display: flex;
+  justify-content: center;
+}
+
+.cards-text{
+  height: 150px;
+  width: 250px;
+  margin: 10px;
+  background-color: brown;
+}
+
+#product-card{
+  height: 250px;
+  width: 250px;
+  margin: 10px
+}
+
+/* HERO */
+
+.hero{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#star-certificate{
+  height: 400px;
+  margin: 30px;
+}
+
+.left{
+  margin: 30px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+}
