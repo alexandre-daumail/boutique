@@ -11,7 +11,7 @@
 }
 @font-face {
   font-family: "Belda Norm Regular", sans-serif;
-  src: url(./font/belda-norm-regular.otf);
+  src: url(../public/font/belda-norm-regular.otf);
 }
 
 
@@ -19,6 +19,24 @@ body {
   overflow-x: hidden;
   font-size: 30px;
   font-family: "Belda Norm Regular", sans-serif;
+  background-image: url(https://images8.alphacoders.com/601/thumb-1920-601973.jpg);
+}
+
+h1{
+  font-size: 50px;
+  text-align: center;
+}
+h2{
+  font-size: 40px;
+  text-align: center;
+}
+h3{
+  font-size: 30px;
+  text-align: center;
+}
+h4{
+  font-size: 20px;
+  text-align: center;
 }
 
 /* Header */ 
@@ -71,7 +89,6 @@ input[type="search"]:focus {
 header {
   display: flex;
   justify-content: center;
-  background-image: url(https://images8.alphacoders.com/601/thumb-1920-601973.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   height: 600px;

@@ -1,33 +1,3 @@
-/* RESET & GLOBAL CSS */
-
-*,
-::before,
-::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  list-style: none;
-}
-@font-face {
-  font-family: "Belda Norm Regular", sans-serif;
-  src: url(./font/belda-norm-regular.otf);
-}
-
-
-body {
-  overflow-x: hidden;
-  font-size: 30px;
-  font-family: "Belda Norm Regular", sans-serif;
-}
-
-main{
-  background-image: url();
-}
-
-/* Main */
-
-
 .container{
   display: flex;
   flex-wrap: wrap;
@@ -42,7 +12,7 @@ main{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: aqua;
+  background-color: white;
 }
 
 .cards-img{
@@ -67,6 +37,25 @@ main{
   margin: 10px
 }
 
-.cards-button{
-  display;
+/* HERO */
+
+.hero{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#star-certificate{
+  height: 400px;
+  margin: 30px;
+}
+
+.left{
+  margin: 30px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
 }

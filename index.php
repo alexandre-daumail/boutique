@@ -1,7 +1,7 @@
 <?php
 $title = "Accueil";
 $css = "index";
-require('include/header.php');
+require('process/header.php');
 
 ?>
 <main>
@@ -10,7 +10,7 @@ require('include/header.php');
 
         <div class="card">
 
-            <img id="product-card" src="assets/img/NOVA SHOP.png" alt="">
+            <img id="product-card" src="public/img/NOVA SHOP.png" alt="">
 
             <p>texte article</p>
 
@@ -24,6 +24,6 @@ require('include/header.php');
 
 <?php
 
-require('include/footer.php');
+require('process/footer.php');
 
 ?>
