@@ -1,24 +1,34 @@
 <?php
+  session_start();
 
-//connexion à la base de donnée
-class Dbh
-{
-    //Methode permettant la connexion à la BDD
-    protected function connect()
+  Class Dbh {
+  
+   // @param void | null
+   // @return array | mixed
+   // @desc Crée une nouvelle connexion PDO et retourne le gestionnaire 
+
+    protected function DbHandler ()
     {
+        $dbHost = 'localhost';
+        $dbName = 'boutique';
+        $dbUser = 'root';
+        $dbPass = '';
         
+        //Crée un DSN (data Source Name) pour la connexion à la bdd
+        $Dsn = "mysql:host=" . $dbHost . ";dbname=" . $dbName;
+
+        //Crée des options pour la configuration de la connexion PDO
+        $options = array(
+          PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+        );
+
         try {
 
-            $username = "root";
-            $password = "";
-            $dbh = new PDO('mysql:host=localhost; dbname=boutique', $username, $password);
-            return $dbh;
-            
-        } catch (PDOException $e) {
-            print "Error! :" . $e->getMessage() . "<br/>";
-            die();
+          $Connection = new PDO($Dsn, $dbUser, $dbPass, $options);
+          return $Connection;
+
+        } catch (Exception $e) {
+          var_dump('Couldn\'t Establish A database Connection. Due to the following reason: ' . $e->getMessage());
         }
-
     }
-
-}
+  }
