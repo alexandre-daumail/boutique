@@ -1,6 +1,6 @@
 <?php 
     $title = "Articles";
     $css = "articles";
-    require ('include/header.php'); 
+    require ('process/header.php'); 
   
 ?>

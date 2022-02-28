@@ -64,8 +64,9 @@
     </header>
     <section class="hero">
         <div class="left">
-            <h2>Achetez une Étoile dans le Ciel !<br>
-                Nomme une Étoile. C'est le plus beau cadeau de l'univers </h2>
+            <h2>Achetez une Étoile dans le Ciel !<h2>
+               <p>Nomme une Étoile. <br> 
+                C'est le plus beau cadeau de l'univers!</p>
 
         </div>
         <div class="right">

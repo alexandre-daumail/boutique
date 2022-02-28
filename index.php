@@ -7,17 +7,48 @@ require('process/header.php');
 <main>
 
     <section class="container">
-
+    
         <div class="card">
 
-            <img id="product-card" src="public/img/NOVA SHOP.png" alt="">
+            <img id="product-card" src="public/img/img-card.png" alt="img-card">
 
-            <p>texte article</p>
+            <p class="txt-card">texte article</p>
+            <p class="price-card">PRIX €</p>
 
-            <button class="header-button">Buy</button>
+            <button class="card-button">Buy</button>
 
         </div>
+        <div class="card">
 
+            <img id="product-card" src="public/img/img-card.png" alt="img-card">
+
+            <p class="txt-card">texte article</p>
+            <p class="price-card">PRIX €</p>
+
+            <button class="card-button">Buy</button>
+
+        </div>
+        <div class="card">
+
+            <img id="product-card" src="public/img/img-card.png" alt="img-card">
+
+            <p class="txt-card">texte article</p>
+            <p class="price-card">PRIX €</p>
+
+            <button class="card-button">Buy</button>
+
+        </div>
+        <div class="card">
+
+            <img id="product-card" src="public/img/img-card.png" alt="img-card">
+
+            <p class="txt-card">texte article</p>
+            <p class="price-card">PRIX €</p>
+
+            <button class="card-button">Buy</button>
+
+        </div>
+        
     </section>
 
 </main>
