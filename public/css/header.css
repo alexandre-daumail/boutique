@@ -16,10 +16,17 @@
   src: url(../public/font/belda-norm-regular.otf);
 }
 
+@font-face {
+  font-family: "SyneMono-Regular";
+  src: url(../public/font/SyneMono-Regular.ttf);
+}
+.left{
+  font-family: "SyneMono-Regular";
+}
 body {
   overflow-x: hidden;
   font-size: 30px;
-  font-family: "Belda Norm Regular", sans-serif;
+  font-family: "SyneMono-Regular";
   background-image: url(https://images8.alphacoders.com/601/thumb-1920-601973.jpg);
       background-size: cover;
     background-repeat: no-repeat;
@@ -97,7 +104,23 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   height: 600px;
+  font-family: "SyneMono-Regular";
 }
+nav > ul > li {
+  float: left;
+  position: relative;
+  text-decoration: none;
+  margin: 0px 20px;
+}
+nav > ul > li > a{ 
+  
+  text-decoration: none;
+  font-size: medium;
+  color: #ffffff;
+  
+}
+
+
 
 .search-button-area {
   display: flex;
@@ -147,7 +170,7 @@ search-area {
 .icon-header {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
 #icon-header {
