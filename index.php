@@ -1,17 +1,29 @@
-<?php 
-    $title = "Accueil";
-    $css = "index";
-    require ('include/header.php'); 
-  
+<?php
+$title = "Accueil";
+$css = "index";
+require('include/header.php');
+
 ?>
 <main>
 
-<p>test</p>
+    <section class="container">
+
+        <div class="card">
+
+            <img id="product-card" src="assets/img/NOVA SHOP.png" alt="">
+
+            <p>texte article</p>
+
+            <button class="header-button">Buy</button>
+
+        </div>
+
+    </section>
 
 </main>
 
-<?php 
+<?php
 
-require ('include/footer.php'); 
+require('include/footer.php');
 
 ?>

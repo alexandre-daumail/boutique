@@ -12,16 +12,16 @@
 
 <body>
     <header>
-        
-        <div class="logo-area">
-            <img src="assets/img/logo-header.png" alt="logo-header">
-        </div>
-        <div class="search-button-area">
 
-            
-            <section class="button-area">
+        <section class="logo-area">
+            <img src="assets/img/logo-header.png" alt="logo-header">
+        </section>
+        <section class="search-button-area">
+
+
+            <div class="button-area">
                 <div>
-                    <button class="header-button">Bouton</button>
+                    <button class="header-button">Accueil</button>
                     <button class="header-button">Bouton</button>
                     <button class="header-button">Bouton</button>
                     <button class="header-button">Bouton</button>
@@ -35,18 +35,25 @@
 
 
 
-            </section>
-            <section class="search-area">
+            </div>
+            <div class="icon-header">
+                <a href="#"><img id="icon-header" src="assets/img/icon-myaccount.png" alt="logo-myaccount"></a>
+                <a href="#"><img id="icon-header" src="assets/img/icon-cart.png" alt="logo-cart"></a>
+                <a href="#"><img id="icon-header" src="assets/img/logo-favorite.png" alt="logo-heart"></a>
+
+            </div>
+            <div class="search-area">
                 <form class="searchbox" action="http://thecodeblock.com">
                     <input type="search" placeholder="Search" />
                     <button type="submit" value="search">&nbsp;</button>
                 </form>
-            </section>
+            </div>
+            
 
 
-        </div>
-        <div class="logo-area">
+        </section>
+        <section class="logo-area">
             <img src="assets/img/logo-header.png" alt="logo-header">
-        </div>
+        </section>
 
     </header>

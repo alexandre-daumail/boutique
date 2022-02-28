@@ -20,6 +20,53 @@ body {
   font-size: 30px;
   font-family: "Belda Norm Regular", sans-serif;
 }
-Main{
-  background-color: black;
+
+main{
+  background-image: url();
+}
+
+/* Main */
+
+
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+  height: 554px;
+  width: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: aqua;
+}
+
+.cards-img{
+  height: 250px;
+  width: 250px;
+  margin: 10px;
+  background-color: blueviolet;display: flex;
+  display: flex;
+  justify-content: center;
+}
+
+.cards-text{
+  height: 150px;
+  width: 250px;
+  margin: 10px;
+  background-color: brown;
+}
+
+#product-card{
+  height: 250px;
+  width: 250px;
+  margin: 10px
+}
+
+.cards-button{
+  display;
 }

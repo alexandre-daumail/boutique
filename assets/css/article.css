@@ -1,0 +1,22 @@
+/* RESET & GLOBAL CSS */
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+@font-face {
+  font-family: "Belda Norm Regular", sans-serif;
+  src: url(./font/belda-norm-regular.otf);
+}
+
+
+body {
+  overflow-x: hidden;
+  font-size: 30px;
+  font-family: "Belda Norm Regular", sans-serif;
+}

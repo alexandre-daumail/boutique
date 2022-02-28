@@ -21,7 +21,7 @@ body {
   font-family: "Belda Norm Regular", sans-serif;
 }
 
-/* Header */
+/* Header */ 
 .byline {
   text-align: center;
   font-size: 18px;
@@ -40,7 +40,7 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   border-radius: 6px;
-  margin-top: 130px;
+  margin-top: 50px;
 }
 input[type="search"] {
   width: 250px;
@@ -74,7 +74,7 @@ header {
   background-image: url(https://images8.alphacoders.com/601/thumb-1920-601973.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 500px;
+  height: 600px;
 }
 
 .search-button-area {
@@ -124,6 +124,17 @@ search-area {
   margin: 0px 30px 0px 30px;
 }
 
+.icon-header {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    
+}
+
+#icon-header {
+    height: 50px;
+    
+}
 /* Fin du Header */
 
 /* Hero */
