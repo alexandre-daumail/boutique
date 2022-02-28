@@ -5,24 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/index.css">
-    <title>Accueil</title>
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/<?= $css ?>.css">
+    <title><?= $title ?></title>
 </head>
 
 <body>
     <header>
-        sec
+        
         <div class="logo-area">
             <img src="assets/img/logo-header.png" alt="logo-header">
         </div>
         <div class="search-button-area">
 
-            <section class="search-area">
-                <form class="searchbox" action="http://thecodeblock.com">
-                    <input type="search" placeholder="Search" />
-                    <button type="submit" value="search">&nbsp;</button>
-                </form>
-            </section>
+            
             <section class="button-area">
                 <div>
                     <button class="header-button">Bouton</button>
@@ -39,6 +35,12 @@
 
 
 
+            </section>
+            <section class="search-area">
+                <form class="searchbox" action="http://thecodeblock.com">
+                    <input type="search" placeholder="Search" />
+                    <button type="submit" value="search">&nbsp;</button>
+                </form>
             </section>
 
 
