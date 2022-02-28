@@ -56,4 +56,8 @@
 
 .price-card{
   color: #5B2A86;
+  font-size: medium;
+}
+.txt-card{
+  font-size: small;
 }

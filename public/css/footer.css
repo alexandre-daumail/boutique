@@ -10,13 +10,13 @@ footer {
 }
 
 footer .big_container p {
-    margin: 30px 80px;
+    margin-top: 10px;
     font-size: 12px;
     color: #fff;
 }
 
 footer .big_container h3 {
-    margin: 30px 80px;
+    margin: 30px ;
     font-weight: 200;
     font-size: 19px;
     color: #fff;
@@ -25,7 +25,7 @@ footer .big_container h3 {
 footer .big_container li {
     font-size: 15px;
     color: #fff;
-    margin: 10px 80px;
+    margin: 10px 0px;
 }
 
 footer .big_container a {
@@ -40,9 +40,10 @@ footer .big_container a:hover {
 
 footer .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: flex-start;
     margin: 0;
 }
 
@@ -63,23 +64,12 @@ footer .container {
 }
 
 
-.contact_footer div {
-    margin: 15px 0;
-}
-
-.contact_footer i {
-    margin-right: 4px;
-}
-
 /* NAVIGATION FOOTER */
 
 .nav_footer {
     width: 20%;
 }
 
-.nav_footer h3 {
-    margin-left:  80px;
-}
 
 .nav_footer a{
     margin-left:  80px;
@@ -93,6 +83,28 @@ footer .container {
     margin-right: 8px;
 }
 
+.contact_footer i{
+    margin-right: 8px;
+}
+
 .text_footer {
+    text-align: left;
+}
+
+.texte_footer {
     text-align: center;
+    margin: 20px;
+}
+
+.titre-footer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+.under-title{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 30px;
 }
