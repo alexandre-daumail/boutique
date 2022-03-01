@@ -29,7 +29,7 @@
         header("Location: index.php?connected");
       }
 
-      if (!password_verify($Password, $check['data']['password'])) {
+      if (!password_verify($password, $check['data']['MOT_DE_PASSE'])) {
         $errors['error'] = "Invalid credentials passed. Please, check the Email or Password and try again.";
         return $errors;
       }
