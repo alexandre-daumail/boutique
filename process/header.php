@@ -1,5 +1,11 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -41,8 +47,11 @@
 
 
             </div>
+
             <div class="icon-header">
-                <a href="#"><img id="icon-header" src="public/img/icon-myaccount.png" alt="logo-myaccount"></a>
+
+                <?= isset($_SESSION['current_session']) && $_SESSION['current_session']['status'] == 1 ? '<a href="account.php"><img id="icon-header" src="public/img/icon-myaccount.png" alt="logo-myaccount"></a>' : '<a href="authenticate.php"><img id="icon-header" src="public/img/icon-myaccount.png" alt="logo-myaccount"></a>' ;?>
+
                 <a href="#"><img id="icon-header" src="public/img/icon-cart.png" alt="logo-cart"></a>
                 <a href="#"><img id="icon-header" src="public/img/logo-favorite.png" alt="logo-heart"></a>
 
