@@ -4,25 +4,28 @@ require ('Dbh.php');
 
 class User extends Dbh
 {
-    function checkEmail(string $email) : array
+    function checkUser(string $email) : array
     {
         $dbHandler = $this->DbHandler();
 
-        $statement = $dbHandler->prepare("SELECT * FROM `utilisateur` WHERE `email` = :email");
+        $statement = $dbHandler->prepare("SELECT * FROM `utilisateur` WHERE `EMAIL` = :email OR `LOGIN` = :email");
 
         $statement->bindValue(':email', $email, PDO::PARAM_STR);
         $statement->execute();
         $result = $statement->fetch(PDO::FETCH_ASSOC);
 
         if (empty($result)) {
+
             $process['status'] = false;
             $process['data'] = [];
             return $process;
+
         }
 
         $process['status'] = true;
         $process['data'] = $result;
         return $process;
+
     }
 
     /**
@@ -53,6 +56,8 @@ class User extends Dbh
         } else {
             return false;
         }
+        
     }
+
 
 }

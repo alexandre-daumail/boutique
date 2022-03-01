@@ -1,64 +1,37 @@
 <?php
-  require_once('./functions/Db.php');
-  
-  /**
-   * @param Array $data
-   * @return Array | void
-   * Receives an email address and password from the $_POST superglobal and matches it against the databse records to authenticate the user
-   */
 
+  require_once('classes/User.php');
+  
+  // Receives an email address and password from the $_POST superglobal and matches it against the databse records to authenticate the user
   function Login(array $data)
   {
+
     $data = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $errors = [];
-    $Email = stripcslashes(strip_tags($data['email']));
-    $Password = htmlspecialchars($data['password']);
+    $email = stripcslashes(strip_tags($data['email']));
+    $password = htmlspecialchars($data['password']);
+
+    $user = new User;
 
     //check if the email address exists in the database...
-    $Email_check = checkEmail($Email);
-    if (!$Email_check['status']) {
-      $errors['error'] = "Invalid credentials passed. Please, check the Email or Password and try again.";
+    $check = $user->checkUser($email);
+    if (!$check['status']) {
+      $errors['error'] = "Identifiants incorrects.";
       return $errors;
     } else {
       //we check that the password matches the hash
-      if (password_verify($Password, $Email_check['data']['password'])) {
+      if (password_verify($password, $check['data']['MOT_DE_PASSE'])) {
         $_SESSION['current_session'] = [
           'status' => 1,
-          'user' => $Email_check['data'],
+          'user' => $check['data'],
           'date_time' => date('Y-m-d H:i:s'),
         ];
-        header("Location: dashboard.php");
+        header("Location: index.php?connected");
       }
 
-      if (!password_verify($Password, $Email_check['data']['password'])) {
+      if (!password_verify($Password, $check['data']['password'])) {
         $errors['error'] = "Invalid credentials passed. Please, check the Email or Password and try again.";
         return $errors;
       }
     }
   }
-
-  /**
-     * @param String $email
-     * @return Array 
-     * @desc Checks if an email string exists in the database and returns   an array which determines the output of the operation.
-  */
-  
-  function checkEmail(string $email) : array
-  {
-    $dbHandler = DbHandler();
-    $statement = $dbHandler->prepare("SELECT `first_name`, `last_name`, `email`, `password` FROM `user` WHERE `email` = :email");
-    $statement->bindValue(':email', $email, PDO::PARAM_STR);
-    $statement->execute();
-    $result = $statement->fetch(PDO::FETCH_ASSOC);
-
-    if (empty($result)) {
-        $process['status'] = false;
-        $process['data'] = [];
-        return $process;
-    }
-
-    $process['status'] = true;
-    $process['data'] = $result;
-    return $process;
-  }
-?>
