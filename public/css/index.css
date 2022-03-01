@@ -38,7 +38,8 @@
 
 #product-card{
   height: 150px;
-  width: 150px;
+  
+  
 }
 
 .txt-card{
@@ -60,4 +61,47 @@
 }
 .txt-card{
   font-size: small;
+}
+
+
+.card-promo{
+  height: 350px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  background-color: white;
+  border-radius: 15px;
+  margin: 50px;
+  padding: 20px;
+  background-color: #a2c3ffa6;
+
+}
+
+.format {
+  display: flex;
+  justify-content: space-between;
+}
+
+.format1{
+  margin: 20px;
+}
+.format2{
+  margin: 20px;
+  text-align: center;
+}
+
+.promo-card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+}
+
+#product-card-trophe{
+  height: 250px;
+  
 }

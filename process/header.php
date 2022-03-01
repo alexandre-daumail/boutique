@@ -29,9 +29,9 @@
                 <div>
                     <nav>
                     <ul>
-                        <li><a href="">Accueil</a></li>
-                        <li><a href="">Informations</a></li>
-                        <li><a href="">Nos Étoiles</a></li>
+                        <li><a href=".././index.php">Accueil</a></li>
+                        <li><a href="#">Informations</a></li>
+                        <li><a href="#">Nos Étoiles</a></li>
                         <li><a href=".././articles.php">Nos Offres</a></li>
                     </ul>
                     </nav>
