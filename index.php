@@ -91,6 +91,13 @@ require('process/header.php');
         
 
     </section>
+    <section class="constellation">
+        <h3>Buy  Star in any constellation</h3>
+        <p>
+        Nous n'offrons à nos clients que le nom d'étoiles facilement visibles. Si vous n'êtes pas satisfait de l'étoile que vous avez nommée, vous pouvez nous demander de nommer n'importe quelle autre étoile pour vous. Vous avez également le droit de demander un remboursement complet de votre achat. Vous pouvez facilement trouver les étoiles que vous souhaitez adopter dans notre registre, et nous vous enverrons votre certificat d'enregistrement de nom d'étoile et votre carte des étoiles immédiatement après l'achat. Nous pouvons également vous les envoyer par e-mail sous forme de copies numériques si vous en avez besoin immédiatement.
+        </p>
+
+    </section>
 
 </main>
 

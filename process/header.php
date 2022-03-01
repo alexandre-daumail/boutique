@@ -48,7 +48,7 @@
 
             </div>
             <div class="icon-header">
-                <a href="#"><img id="icon-header" src="public/img/icon-myaccount.png" alt="logo-myaccount"></a>
+                <img id="icon-header" src="public/img/icon-myaccount.png" alt="logo-myaccount"></a>
                 <a href="#"><img id="icon-header" src="public/img/icon-cart.png" alt="logo-cart"></a>
                 <a href="#"><img id="icon-header" src="public/img/logo-favorite.png" alt="logo-heart"></a>
 
@@ -72,10 +72,13 @@
         <div class="left">
             <h2>Achetez une Étoile dans le Ciel !<h2>
                <p>Nomme une Étoile. <br> 
-                C'est le plus beau cadeau de l'univers!</p>
+                C'est le plus beau cadeau de l'univers!
+            </p>
 
         </div>
         <div class="right">
             <img id="star-certificate" src="./public/img/CERTIFICAT.png" alt="certificat">
         </div>
     </section>
+
+    
