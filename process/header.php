@@ -48,9 +48,10 @@
 
             </div>
             <div class="icon-header">
-                <img id="icon-header" src="public/img/icon-myaccount.png" alt="logo-myaccount"></a>
-                <a href="#"><img id="icon-header" src="public/img/icon-cart.png" alt="logo-cart"></a>
-                <a href="#"><img id="icon-header" src="public/img/logo-favorite.png" alt="logo-heart"></a>
+                <img id="icon-header" src="public/img/icon/Vectoraccount.png" alt="logo-myaccount"></a>
+                <a href="#"><img id="icon-header" src="public/img/icon/Vectorcart.png" alt="logo-cart"></a>
+                <a href="#"><img id="icon-header" src="public/img/icon/Vectoradd-favorite.png" alt="logo-heart"></a>
+                <a href="#"><img id="icon-header" src="public/img/icon/Component 1log out.png" alt="logo-log-out"></a>
 
             </div>
             <div class="search-area">
