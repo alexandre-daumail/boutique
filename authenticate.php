@@ -1,5 +1,9 @@
 <?php
 
+$title = "Inscription | Connexion";
+$css = "index";
+
+require_once('process/header.php');
 require_once('process/Signup.php');
 require_once('process/Login.php');
 
@@ -15,21 +19,9 @@ if (isset($_POST['login']) && count($_POST) > 0) {
 
 ?>
 
-<!DOCTYPE html>
-
-<html lang="fr">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Inscription</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
 <body>
 
-    <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" id="signup">
+    <form class="container" action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" id="signup">
 
         <fieldset>
 
@@ -57,13 +49,13 @@ if (isset($_POST['login']) && count($_POST) > 0) {
 
             <input type="password" name="password_rpt" id="5" placeholder="<?= isset($process['password_rpt']) && !empty($process['password_rpt']) ? $process['password_rpt'] : "" ?>" required>
 
-            <button type="submit" name="signup">Valider</button>
+            <button type="submit" name="signup" form="signup">Valider</button>
 
         </fieldset>
 
     </form>
 
-    <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" id="signup">
+    <form class="container" action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" id="login">
 
         <fieldset>
 
@@ -79,12 +71,18 @@ if (isset($_POST['login']) && count($_POST) > 0) {
 
             <input type="password" name="password" id="4" placeholder="<?= isset($process['password']) && !empty($process['password']) ? $process['password'] : "" ?>" required>
 
-            <button type="submit" name="login">Valider</button>
+            <button type="submit" name="login" form="login">Valider</button>
 
         </fieldset>
 
     </form>
 
 </body>
-<?php $process [] = ""; ?>
+
 </html>
+
+<?php
+$process = [];
+var_dump($process);
+require_once('process/footer.php');
+?>

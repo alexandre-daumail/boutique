@@ -3,7 +3,6 @@ $title = "Accueil";
 $css = "index";
 require('process/header.php');
 
-
 ?>
 <main>
 
