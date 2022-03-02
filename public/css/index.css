@@ -105,3 +105,18 @@
   height: 250px;
   
 }
+
+.constellation{
+  color: #ffffff;
+  font-size: large;
+  text-align: center;
+}
+
+#stars-map{
+  height: 450px;
+}
+
+.contelllation-2{
+  display: flex;
+  justify-content: space-evenly;
+}
