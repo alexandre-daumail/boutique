@@ -1,4 +1,6 @@
-/* RESET & GLOBAL CSS
+/* ---------- HEADER ---------- */
+
+    /* RESET & GLOBAL CSS */
 
 *,
 ::before,
@@ -11,12 +13,11 @@
 }
 @font-face {
   font-family: "Belda Norm Regular", sans-serif;
-  src: url(./font/belda-norm-regular.otf);
+  src: url(../public/font/belda-norm-regular.otf);
 }
 
+@font-face {
+  font-family: "SyneMono-Regular";
+  src: url(../public/font/SyneMono-Regular.ttf);
+}
 
-body {
-  overflow-x: hidden;
-  font-size: 30px;
-  font-family: "Belda Norm Regular", sans-serif;
-} */

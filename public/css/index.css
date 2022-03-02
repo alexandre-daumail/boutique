@@ -7,19 +7,24 @@
 }
 
 .card{
-  height: 554px;
-  width: 290px;
+  height: 400px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   background-color: white;
+  border-radius: 15px;
+  margin: 50px;
+  background-color: #a2c3ffa6;
+
 }
 
 .cards-img{
   height: 250px;
   width: 250px;
   margin: 10px;
-  background-color: blueviolet;display: flex;
+  display: flex;
   display: flex;
   justify-content: center;
 }
@@ -32,30 +37,86 @@
 }
 
 #product-card{
-  height: 250px;
-  width: 250px;
-  margin: 10px
+  height: 150px;
+  
+  
 }
 
-/* HERO */
+.txt-card{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 
-.hero{
+.card-button{
+  padding: 10px;
+  width: 124px;
+  margin-top: 26px;
+  border-radius: 5px;
+  border: 2px solid #ffffff;
+}
+
+.price-card{
+  color: #5B2A86;
+  font-size: medium;
+}
+.txt-card{
+  font-size: small;
+}
+
+
+.card-promo{
+  height: 350px;
+  width: 500px;
   display: flex;
-  justify-content: space-evenly;
-}
-
-#star-certificate{
-  height: 400px;
-  margin: 30px;
-}
-
-.left{
-  margin: 30px;
-  color: white;
-  display: flex;
+  justify-content: center;
   flex-direction: column;
+  align-items: center;
   align-content: center;
+  background-color: white;
+  border-radius: 15px;
+  margin: 50px;
+  padding: 20px;
+  background-color: #a2c3ffa6;
+
+}
+
+.format {
+  display: flex;
+  justify-content: space-between;
+}
+
+.format1{
+  margin: 20px;
+}
+.format2{
+  margin: 20px;
+  text-align: center;
+}
+
+.promo-card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   justify-content: center;
   align-items: center;
+}
 
+#product-card-trophe{
+  height: 250px;
+  
+}
+
+.constellation{
+  color: #ffffff;
+  font-size: large;
+  text-align: center;
+}
+
+#stars-map{
+  height: 450px;
+}
+
+.contelllation-2{
+  display: flex;
+  justify-content: space-evenly;
 }

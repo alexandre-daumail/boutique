@@ -15,8 +15,9 @@ session_start();
     <script src="https://kit.fontawesome.com/3434ebb08e.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="public/css/header.css">
-    <link rel="stylesheet" href="public/css/<?= $css ?>.css">
+    <link rel="stylesheet" href="public/css/<?= $css?>.css">
     <link rel="stylesheet" href="public/css/footer.css">
+
 
     <title><?= $title ?></title>
 </head>
@@ -32,10 +33,15 @@ session_start();
 
             <div class="button-area">
                 <div>
-                    <button class="header-button">Accueil</button>
-                    <button class="header-button">Informations</button>
-                    <button class="header-button">Nos Étoiles</button>
-                    <button class="header-button">Nos Offres</button>
+                    <nav>
+                    <ul>
+                        <li><a href=".././index.php">Accueil</a></li>
+                        <li><a href="#">Informations</a></li>
+                        <li><a href="#">Nos Étoiles</a></li>
+                        <li><a href=".././articles.php">Nos Offres</a></li>
+                    </ul>
+                    </nav>
+                    
                 </div>
                 <div class="under-button">
                     <img id="under-button" src="public/img/under-button.png" alt="">
@@ -73,11 +79,15 @@ session_start();
     </header>
     <section class="hero">
         <div class="left">
-            <h2>Achetez une Étoile dans le Ciel !<br>
-                Nomme une Étoile. C'est le plus beau cadeau de l'univers </h2>
+            <h2>Achetez une Étoile dans le Ciel !<h2>
+               <p>Nomme une Étoile. <br> 
+                C'est le plus beau cadeau de l'univers!
+            </p>
 
         </div>
         <div class="right">
             <img id="star-certificate" src="./public/img/CERTIFICAT.png" alt="certificat">
         </div>
     </section>
+
+    
