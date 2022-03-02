@@ -6,7 +6,18 @@ require('process/header.php');
 
 ?>
 <main>
+    <section class="hero">
+        <div class="left">
+            <h2>Achetez une Étoile dans le Ciel !<h2>
+                    <p>Nomme une Étoile. <br>
+                        C'est le plus beau cadeau de l'univers!
+                    </p>
 
+        </div>
+        <div class="right">
+            <img id="star-certificate" src="./public/img/CERTIFICAT.png" alt="certificat">
+        </div>
+    </section>
     <section class="container">
 
         <div class="card">
@@ -92,7 +103,7 @@ require('process/header.php');
 
     </section>
     <section class="constellation">
-        
+
         <div class="constellation-1">
             <h3>Raisons d'acheter une étoile</h3>
             <p>

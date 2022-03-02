@@ -1,6 +1,6 @@
 /* ---------- HEADER ---------- */
 
-    /* RESET & GLOBAL CSS */
+/* RESET & GLOBAL CSS */
 
 *,
 ::before,
@@ -20,23 +20,23 @@
   font-family: "SyneMono-Regular";
   src: url(../public/font/SyneMono-Regular.ttf);
 }
-.left{
+.left {
   font-family: "SyneMono-Regular";
 }
 body {
   overflow-x: hidden;
   font-size: 30px;
   font-family: "SyneMono-Regular";
-  background-image: url(https://images8.alphacoders.com/601/thumb-1920-601973.jpg);
-      background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 80vh;
+  /* background-image: url(https://images8.alphacoders.com/601/thumb-1920-601973.jpg); */
+  background-color: #939393;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 80vh;
 }
 
 h1 {
   font-size: 50px;
   text-align: center;
-
 }
 h2 {
   font-size: 40px;
@@ -52,10 +52,9 @@ h4 {
   text-align: center;
 }
 
-p{
+p {
   margin-bottom: 50px;
 }
-
 
 .byline {
   text-align: center;
@@ -117,15 +116,11 @@ nav > ul > li {
   text-decoration: none;
   margin: 0px 20px;
 }
-nav > ul > li > a{ 
-  
+nav > ul > li > a {
   text-decoration: none;
   font-size: medium;
   color: #ffffff;
-  
 }
-
-
 
 .search-button-area {
   display: flex;
@@ -147,7 +142,7 @@ search-area {
 .header-button {
   padding: 10px;
   width: 109px;
-  
+
   border-radius: 5px;
   border: 2px solid #ffffff;
 }
@@ -181,32 +176,3 @@ search-area {
 #icon-header {
   height: 50px;
 }
-
-/* HERO */
-
-.hero {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-#star-certificate {
-  height: 400px;
-  margin: 30px;
-  border-radius: 15px;
-}
-
-.left {
-  margin: 30px;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Hero */
-
-/* Fin du Hero */
-
-
