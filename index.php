@@ -92,6 +92,7 @@ require('process/header.php');
 
     </section>
     <section class="constellation">
+        
         <div class="constellation-1">
             <h3>Raisons d'acheter une étoile</h3>
             <p>
