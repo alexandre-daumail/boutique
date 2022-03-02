@@ -31,23 +31,23 @@ if (isset($_POST['login']) && count($_POST) > 0) {
 
                 <label for="1">Prénom</label>
 
-                <input type="text" name="first_name" id="1" placeholder="<?= isset($process['first_name']) && !empty($process['first_name']) ? $process['first_name'] : "" ?>" required>
+                <input type="text" name="first_name" id="1" placeholder="<?= isset($process['first_name']) && !empty($process['first_name']) ? $process['first_name'] : "Prénom" ?>" required>
 
                 <label for="2">Nom</label>
 
-                <input type="text" name="last_name" id="2" placeholder="<?= isset($process['last_name']) && !empty($process['last_name']) ? $process['last_name'] : "" ?>" required>
+                <input type="text" name="last_name" id="2" placeholder="<?= isset($process['last_name']) && !empty($process['last_name']) ? $process['last_name'] : "Nom" ?>" required>
 
                 <label for="3">Email</label>
 
-                <input type="email" name="email" id="3" placeholder="<?= isset($process['email']) && !empty($process['email']) ? $process['email'] : "" ?>" required>
+                <input type="email" name="email" id="3" placeholder="<?= isset($process['email']) && !empty($process['email']) ? $process['email'] : "email" ?>" required>
 
                 <label for="4">Mot de Passe</label>
 
-                <input type="password" name="password" id="4" placeholder="<?= isset($process['password']) && !empty($process['password']) ? $process['password'] : "" ?>" required>
+                <input type="password" name="password" id="4" placeholder="<?= isset($process['password']) && !empty($process['password']) ? $process['password'] : "Mot de passe" ?>" required>
 
                 <label for="5">Confirmation</label>
 
-                <input type="password" name="password_rpt" id="5" placeholder="<?= isset($process['password_rpt']) && !empty($process['password_rpt']) ? $process['password_rpt'] : "" ?>" required>
+                <input type="password" name="password_rpt" id="5" placeholder="<?= isset($process['password_rpt']) && !empty($process['password_rpt']) ? $process['password_rpt'] : "Confirmation" ?>" required>
 
                 <button type="submit" name="signup" form="signup">S'inscrire</button>
 
@@ -69,7 +69,7 @@ if (isset($_POST['login']) && count($_POST) > 0) {
 
                 <label for="7">Mot de Passe</label>
 
-                <input type="password" name="password" id="7" placeholder="<?= isset($process['password']) && !empty($process['password']) ? $process['password'] : "" ?>" required>
+                <input type="password" name="password" id="7" placeholder="<?= isset($process['password']) && !empty($process['password']) ? $process['password'] : "Mot de passe" ?>" required>
 
                 <button type="submit" name="login" form="login">Se connecter</button>
 

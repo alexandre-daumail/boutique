@@ -8,8 +8,10 @@ main form {
     display: flex;
     justify-content: space-evenly;
     width: 33%;
-
-
+    background-color: aliceblue;
+    padding: 50px;
+    margin: 50px;
+    text-align: center;
 }
 
 main input {
@@ -17,10 +19,12 @@ main input {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-    border: 3px solid #ccc;
+    border: none;
+    border-bottom: solid 1px;
     -webkit-transition: 0.5s;
     transition: 0.5s;
     outline: none;
+
 }
 
 input:focus {
@@ -29,4 +33,9 @@ input:focus {
 
 fieldset {
     border: none;
+}
+
+legend {
+    text-align: left;
+    margin-bottom: 15px;
 }
