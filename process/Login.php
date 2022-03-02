@@ -8,13 +8,13 @@
 
     $data = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $errors = [];
-    $email = stripcslashes(strip_tags($data['email']));
+    $login = stripcslashes(strip_tags($data['login']));
     $password = htmlspecialchars($data['password']);
 
     $user = new User;
 
     //check if the email address exists in the database...
-    $check = $user->checkUser($email);
+    $check = $user->checkUser($login);
     if (!$check['status']) {
       $errors['error'] = "Identifiants incorrects.";
       return $errors;

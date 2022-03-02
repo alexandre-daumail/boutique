@@ -15,7 +15,7 @@ session_start();
     <script src="https://kit.fontawesome.com/3434ebb08e.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="public/css/header.css">
-    <link rel="stylesheet" href="public/css/<?= $css?>.css">
+    <link rel="stylesheet" href="public/css/<?= $css ?>.css">
     <link rel="stylesheet" href="public/css/footer.css">
 
 
@@ -23,6 +23,7 @@ session_start();
 </head>
 
 <body>
+    
     <header>
 
         <section class="logo-area">
@@ -62,11 +63,14 @@ session_start();
                 <?= isset($_SESSION['current_session']) && $_SESSION['current_session']['status'] == 1 ? '<a href="account.php"><img id="icon-header" src="public/img/icon-myaccount.png" alt="logo-myaccount"></a><a href="logout.php"><img id="icon-header" src="public/img/icon/logout.png" alt="logout logo"></a>' : '<a href="authenticate.php"><img id="icon-header" src="public/img/icon-myaccount.png" alt="logo-myaccount"></a>' ;?>
 
             </div>
+
             <div class="search-area">
+
                 <form class="searchbox" action="http://thecodeblock.com">
                     <input type="search" placeholder="Search" />
                     <button type="submit" value="search">&nbsp;</button>
                 </form>
+
             </div>
 
 
@@ -77,17 +81,5 @@ session_start();
         </section>
 
     </header>
-    <section class="hero">
-        <div class="left">
-            <h2>Achetez une Étoile dans le Ciel !<h2>
-               <p>Nomme une Étoile. <br> 
-                C'est le plus beau cadeau de l'univers!
-            </p>
-
-        </div>
-        <div class="right">
-            <img id="star-certificate" src="./public/img/CERTIFICAT.png" alt="certificat">
-        </div>
-    </section>
 
     
