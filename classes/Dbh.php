@@ -8,10 +8,10 @@
 
     protected function DbHandler ()
     {
-        $dbHost = 'localhost';
+        $dbHost = 'localhost:8889';
         $dbName = 'boutique';
         $dbUser = 'root';
-        $dbPass = '';
+        $dbPass = 'root';
         
         //Crée un DSN (data Source Name) pour la connexion à la bdd
         $Dsn = "mysql:host=" . $dbHost . ";dbname=" . $dbName;
