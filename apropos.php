@@ -6,6 +6,8 @@ require('process/header.php');
 ?>
 
 <main>
+
+</popup>
     <article>
         <h3>Pourquoi acheter un Étoile dans le Ciel ?</h3>
         <p>Il n'y a pas tant de "dons éternels" dans notre monde, et parmi ceux-ci, la beauté de la lumière des étoiles n'est en rien inférieure à celle des diamants. Ils sont admirés depuis des millénaires - les gens regardent les étoiles depuis le tout début de la civilisation. Belles et lumineuses, froides et inextinguibles, elles sont à bien des égards des mystères de l'univers qui continueront de susciter admiration et curiosité pour de nombreuses générations à venir. Enfant, chacun de nous cherchait dans les étoiles quelque chose que nous ne pouvions pas trouver sur Terre. Enfin, un philosophe a posé la question : "Sommes-nous des personnes parce que nous regardons les étoiles ? Ou regardons-nous les étoiles parce que nous sommes des personnes ?".</p>

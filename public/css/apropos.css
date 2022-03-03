@@ -13,7 +13,7 @@ article{
   margin: 30px;
   padding: 20px;
 }
-li {
+main > article > ul > li {
   list-style-type: circle;
 }
 
