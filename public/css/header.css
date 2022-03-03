@@ -22,17 +22,17 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
-.left{
-  font-family: "SyneMono-Regular";
-}
 
 /* ---------- HEADER ---------- */
 
 header {
+  display: flex;
+  justify-content: center;
   background-image: url(https://images8.alphacoders.com/601/thumb-1920-601973.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 80vh;
+  min-height: 440px;
+  font-family: "SyneMono-Regular";
 }
 
 body {
@@ -42,8 +42,7 @@ body {
   /* background-image: url(https://images8.alphacoders.com/601/thumb-1920-601973.jpg); */
   background-color: #939393;
   background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 80vh;
+  background-repeat: no-repeat;  
 }
 
 h1 {
@@ -85,10 +84,11 @@ p {
 }
 
 .searchbox {
+  
   background-color: #fffbf8;
   /* padding: 13px; */
   width: 335px;
-  margin: 50px auto;
+  margin: 10px auto;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -121,14 +121,7 @@ input[type="search"]:focus {
   outline: 0;
 }
 
-header {
-  display: flex;
-  justify-content: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 600px;
-  font-family: "SyneMono-Regular";
-}
+
 nav > ul > li {
   float: left;
   position: relative;
@@ -144,11 +137,13 @@ nav > ul > li > a {
 .search-button-area {
   display: flex;
   flex-direction: column;
-  margin: 50px;
+  margin: 82px 50px 0px 50px;
+  height: 320px;
 }
 
 search-area {
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -172,8 +167,8 @@ search-area {
   align-items: center;
 }
 #icon-header {
-  height: 50px;
-  margin: 30px;
+  height: 30px;
+  margin: 10px;
 }
 
 .under-button {
@@ -189,9 +184,6 @@ search-area {
 .icon-header {
   display: flex;
   justify-content: center;
-  margin-top: 25px;
+  margin-top: 10px;
 }
 
-#icon-header {
-  height: 50px;
-}
