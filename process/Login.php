@@ -13,10 +13,10 @@
 
     $user = new User;
 
-    //check if the email address exists in the database...
+    //check if the email/login address exists in the database...
     $check = $user->checkUser($login);
     if (!$check['status']) {
-      $errors['error'] = "Identifiants incorrects.";
+      $errors['error']['login'] = "Identifiants incorrects.";
       return $errors;
     } else {
       //we check that the password matches the hash
@@ -28,7 +28,7 @@
         ];
         header("Location: index.php?connected");
       }
-
+      
       if (!password_verify($password, $check['data']['MOT_DE_PASSE'])) {
         $errors['error'] = "Invalid credentials passed. Please, check the Email or Password and try again.";
         return $errors;

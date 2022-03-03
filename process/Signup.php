@@ -9,6 +9,7 @@
         $data = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         
         // Filtration des données récupérées
+        $login = stripcslashes(strip_tags($data['login']));
         $first_name = stripcslashes(strip_tags($data['first_name']));
         $last_name = stripcslashes(strip_tags($data['last_name']));
         $email = stripcslashes(strip_tags($data['email']));
@@ -18,6 +19,9 @@
         // Affichage des erreurs
         $errors = [];
 
+        if (preg_match('/[^A-Za-z0-9_]/', $login)) {
+            $errors['login'] = "Désolé, veuillez entrer un pseudo valide";
+        }
         if (preg_match('/[^A-Za-z0-9_]/', $first_name)) {
             $errors['first_name'] = "Désolé, veuillez entrer un prénom valide";
         }
@@ -32,6 +36,12 @@
 
         $registration = new User;
 
+        // Vérifier que le pseudo n'est pas déjà utilisé...
+        $loginChecked = $registration->checkUser($login);
+        if ($loginChecked['status']) {
+            $errors['login'] = "Désolé mais ce pseudo existe déjà.";
+        }
+        
         //Vérifier que le mail n'est pas déjà utilisé...
         $emailChecked = $registration->checkUser($email);
         if ($emailChecked['status']) {
@@ -43,7 +53,7 @@
         }
 
         if (count($errors) > 0) {           
-            $errors['error'] = "Veuillez corriger les champs erronés";
+            $errors['error']['signup'] = "Veuillez corriger les champs erronés";
             return $errors;
         } else {
 
@@ -52,7 +62,8 @@
                 'first_name' => $first_name,
                 'last_name' => $last_name,
                 'email' => $email,
-                'password' => $password
+                'password' => $password,
+                'login' => $login,
             ];
             
             $registration->register($data);
@@ -70,7 +81,7 @@
             } else {
 
                 //You could probably notify the dev team within this line but this is just a demo still...
-                $errors['error'] = "Désolé, une erreur inattentue a été constatée et votre compte n'a pas été créé. Veuillez réessayer ultérieurement";
+                $errors['error']['signup'] = "Désolé, une erreur inattentue a été constatée et votre compte n'a pas été créé. Veuillez réessayer ultérieurement";
                 return $errors;
             }
         }
