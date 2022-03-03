@@ -52,7 +52,7 @@
   width: 124px;
   margin-top: 26px;
   border-radius: 5px;
-  border: 2px solid #ffffff;
+  border: 2px solid #000;
 }
 
 .price-card{
@@ -107,7 +107,7 @@
 }
 
 .constellation{
-  color: #ffffff;
+  color: #000;
   font-size: large;
   text-align: center;
 }
