@@ -1,3 +1,19 @@
-p:nth-child(1) {
-    color: red;
-  }
+main{
+  display: flex;
+  flex-wrap: wrap;
+  font-size: medium;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+article{
+  width: 510px;
+  margin: 30px;
+  padding: 20px;
+}
+li {
+  list-style-type: circle;
+}
+
