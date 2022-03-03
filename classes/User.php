@@ -59,5 +59,20 @@ class User extends Dbh
         
     }
 
+    // Fonction qui donne les informations de l'utilisateur
+    public function getUser($login)
+    {
+        $get = $this->DbHandler()->prepare("SELECT * FROM utilisateurs WHERE login = :login");
+
+        $get->bindValue(':login', $login, PDO::PARAM_STR);
+
+        $get->execute();
+
+        $result = $get->fetchAll(PDO::FETCH_OBJ);
+
+        return $result;
+    
+    }
+
 
 }

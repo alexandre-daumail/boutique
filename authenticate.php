@@ -30,6 +30,13 @@ if (isset($_POST['connect']) && count($_POST) > 0) {
                 <label for="11">Pseudonyme</label>
 
                 <input type="text" name="login" id="11" placeholder="<?= isset($process['login']) && !empty($process['login']) ? $process['login'] : "Pseudonyme" ?>" required>
+
+                <label for="12">Civilité</label>
+                
+                <select name="civility" id="12">
+                    <option value="mme">Madame</option>
+                    <option value="m.">Monsieur</option>
+                </select>
                 
                 <label for="1">Prénom</label>
                 
