@@ -27,31 +27,28 @@ session_start();
     <header>
 
         <section class="logo-area">
-            <img src="public/img/logo-header.png" alt="logo-header">
+            <img id="logo-header" src="public/img/logo-header.png" alt="logo-header">
         </section>
         <section class="search-button-area">
-
-
+            
             <div class="button-area">
-                <div>
-                    <nav>
-                        <ul>
-                            <li><a href="index.php">Accueil</a></li>
-                            <li><a href="#">Informations</a></li>
-                            <li><a href="#">Nos Étoiles</a></li>
-                            <li><a href="articles.php">Nos Offres</a></li>
-                        </ul>
-                    </nav>
-
+                <div class="under-button">
+                    <a href="index.php">Accueil</a>
+                    <img id="under-button" src="public/img/under-button.png" alt="">
                 </div>
                 <div class="under-button">
-                    <img id="under-button" src="public/img/under-button.png" alt="">
-                    <img id="under-button" src="public/img/under-button.png" alt="">
-                    <img id="under-button" src="public/img/under-button.png" alt="">
+                    <a href="index.php">Information</a>
                     <img id="under-button" src="public/img/under-button.png" alt="">
                 </div>
+                <div class="under-button">
+                    <a href="index.php">Nos Étoiles</a>
+                    <img id="under-button" src="public/img/under-button.png" alt="">
+                </div>
+                <div class="under-button">
+                    <a href="index.php">Nos Offres</a>
+                    <img id="under-button" src="public/img/under-button.png" alt="">
 
-
+                </div>
 
             </div>
 
@@ -59,11 +56,9 @@ session_start();
 
                 <a href="#"><img id="icon-header" src="public/img/icon/Vectorcart.png" alt="logo du panier"></a>
 
-
                 <?= isset($_SESSION['current_session']) && $_SESSION['current_session']['status'] == 1 ? '<a href="account.php"><img id="icon-header" src="public/img/icon/Vectoraccount.png" alt="logo-myaccount"></a><a href="#"><img id="icon-header" src="public/img/logo-favorite.png" alt="logo des favoris title="favoris"></a><a href="logout.php"><img id="icon-header" src="public/img/icon/logout.png" alt="logout logo"></a>' : '<a href="authenticate.php"><img id="icon-header" src="public/img/icon/Vectoraccount.png" alt="logo-myaccount"></a>'; ?>
 
             </div>
-
             <div class="search-area">
 
                 <form class="searchbox" action="http://thecodeblock.com">
@@ -73,11 +68,9 @@ session_start();
 
             </div>
 
-
-
         </section>
         <section class="logo-area">
-            <img src="public/img/logo-header.png" alt="logo-header">
+            <img id="logo-header" src="public/img/logo-header.png" alt="logo-header">
         </section>
 
     </header>
