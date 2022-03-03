@@ -19,7 +19,7 @@ if (isset($_POST['connect']) && count($_POST) > 0) {
 
     <main>
 
-        <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" >
+        <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" id="1">
 
             <fieldset>
 
@@ -51,13 +51,13 @@ if (isset($_POST['connect']) && count($_POST) > 0) {
 
                 <input type="password" name="password_rpt" id="5" placeholder="<?= isset($process['password_rpt']) && !empty($process['password_rpt']) ? $process['password_rpt'] : "Confirmation" ?>" required>
                         
-                <button type="submit" name="signup">S'inscrire</button>
+                <button type="submit" name="signup" form="1">S'inscrire</button>
                 
             </fieldset>
             
         </form>
 
-        <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+        <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" id="2">
             
             <fieldset>
                 
@@ -67,13 +67,13 @@ if (isset($_POST['connect']) && count($_POST) > 0) {
 
                 <label for="6">Identifiant</label>
 
-                <input type="text" name="login" id="6" placeholder="Login ou Email" required>
+                <input type="text" name="login_connect" id="6" placeholder="Login ou Email" required>
 
                 <label for="7">Mot de Passe</label>
 
-                <input type="password" name="password" id="7" placeholder="Mot de passe" required>
+                <input type="password" name="pwd_connect" id="7" placeholder="Mot de passe" required>
 
-                <button type="submit" name="connect">Se connecter</button>
+                <button type="submit" name="connect" form="2">Se connecter</button>
 
             </fieldset>
 

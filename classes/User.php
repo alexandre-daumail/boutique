@@ -29,7 +29,7 @@ class User extends Dbh
     }
 
     /**
-     * @desc Creates a new user and returns a boolean indicating the status of the              operation...
+     * @desc Creates a new user and returns a boolean indicating the status of the operation...
      */
     public function register(array $data) : bool
     {

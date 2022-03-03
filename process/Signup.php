@@ -69,18 +69,11 @@
             $registration->register($data);
             
             if ($registration) {
-
-                //Before the redirect this would be a good time to send a mail or something in order to verify the user...
-                $_SESSION['current_session'] = [
-                    'status' => 1,
-                    'user' => $data,
-                    'date_time' => date('Y-m-d H:i:s'),
-                ];
+           
                 header("Location: index.php");
                 
             } else {
 
-                //You could probably notify the dev team within this line but this is just a demo still...
                 $errors['error']['signup'] = "Désolé, une erreur inattentue a été constatée et votre compte n'a pas été créé. Veuillez réessayer ultérieurement";
                 return $errors;
             }
