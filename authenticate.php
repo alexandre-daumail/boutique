@@ -14,6 +14,7 @@ if (isset($_POST['signup']) && count($_POST) > 0) {
 if (isset($_POST['connect']) && count($_POST) > 0) {
     $process = Login($_POST);
 }
+
 ?>
 
     <main>
@@ -40,7 +41,7 @@ if (isset($_POST['connect']) && count($_POST) > 0) {
 
                 <label for="3">Email</label>
                 
-                <input type="email" name="email" id="3" placeholder="<?= isset($process['email']) && !empty($process['email']) ? $process['email'] : "email" ?>" required>
+                <input type="email" name="email" id="3" placeholder="<?= isset($process['email']) && !empty($process['email']) ? $process['email'] : "Email" ?>" required>
 
                 <label for="4">Mot de Passe</label>
                 
@@ -66,11 +67,11 @@ if (isset($_POST['connect']) && count($_POST) > 0) {
 
                 <label for="6">Identifiant</label>
 
-                <input type="text" name="login" id="6" placeholder="<?= isset($process['email']) && !empty($process['error']) ? $process['error'] : "Login ou Email" ?>" required>
+                <input type="text" name="login" id="6" placeholder="Login ou Email" required>
 
                 <label for="7">Mot de Passe</label>
 
-                <input type="password" name="password" id="7" placeholder="<?= isset($process['password']) && !empty($process['password']) ? $process['password'] : "Mot de passe" ?>" required>
+                <input type="password" name="password" id="7" placeholder="Mot de passe" required>
 
                 <button type="submit" name="connect">Se connecter</button>
 
