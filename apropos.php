@@ -7,7 +7,7 @@ require('process/header.php');
 
 <main>
 
-</popup>
+
     <article>
         <h3>Pourquoi acheter un Étoile dans le Ciel ?</h3>
         <p>Il n'y a pas tant de "dons éternels" dans notre monde, et parmi ceux-ci, la beauté de la lumière des étoiles n'est en rien inférieure à celle des diamants. Ils sont admirés depuis des millénaires - les gens regardent les étoiles depuis le tout début de la civilisation. Belles et lumineuses, froides et inextinguibles, elles sont à bien des égards des mystères de l'univers qui continueront de susciter admiration et curiosité pour de nombreuses générations à venir. Enfant, chacun de nous cherchait dans les étoiles quelque chose que nous ne pouvions pas trouver sur Terre. Enfin, un philosophe a posé la question : "Sommes-nous des personnes parce que nous regardons les étoiles ? Ou regardons-nous les étoiles parce que nous sommes des personnes ?".</p>
@@ -41,7 +41,7 @@ require('process/header.php');
             </li>
 
             <li>
-                Si vous achetez une étoile chez Cosmonova, vous devez tenir compte de l'emplacement du destinataire. Si une personne observe une étoile dans un endroit peu pollué par la lumière, il suffit de choisir un coffret cadeau étoile traditionnel, et si une personne regarde une étoile depuis une métropole où l'éclairage est très important, il faut envisager l'achat d'une très étoile brillante.
+                Si vous achetez une étoile chez NovaStar, vous devez tenir compte de l'emplacement du destinataire. Si une personne observe une étoile dans un endroit peu pollué par la lumière, il suffit de choisir un coffret cadeau étoile traditionnel, et si une personne regarde une étoile depuis une métropole où l'éclairage est très important, il faut envisager l'achat d'une très étoile brillante.
             </li>
         </ul>
         </p>
