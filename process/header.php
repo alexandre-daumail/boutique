@@ -23,7 +23,7 @@ session_start();
 </head>
 
 <body>
-    
+
     <header>
 
         <section class="logo-area">
@@ -35,14 +35,14 @@ session_start();
             <div class="button-area">
                 <div>
                     <nav>
-                    <ul>
-                        <li><a href="index.php">Accueil</a></li>
-                        <li><a href="#">Informations</a></li>
-                        <li><a href="#">Nos Étoiles</a></li>
-                        <li><a href="articles.php">Nos Offres</a></li>
-                    </ul>
+                        <ul>
+                            <li><a href="index.php">Accueil</a></li>
+                            <li><a href="#">Informations</a></li>
+                            <li><a href="#">Nos Étoiles</a></li>
+                            <li><a href="articles.php">Nos Offres</a></li>
+                        </ul>
                     </nav>
-                    
+
                 </div>
                 <div class="under-button">
                     <img id="under-button" src="public/img/under-button.png" alt="">
@@ -56,11 +56,11 @@ session_start();
             </div>
 
             <div class="icon-header">
-                
-                <a href="#"><img id="icon-header" src="public/img/icon/Vectorcart.png" alt="logo du panier" ></a>
-                
-                
-                <?= isset($_SESSION['current_session']) && $_SESSION['current_session']['status'] == 1 ? '<a href="account.php"><img id="icon-header" src="public/img/icon/Vectoraccount.png" alt="logo-myaccount"></a><a href="#"><img id="icon-header" src="public/img/logo-favorite.png" alt="logo des favoris title="favoris"></a><a href="logout.php"><img id="icon-header" src="public/img/icon/logout.png" alt="logout logo"></a>' : '<a href="authenticate.php"><img id="icon-header" src="public/img/icon/Vectoraccount.png" alt="logo-myaccount"></a>' ;?>
+
+                <a href="#"><img id="icon-header" src="public/img/icon/Vectorcart.png" alt="logo du panier"></a>
+
+
+                <?= isset($_SESSION['current_session']) && $_SESSION['current_session']['status'] == 1 ? '<a href="account.php"><img id="icon-header" src="public/img/icon/Vectoraccount.png" alt="logo-myaccount"></a><a href="#"><img id="icon-header" src="public/img/logo-favorite.png" alt="logo des favoris title="favoris"></a><a href="logout.php"><img id="icon-header" src="public/img/icon/logout.png" alt="logout logo"></a>' : '<a href="authenticate.php"><img id="icon-header" src="public/img/icon/Vectoraccount.png" alt="logo-myaccount"></a>'; ?>
 
             </div>
 
@@ -81,5 +81,3 @@ session_start();
         </section>
 
     </header>
-
-    

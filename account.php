@@ -20,32 +20,30 @@ require_once('process/header.php');
 
 <main>
     <?php
-        switch ($_POST) {
-            case 'profil':
-                require('profil.php');
-                break;
-                
-            case 'commands':
-                require('commands.php');
-                break;
+    switch ($_POST) {
+        case 'profil':
+            require('profil.php');
+            break;
 
-            case 'retours':
-                require('retours.php');
-                break;
+        case 'commands':
+            require('commands.php');
+            break;
 
-            case 'paiements':
-                require('paiements.php');
-                break;
+        case 'retours':
+            require('retours.php');
+            break;
 
-            case 'annulations':
-                require('annulations.php');
-                break;
+        case 'paiements':
+            require('paiements.php');
+            break;
 
-            
-            default:
-                require('profil.php');
-                break;
-        }
+        case 'annulations':
+            require('annulations.php');
+            break;
+
+        default:
+            require('profil.php');
+            break;
+    }
     ?>
 </main>
-

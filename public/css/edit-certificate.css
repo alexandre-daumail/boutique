@@ -1,22 +1,22 @@
 .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    }
-
-.item1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.item2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
 }
 
-img{
-    width: 150px;
+.item1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 150px;
 }

@@ -110,9 +110,9 @@ require('process/header.php');
     <section class="constellation">
 
         <div class="constellation-1">
-            
+
             <h3>Raisons d'acheter une étoile</h3>
-            
+
             <p>
                 Raison d'acheter une étoile
                 Dans notre galaxie, il y a plus de 100 milliards d'étoiles.
@@ -128,7 +128,7 @@ require('process/header.php');
         <div class="constellation-2">
 
             <div class="constellation-3">
-                
+
                 <h3>Achetez une étoila dans n'importe qu'elle constellation</h3>
 
                 <p>
