@@ -35,7 +35,7 @@ class User extends Dbh
     {
         var_dump($data);
         $dbHandler = $this->DbHandler();
-        $statement = $dbHandler->prepare("INSERT INTO `utilisateurs` (prénom, nom, email, password, created_at, login) VALUES (:first_name, :last_name, :email, :password, :created_at, :login)");
+        $statement = $dbHandler->prepare("INSERT INTO `utilisateurs` (prénom, nom, email, password, created_at, login, civilité) VALUES (:first_name, :last_name, :email, :password, :created_at, :login, :civilite)");
         
         //#Defaults....
         $timestamps = date('Y-m-d H:i:s');
@@ -48,6 +48,7 @@ class User extends Dbh
         $statement->bindValue(':email', $data['email'], PDO::PARAM_STR);
         $statement->bindValue(':password', $password, PDO::PARAM_STR);
         $statement->bindValue(':created_at', $timestamps, PDO::PARAM_STR);
+        $statement->bindValue(':civilite', $data['civilite'], PDO::PARAM_STR);
         
         $result = $statement->execute();
         
