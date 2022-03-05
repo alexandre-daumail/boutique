@@ -8,8 +8,8 @@
 
     $data = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $errors = [];
-    $login = stripcslashes(strip_tags($data['login']));
-    $password = htmlspecialchars($data['password']);
+    $login = stripcslashes(strip_tags($data['login_connect']));
+    $password = htmlspecialchars($data['pwd_connect']);
 
     $user = new User;
 
