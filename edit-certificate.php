@@ -7,15 +7,38 @@ require('process/header.php');
 ?>
 
 <main>
-    <section class="grid">
-        <div class="item1">
-            <img src="public/img/CERTIFICAT.png" alt="">
-        </div>
-        <div class="item2">
-            <form action="#" method="POST">
-                <option value="1"><img src="public/img/icon/" alt=""></option>
-            </form>
-        </div>
+    <section class="left">
+
+    </section>
+    <section class="right">
+        <form action="#" method="POST">
+
+            <fieldset>
+
+                <h4>Choisir le support</h4>
+
+                <label>
+                    <input type="radio" name="bois" value="Wood">
+                    <img class="img-form" src="public/img/gravure-bois.png">
+                </label>
+
+                <label>
+                    <input type="radio" name="verre" value="verre">
+                    <img class="img-form" src="public/img/CERTIFICAT.png">
+                </label>
+                <label>
+                    <input type="radio" name="verre" value="verre">
+                    <img class="img-form" src="public/img/trophe.png">
+                </label>
+            </fieldset>
+            <fieldset>
+                <h4>Selecteur d'étoiles</h4>
+            </fieldset>
+            <fieldset>
+
+            </fieldset>
+
+        </form>
     </section>
 </main>
 
