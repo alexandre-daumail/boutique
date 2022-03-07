@@ -19,6 +19,7 @@
       $errors['error']['login'] = "Identifiants incorrects.";
       return $errors;
     } else {
+      
       //we check that the password matches the hash
       if (password_verify($password, $check['data']['password'])) {
         $_SESSION['current_session'] = [

@@ -2,6 +2,12 @@
 
 session_start();
 
+function test($var){
+    echo '<pre>';
+    var_dump($var);
+    echo '</pre>';
+}
+
 ?>
 
 <!DOCTYPE html>
