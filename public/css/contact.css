@@ -1,5 +1,5 @@
 main {
-    min-height: 120vh;
+  min-height: 120vh;
 }
 
 h1 {
@@ -9,21 +9,20 @@ h1 {
 }
 
 h2 {
-    margin: 30px 40px;
-    text-align: start;
-    font-size: 20px;
+  margin: 30px 40px;
+  text-align: start;
+  font-size: 20px;
 }
 
-h5{
-    text-transform: uppercase;
-    font-weight: 100;
-    font-size: 20px;
-    margin: 10px 10px;
+h5 {
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 20px;
+  margin: 10px 10px;
 }
 
 hr {
-    margin: 15px 10px;
-    
+  margin: 15px 10px;
 }
 
 p {
@@ -45,55 +44,55 @@ p {
 }
 
 .container form {
-    margin: 0 30px;
-    height: 100%;
+  margin: 0 30px;
+  height: 100%;
 }
 
-.txt_field{
-    display: flex;
-    flex-direction: column;
+.txt_field {
+  display: flex;
+  flex-direction: column;
 }
 
 label {
-    text-transform: uppercase;
-    font-size: 15px;
-    margin: 0 12px;
+  text-transform: uppercase;
+  font-size: 15px;
+  margin: 0 12px;
 }
 
 label::after {
-    content: "*";
-    color: red;
-  }
+  content: "*";
+  color: red;
+}
 
-.txt_field input{
-    border: 1px solid grey;
-    margin: 10px 10px;
-    width: 420px;
-    height: 40px;
-    font-size: 20px;
-    padding-left: 15px;
-    border-radius: 3px;
+.txt_field input {
+  border: 1px solid grey;
+  margin: 10px 10px;
+  width: 420px;
+  height: 40px;
+  font-size: 20px;
+  padding-left: 15px;
+  border-radius: 3px;
 }
 
 .container textarea {
-    border: 1px solid grey;
-    margin: 10px 10px;
-    resize: none;
-    width: 420px;
-    height: 180px;
-    border-radius: 4px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    color: #adadad;
-    padding: 2rem;
-}   
-
-.name {
-    display: flex;
+  border: 1px solid grey;
+  margin: 10px 10px;
+  resize: none;
+  width: 420px;
+  height: 180px;
+  border-radius: 4px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #adadad;
+  padding: 2rem;
 }
 
-.name .txt_field input{
-    width: 200px;
+.name {
+  display: flex;
+}
+
+.name .txt_field input {
+  width: 200px;
 }
 
 input[type="submit"]{

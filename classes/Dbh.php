@@ -1,33 +1,33 @@
 <?php
 
-  Class Dbh {
-  
-   // @param void | null
-   // @return array | mixed
-   // @desc Crée une nouvelle connexion PDO et retourne le gestionnaire 
+class Dbh
+{
 
-    protected function DbHandler ()
-    {
-        $dbHost = 'localhost';
-        $dbName = 'boutique';
-        $dbUser = 'root';
-        $dbPass = '';
-        
-        //Crée un DSN (data Source Name) pour la connexion à la bdd
-        $Dsn = "mysql:host=" . $dbHost . ";dbname=" . $dbName;
+  // @param void | null
+  // @return array | mixed
+  // @desc Crée une nouvelle connexion PDO et retourne le gestionnaire 
 
-        //Crée des options pour la configuration de la connexion PDO
-        $options = array(
-          PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-        );
+  protected function DbHandler()
+  {
+    $dbHost = 'localhost:8889';
+    $dbName = 'boutique';
+    $dbUser = 'root';
+    $dbPass = 'root';
 
-        try {
+    //Crée un DSN (data Source Name) pour la connexion à la bdd
+    $Dsn = "mysql:host=" . $dbHost . ";dbname=" . $dbName;
 
-          $Connection = new PDO($Dsn, $dbUser, $dbPass, $options);
-          return $Connection;
+    //Crée des options pour la configuration de la connexion PDO
+    $options = array(
+      PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+    );
 
-        } catch (Exception $e) {
-          var_dump('Couldn\'t Establish A database Connection. Due to the following reason: ' . $e->getMessage());
-        }
+    try {
+
+      $Connection = new PDO($Dsn, $dbUser, $dbPass, $options);
+      return $Connection;
+    } catch (Exception $e) {
+      var_dump('Couldn\'t Establish A database Connection. Due to the following reason: ' . $e->getMessage());
     }
   }
+}

@@ -8,7 +8,7 @@ require('process/header.php');
 ?>
 
 <main>
-    
+
     <h1>Contactez Nous</h1>
 
     <div class="container">
@@ -16,7 +16,7 @@ require('process/header.php');
         <div class="text">
 
             <h2>Get in touch with us</h2>
-            
+
             <p>
 
             Nous nous soucions sincèrement de nos clients, 
@@ -53,19 +53,19 @@ require('process/header.php');
             <div class="name">
 
                 <div class="txt_field">
-                <label>prénom&nbsp;</label>
+                    <label>prénom&nbsp;</label>
                     <input type="text" name="name" required autocomplete="off">
                 </div>
 
                 <div class="txt_field">
-                <label>nom&nbsp;</label>
+                    <label>nom&nbsp;</label>
                     <input type="text" name="lname" required autocomplete="off">
                 </div>
 
             </div>
 
             <div class="txt_field">
-            <label>email&nbsp;</label>
+                <label>email&nbsp;</label>
                 <input type="email" name="email" required autocomplete="off">
             </div>
 
@@ -73,7 +73,7 @@ require('process/header.php');
             <label>sujet&nbsp;</label>
                 <input type="text" name="object" required autocomplete="off">
             </div>
-            
+
             <div class="txt_field">
                 <label>message&nbsp;</label>
                 <textarea name="message" required></textarea>
@@ -105,9 +105,3 @@ require('send_email.php');
 require('process/footer.php');
 
 ?>
-
-
-            
-
-
-    
