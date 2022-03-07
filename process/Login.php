@@ -8,8 +8,8 @@
 
     $data = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $errors = [];
-    $login = stripcslashes(strip_tags($data['login']));
-    $password = htmlspecialchars($data['password']);
+    $login = stripcslashes(strip_tags($data['login_connect']));
+    $password = htmlspecialchars($data['pwd_connect']);
 
     $user = new User;
 
@@ -19,6 +19,7 @@
       $errors['error']['login'] = "Identifiants incorrects.";
       return $errors;
     } else {
+      
       //we check that the password matches the hash
       if (password_verify($password, $check['data']['password'])) {
         $_SESSION['current_session'] = [

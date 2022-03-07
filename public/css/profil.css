@@ -7,10 +7,10 @@ main form {
     border-radius: 0px;
     display: flex;
     justify-content: space-evenly;
-    width: 33%;
+    width: 70%;
     background-color: aliceblue;
     padding: 50px;
-    margin: 50px;
+    margin: 50px auto;
 }
 
 main input, main select {
