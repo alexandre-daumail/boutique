@@ -3,6 +3,8 @@ $title = "Contact";
 $css = "contact";
 require('process/header.php');
 
+
+
 ?>
 
 <main>
@@ -17,31 +19,32 @@ require('process/header.php');
 
             <p>
 
-                We sincerely care about our customers,
-                that’s why we always strive to provide the best star naming service.<br>
-                Before contacting us, check out our frequently asked questions.
-                Also, you may try reaching out to us via Chat.
-                Usually, we get back to you within 1 business day.
-                Any questions regarding the order process,
-                stars and everything else will be answered!
+            Nous nous soucions sincèrement de nos clients, 
+            c'est pourquoi nous nous efforçons toujours de 
+            fournir le meilleur service de nommage d'étoiles.
+            Avant de nous contacter, consultez notre foire aux questions. 
+            Vous pouvez également essayer de nous contacter via le chat. 
+            Habituellement, nous vous répondons dans un délai d'un jour ouvrable. 
+            Toutes les questions concernant le processus de commande, 
+            les étoiles et tout le reste recevront une réponse !
 
             </p>
 
-            <h2>Company details</h2>
+            <h2>Coordonnés de NovaShop</h2>
 
             <p>
-
-                SIA OCR,<br>
-                Reg. number: 40203116030<br>
-                Address: Riga, Matisa iela 61 – 23, LV-1009,<br>
-                Latvia<br>
-                contact@cosmonova.org<br>
+            
+            NovaShop Inc.<br>
+            N° SIRET: 40203116030<br>
+            15 Boulevard de Venus 0013 VENUS<br>
+            +33 6 56 76 87 90<br>
+            contact@novashop.org<br>
 
             </p>
 
         </div>
 
-        <form action="contact_process.php" method="post">
+        <form method="post">
 
             <h5>Formulaire de contact</h5>
 
@@ -67,20 +70,33 @@ require('process/header.php');
             </div>
 
             <div class="txt_field">
-                <label>sujet&nbsp;</label>
-                <input type="text" name="subject" required autocomplete="off">
+            <label>sujet&nbsp;</label>
+                <input type="text" name="object" required autocomplete="off">
             </div>
 
             <div class="txt_field">
                 <label>message&nbsp;</label>
-                <textarea name="content" required></textarea>
+                <textarea name="message" required></textarea>
             </div>
 
             <input type="submit" name="formsend" value="Envoyer">
 
+            <?php
+
+if(isset($_POST['formsend'])) {
+
+require('send_email.php');
+}       
+
+?>
+
         </form>
 
+        
+        
+
     </div>
+
 
 </main>
 

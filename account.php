@@ -4,46 +4,22 @@ $title = "Mon compte";
 $css = "account";
 
 require_once('process/header.php');
-
 ?>
-<aside>
-    <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-        <fieldset>
-            <button name="profil">Mon profil</button>
-            <button name="commands">Mes commandes</button>
-            <button name="retours">Mes retours</button>
-            <button name="paiements">Informations de paiements</button>
-            <button name="annulations">Annulations et remboursements</button>
-        </fieldset>
-    </form>
-</aside>
 
 <main>
-    <?php
-    switch ($_POST) {
-        case 'profil':
-            require('profil.php');
-            break;
 
-        case 'commands':
-            require('commands.php');
-            break;
-
-        case 'retours':
-            require('retours.php');
-            break;
-
-        case 'paiements':
-            require('paiements.php');
-            break;
-
-        case 'annulations':
-            require('annulations.php');
-            break;
-
-        default:
-            require('profil.php');
-            break;
-    }
-    ?>
+        <ul>
+            <li><a href="profil.php">Mon profil</a></li>
+            <li><a href="commandes.php">Mes commandes</a></li>
+            <li><a href="retours.php">Mes retours</a></li>
+            <li><a href="paiements.php">Informations de paiement</a></li>
+            <li><a href="annulations.php">Annulations et remboursements</a></li>
+        </ul>
+    
 </main>
+
+<?php
+
+require('process/footer.php');
+
+?>
