@@ -2,6 +2,8 @@
 
 session_start();
 
+require('classes/Dbh.php');
+
 function test($var){
     echo '<pre>';
     var_dump($var);
