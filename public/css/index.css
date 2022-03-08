@@ -1,4 +1,4 @@
-.container{
+.container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -18,10 +18,9 @@
   border-radius: 15px;
   margin: 50px;
   background-color: #a2c3ffa6;
-
 }
 
-.cards-img{
+.cards-img {
   height: 250px;
   width: 250px;
   margin: 10px;
@@ -30,25 +29,23 @@
   justify-content: center;
 }
 
-.cards-text{
+.cards-text {
   height: 150px;
   width: 250px;
   margin: 10px;
   background-color: brown;
 }
 
-#product-card{
+#product-card {
   height: 150px;
-  
-  
 }
 
-.txt-card{
+.txt-card {
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
-.card-button{
+.card-button {
   padding: 10px;
   width: 124px;
   margin-top: 26px;
@@ -56,16 +53,15 @@
   border: 2px solid #000;
 }
 
-.price-card{
-  color: #5B2A86;
+.price-card {
+  color: #5b2a86;
   font-size: medium;
 }
-.txt-card{
+.txt-card {
   font-size: small;
 }
 
-
-.card-promo{
+.card-promo {
   height: 350px;
   width: 500px;
   display: flex;
@@ -78,7 +74,6 @@
   margin: 50px;
   padding: 20px;
   background-color: #a2c3ffa6;
-
 }
 
 .format {
@@ -86,15 +81,15 @@
   justify-content: space-between;
 }
 
-.format1{
+.format1 {
   margin: 20px;
 }
-.format2{
+.format2 {
   margin: 20px;
   text-align: center;
 }
 
-.promo-card{
+.promo-card {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -102,23 +97,22 @@
   align-items: center;
 }
 
-#product-card-trophe{
+#product-card-trophe {
   height: 250px;
-  
 }
 
-.constellation{
+.constellation {
   color: #000;
   font-size: large;
   text-align: center;
 }
 
-#stars-map{
+#stars-map {
   height: 450px;
   margin: 50px;
 }
 
-.constellation-2{
+.constellation-2 {
   display: flex;
   justify-content: space-evenly;
   align-items: center;

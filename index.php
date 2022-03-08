@@ -26,7 +26,7 @@ require('process/header.php');
             <p class="txt-card">texte article</p>
             <p class="price-card">PRIX €</p>
 
-            <button class="card-button">Buy</button>
+            <button class="card-button"><a href="edit-certificate.php">Buy</a></button>
 
         </div>
         <div class="card">
@@ -36,18 +36,7 @@ require('process/header.php');
             <p class="txt-card">texte article</p>
             <p class="price-card">PRIX €</p>
 
-            <button class="card-button">Buy</button>
-
-        </div>
-
-        <div class="card">
-
-            <img id="product-card" src="public/img/img-card.png" alt="img-card">
-
-            <p class="txt-card">texte article</p>
-            <p class="price-card">PRIX €</p>
-
-            <button class="card-button">Buy</button>
+            <button class="card-button"><a href="edit-certificate.php">Buy</a></button>
 
         </div>
 
@@ -58,7 +47,18 @@ require('process/header.php');
             <p class="txt-card">texte article</p>
             <p class="price-card">PRIX €</p>
 
-            <button class="card-button">Buy</button>
+            <button class="card-button"><a href="edit-certificate.php">Buy</a></button>
+
+        </div>
+
+        <div class="card">
+
+            <img id="product-card" src="public/img/img-card.png" alt="img-card">
+
+            <p class="txt-card">texte article</p>
+            <p class="price-card">PRIX €</p>
+
+            <button class="card-button"><a href="edit-certificate.php">Buy</a></button>
 
         </div>
 
@@ -81,7 +81,7 @@ require('process/header.php');
                 </div>
             </div>
 
-            <button class="card-button">Buy</button>
+            <button class="card-button"><a href="edit-certificate.php">Buy</a></button>
 
         </div>
 
@@ -100,7 +100,7 @@ require('process/header.php');
                 </div>
             </div>
 
-            <button class="card-button">Buy</button>
+            <button class="card-button"><a href="edit-certificate.php">Buy</a></button>
 
         </div>
 
@@ -110,9 +110,9 @@ require('process/header.php');
     <section class="constellation">
 
         <div class="constellation-1">
-            
+
             <h3>Raisons d'acheter une étoile</h3>
-            
+
             <p>
                 Raison d'acheter une étoile
                 Dans notre galaxie, il y a plus de 100 milliards d'étoiles.
@@ -128,7 +128,7 @@ require('process/header.php');
         <div class="constellation-2">
 
             <div class="constellation-3">
-                
+
                 <h3>Achetez une étoila dans n'importe qu'elle constellation</h3>
 
                 <p>
