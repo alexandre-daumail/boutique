@@ -29,22 +29,17 @@ if (isset($_POST['connect']) && count($_POST) > 0) {
 
             <label for="11">Pseudonyme</label>
 
-                <input type="text" name="login" id="11" placeholder="<?= isset($process['login']) && !empty($process['login']) ? $process['login'] : "Pseudonyme" ?>" required>
+            <input type="text" name="login" id="11" placeholder="<?= isset($process['login']) && !empty($process['login']) ? $process['login'] : "Pseudonyme" ?>" required>
 
-                <label for="civ">Civilité</label>
-                <select name="civilite" id="civ" required>
-                    <optgroup label=" -- Choisissez une civilité -- ">
+            <label for="civ">Civilité</label>
+            <select name="civilite" id="civ" required>
+                <optgroup label=" -- Choisissez une civilité -- ">
                     <option value="mme">Madame</option>
                     <option value="mr">Monsieur</option>
-                    </optgroup>
-                </select> 
-
-                <label for="1">Prénom</label>
-                
-                <input type="text" name="first_name" id="1" placeholder="<?= isset($process['first_name']) && !empty($process['first_name']) ? $process['first_name'] : "Prénom" ?>" required>
+                </optgroup>
+            </select><br>
 
             <label for="1">Prénom</label>
-
             <input type="text" name="first_name" id="1" placeholder="<?= isset($process['first_name']) && !empty($process['first_name']) ? $process['first_name'] : "Prénom" ?>" required>
 
             <label for="2">Nom</label>

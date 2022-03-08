@@ -32,6 +32,22 @@ require('process/header.php');
                 </label>
             </fieldset>
             <fieldset>
+                <ul>
+                    <li>
+                        <h5>Normal</h5>
+                        <p>Peut être vu d'un petit village avec un minimum de lumière</p>
+                    </li>
+                    <li>
+                        <h5>Brillante</h5>
+                        <p>Peut être vu d'une petite ville avec une lumière modérée autour</p>
+                    </li>
+                    <li>
+                        <h5>Très Brillante</h5>
+                        <p>Peut être vu d'une grande ville même avec beaucoup de lumière autour</p>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
                 <h4>Selecteur d'étoiles</h4>
             </fieldset>
             <fieldset>
