@@ -1,66 +1,79 @@
 <?php
 
-    $title = "Mon Panier";
-    $css = "panier";
-    
-    require ('process/header.php'); 
-  
+$title = "Mon Panier";
+$css = "panier";
+
+require('process/header.php');
+
 ?>
 
 <main>
-<?php
-		if (isset($_SESSION["cart_item"])) {
-			$total_quantity = 0;
-			$total_price = 0;
-		?>
 
-    <table>
+    <?php
+    if (isset($_SESSION["cart_item"])) {
+        $total_quantity = 0;
+        $total_price = 0;
+    ?>
 
-        <thead>
-            
-            <tr>
-                <th>Désignation</th>
-                <th>Prix</th>
-                <th>Quantité</th>
-                <th>Sous-Total</th>
-                <th>Supprimer</th>
-            </tr>
-        </thead>
+        <table>
 
-        <tbody>
-            <?php 
-            foreach ($_SESSION["cart_item"] as $item) {
-                
-                $item_price = $item["quantity"] * $item["price"];
-            ?>
+            <thead>
 
-                <td><img src="<?= $item["image"]; ?>" class="cart-item-image" /><?= $item["name"]; ?></td>
-                <td><?= $item["price"]; ?></td>
-                <td><?= $item["quantity"]; ?></td>
-                <td><?= "€ " . number_format($item_price, 2); ?></td>
-                <td><a href="panier.php?action=remove&code=<?= $item["code"]; ?>" class="btnRemoveAction"><img src="icon-delete.png" alt="Remove Item" /></a></td>
+                <tr>
+                    <th>Désignation</th>
+                    <th>Prix</th>
+                    <th>Quantité</th>
+                    <th>Sous-Total</th>
+                    <th>Supprimer</th>
+                </tr>
 
-            <?php
-                $total_quantity += $item["quantity"];
-                $total_price += ($item["price"] * $item["quantity"]);
-			}
-			?>
-        </tbody>
-					<tr>
-						<td colspan="2" align="right">Total:</td>
-						<td align="right"><?php echo $total_quantity; ?></td>
-						<td align="right" colspan="2"><strong><?php echo "$ " . number_format($total_price, 2); ?></strong></td>
-						<td></td>
-					</tr>
-				</tbody>
-			</table>
-		<?php
-		} else {
-		?>
-			<div class="no-records">Your Cart is Empty</div>
-		<?php
-		}
-		?>
+            </thead>
 
-    </table>
+            <tbody>
+
+                <tr>
+
+                    <?php
+
+                    foreach ($_SESSION["cart_item"] as $item) {
+
+                        $item_price = $item["quantity"] * $item["price"];
+                    ?>
+
+                        <td><img src="<?= $item["image"]; ?>" /><?= $item["name"]; ?></td>
+                        <td><?= $item["price"]; ?></td>
+                        <td><?= $item["quantity"]; ?></td>
+                        <td><?= "€ " . number_format($item_price, 2); ?></td>
+                        <td><a href="panier.php?action=remove&code=<?= $item["code"]; ?>" class="btnRemoveAction"><img src="icon-delete.png" alt="Remove Item" /></a></td>
+
+                    <?php
+                        $total_quantity += $item["quantity"];
+                        $total_price += ($item["price"] * $item["quantity"]);
+                    }
+                    ?>
+
+                </tr>
+
+                <tr>
+
+                    <td colspan="2">Total:</td>
+                    <td><?php echo $total_quantity; ?></td>
+                    <td colspan="2"><strong><?php echo "$ " . number_format($total_price, 2); ?></strong></td>
+                    <td></td>
+                    
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    <?php
+    } else {
+
+        echo '<p>Votre panier est vide</p>'; 
+
+    }
+
+    ?>
+
 </main>
