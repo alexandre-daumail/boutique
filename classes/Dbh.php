@@ -9,8 +9,8 @@ class Dbh
 
   protected function DbHandler()
   {
-    $dbHost = 'localhost:8889';
-    $dbName = 'boutique';
+    $dbHost = 'localhost:8888';
+    $dbName = 'Boutiques';
     $dbUser = 'root';
     $dbPass = 'root';
 

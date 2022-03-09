@@ -14,7 +14,7 @@ require('process/header.php');
 
         </div>
         <div class="right">
-            <img id="star-certificate" src="./public/img/CERTIFICAT.png" alt="certificat">
+            <img id="star-certificate" src="./public/img/certificat4.png" alt="certificat">
         </div>
     </section>
     <section class="container">

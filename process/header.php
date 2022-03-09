@@ -64,12 +64,7 @@ function test($var){
                 
                 <a href="#"><img id="icon-header" src="public/img/icon/Vectorcart.png" alt="logo du panier" ></a>
                 
-                
-                <?= isset($_SESSION['current_session']) && $_SESSION['current_session']['status'] == 1 ? '<a href="account.php"><img id="icon-header" src="public/img/icon/Vectoraccount.png" alt="logo-myaccount"></a><a href="favorites.php"><img id="icon-header" src="public\img\icon\fav.png" alt="logo des favoris" title="Vos étoiles favorites"></a><a href="logout.php"><img id="icon-header" src="public/img/icon/logout.png" alt="logout logo"></a>' : '<a href="authenticate.php"><img id="icon-header" src="public/img/icon/Vectoraccount.png" alt="logo-myaccount"></a>' ;?>
-
-                <a href="#"><img id="icon-header" src="public/img/icon/Vectorcart.png" alt="logo du panier"></a>
-
-                <?= isset($_SESSION['current_session']) && $_SESSION['current_session']['status'] == 1 ? '<a href="account.php"><img id="icon-header" src="public/img/icon/Vectoraccount.png" alt="logo-myaccount"></a><a href="#"><img id="icon-header" src="public/img/logo-favorite.png" alt="logo des favoris title="favoris"></a><a href="logout.php"><img id="icon-header" src="public/img/icon/logout.png" alt="logout logo"></a>' : '<a href="authenticate.php"><img id="icon-header" src="public/img/icon/Vectoraccount.png" alt="logo-myaccount"></a>'; ?>
+                <?= isset($_SESSION['current_session']) && $_SESSION['current_session']['status'] == 1 ? '<a href="account.php"><img id="icon-header" src="public/img/icon/Vectoraccount.eng" alt="logo-myaccount"></a><a href="favorites.php"><img id="icon-header" src="public\img\icon\fav.png" alt="logo des favoris" title="Vos étoiles favorites"></a><a href="logout.php"><img id="icon-header" src="public/img/icon/logout.png" alt="logout logo"></a>' : '<a href="authenticate.php"><img id="icon-header" src="public/img/icon/Vectoraccount.png" alt="logo-myaccount"></a>' ;?>
 
             </div>
             <div class="search-area">
