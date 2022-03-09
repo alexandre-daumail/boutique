@@ -9,13 +9,13 @@ class Dbh
 
   protected function DbHandler()
   {
-    $dbHost = 'localhost:8889';
+    $dbHost = 'localhost';
     $dbName = 'boutique';
     $dbUser = 'root';
-    $dbPass = 'root';
+    $dbPass = '';
 
     //Crée un DSN (data Source Name) pour la connexion à la bdd
-    $Dsn = "mysql:host=" . $dbHost . ";dbname=" . $dbName;
+    $Dsn = "mysql:host=" . $dbHost . ";dbname=" . $dbName . ";charset=utf8mb4";
 
     //Crée des options pour la configuration de la connexion PDO
     $options = array(
