@@ -1,6 +1,6 @@
 <?php
 $title = "Nos Offres";
-$css = "articles";
+$css = "offres";
 require('process/header.php');
 
 ?>
