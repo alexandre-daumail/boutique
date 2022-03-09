@@ -53,7 +53,7 @@ function test($var){
                     <img id="under-button" src="public/img/under-button.png" alt="">
                 </div>
                 <div class="under-button">
-                    <a href="index.php">Nos Offres</a>
+                    <a href="offres.php">Nos Offres</a>
                     <img id="under-button" src="public/img/under-button.png" alt="">
 
                 </div>
@@ -68,14 +68,7 @@ function test($var){
                 <?= isset($_SESSION['current_session']) && $_SESSION['current_session']['status'] == 1 ? '<a href="account.php"><img id="icon-header" src="public/img/icon/Vectoraccount.png" alt="logo-myaccount"></a><a href="favorites.php"><img id="icon-header" src="public\img\icon\fav.png" alt="logo des favoris" title="Vos étoiles favorites"></a><a href="logout.php"><img id="icon-header" src="public/img/icon/logout.png" alt="logout logo"></a>' : '<a href="authenticate.php"><img id="icon-header" src="public/img/icon/Vectoraccount.png" alt="logo-myaccount"></a>' ;?>
 
             </div>
-            <div class="search-area">
-
-                <form class="searchbox" action="http://thecodeblock.com">
-                    <input type="search" placeholder="Search" />
-                    <button type="submit" value="search">&nbsp;</button>
-                </form>
-
-            </div>
+            
 
         </section>
 

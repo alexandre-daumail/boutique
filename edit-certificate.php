@@ -8,29 +8,32 @@ require('process/header.php');
 
 <main>
     <section class="left">
-        
+        <img id="aperçu-certif" src="public/img/Certificat4.png" alt="">
     </section>
     <section class="right">
         <form action="#" method="POST">
 
-            <h4>Choisir le support</h4>
-            <ul>
-                <li>
-                    <input type="checkbox" id="myCheckbox1" />
-                    <label for="myCheckbox1"><img src="public/img/CERTIFICAT.png" /></label>
-                </li>
-                <li>
-
-                    <input type="checkbox" id="myCheckbox2" />
-                    <label for="myCheckbox2"><img src="public/img/certificat1.png" /></label>
-                </li>
-                <li>
-
-                    <input type="checkbox" id="myCheckbox3" />
-                    <label for="myCheckbox3"><img src="public/img/certificat2.png" /></label>
-                </li>
-            </ul>
             <fieldset>
+                <h4>Choisir le support</h4>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="myCheckbox1" />
+                        <label for="myCheckbox1"><img src="public/img/CERTIFICAT.png" /></label>
+                    </li>
+                    <li>
+
+                        <input type="checkbox" id="myCheckbox2" />
+                        <label for="myCheckbox2"><img src="public/img/certificat1.png" /></label>
+                    </li>
+                    <li>
+
+                        <input type="checkbox" id="myCheckbox3" />
+                        <label for="myCheckbox3"><img src="public/img/certificat2.png" /></label>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <h4>Choisissez la Brillance de votre étoile</h4>
                 <ul>
                     <li>
                         <input type="checkbox" id="myCheckbox4" />
@@ -56,10 +59,6 @@ require('process/header.php');
                         </label>
                     </li>
                 </ul>
-            </fieldset>
-
-            <fieldset>
-                <h4>Selecteur d'étoiles</h4>
             </fieldset>
 
 

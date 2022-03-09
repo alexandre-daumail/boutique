@@ -26,10 +26,11 @@
 header {
   display: flex;
   justify-content: center;
+  align-items: center;
   background-image: url(https://images8.alphacoders.com/601/thumb-1920-601973.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 280px;
+  min-height: 220px;
   font-family: "SyneMono-Regular";
 }
 
@@ -46,22 +47,27 @@ body {
 h1 {
   font-size: 50px;
   text-align: center;
+  margin-top: 20px;
   margin-bottom: 50px;
 }
 h2 {
   font-size: 40px;
   text-align: center;
+  margin-top: 20px;
+
   margin-bottom: 50px;
 }
 h3 {
   font-size: 30px;
   text-align: center;
-  margin: 10px;
+  margin-top: 20px;
+
   margin-bottom: 50px;
 }
 h4 {
   font-size: 20px;
   text-align: center;
+  margin-top: 20px;
   margin-bottom: 50px;
 }
 
@@ -82,29 +88,7 @@ p {
 #logo-header{
   height: 150px;
 }
-.searchbox {
-  background-color: #fffbf8;
-  width: 270px;
-  margin: 0px 20px 40px 20px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  border-radius: 6px;
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  height: 26px;
-}
-input[type="search"] {
-  width: 215px;
-  height: 15px;
-  padding-left: 15px;
-  border-radius: 6px;
-  border: none;
-  color: #939393;
-  font-weight: 500;
-  background-color: #fffbf8;
-}
+
 header button[type="submit"] {
   width: 35px;
   height: 30px;
@@ -117,9 +101,7 @@ header button[type="submit"] {
   border: none;
   cursor: pointer;
 }
-input[type="search"]:focus {
-  outline: 0;
-}
+
 
 section > div > div > a {
   text-decoration: none;
@@ -134,14 +116,10 @@ section > div > div > a {
   align-content: center;
   align-items: center;
   margin: 10px 50px 10px 50px;
-  height: 230px;
+  height: fit-content;
 }
 
-search-area {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .button-area {
   display: flex;
