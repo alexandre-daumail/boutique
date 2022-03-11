@@ -2,14 +2,13 @@ main {
   display: flex;
 }
 
-form{
+form {
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-content: center;
   align-items: center;
 }
-
 
 ul {
   list-style-type: none;
@@ -30,7 +29,7 @@ label {
   position: relative;
   margin: 10px;
   cursor: pointer;
-  
+
   height: 180px;
 }
 
@@ -90,7 +89,7 @@ label img {
   align-items: center;
 }
 
-.right{
+.right {
   width: 60%;
   display: flex;
   justify-content: center;
@@ -99,13 +98,11 @@ label img {
   background-color: #fff;
 }
 
-
-
-#aperçu-certif{
+#aperçu-certif {
   width: 400px;
 }
 
-#submit-certificate{
+#submit-certificate {
   width: 220px;
   font-size: 20px;
   margin-bottom: 20px;
@@ -124,20 +121,20 @@ fieldset {
 }
 
 .field-1 > ul > li > label {
- width: 125px;
- height: 170px;
- margin-bottom: 50px;
+  width: 125px;
+  height: 170px;
+  margin-bottom: 50px;
 }
 .field-2 > ul > li > label {
- width: 600px;
- height: 100px;
- margin-bottom: 10px;
+  width: 600px;
+  height: 100px;
+  margin-bottom: 10px;
 }
 
-h5{
+h5 {
   margin-bottom: 20px;
 }
 
-#myCheckbox8{
+#myCheckbox8 {
   height: 175px;
 }
