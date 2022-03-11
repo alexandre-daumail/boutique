@@ -52,7 +52,8 @@
                                 <li><a href="../authenticate.php">Mon Compte</a></li>
                                 <li><a href="#">Informations</a></li>
                                 <li><a href="#">Nos Etoiles</a></li>
-                                <li><a href="../offres.php">Nos Offres</a></li>
+                                <li><a href="../boutique/offres.php">Nos Offres</a></li>
+                                <li><a href="../boutique/edit-certificate.php">Créer un Certificat</a></li>
 
                             </ul>
                         </div>

@@ -4,7 +4,7 @@ main {
 }
 
 main form {
-  border-radius: 15px;
+  border-radius: 4px;
   display: flex;
   justify-content: space-evenly;
   width: 33%;
