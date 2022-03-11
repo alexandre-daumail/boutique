@@ -11,10 +11,12 @@ require('process/header.php');
         <h3>Pourquoi acheter un Étoile dans le Ciel ?</h3>
         <p>Il n'y a pas tant de "dons éternels" dans notre monde, et parmi ceux-ci, la beauté de la lumière des étoiles n'est en rien inférieure à celle des diamants. Ils sont admirés depuis des millénaires - les gens regardent les étoiles depuis le tout début de la civilisation. Belles et lumineuses, froides et inextinguibles, elles sont à bien des égards des mystères de l'univers qui continueront de susciter admiration et curiosité pour de nombreuses générations à venir. Enfant, chacun de nous cherchait dans les étoiles quelque chose que nous ne pouvions pas trouver sur Terre. Enfin, un philosophe a posé la question : "Sommes-nous des personnes parce que nous regardons les étoiles ? Ou regardons-nous les étoiles parce que nous sommes des personnes ?".</p>
     </article>
+
     <article>
         <h3>Combien ça coute d'acheter une étoile ?</h3>
         <p>Le coût d'achat d'une étoile dépend de plusieurs facteurs. Premièrement, le forfait que vous choisissez joue un rôle, car il existe des étoiles traditionnelles, du zodiaque et binaires disponibles. Chacun de ces packages a son propre ensemble de caractéristiques. Deuxièmement, cela dépend aussi de la luminosité de l'étoile. Certaines étoiles peuvent être vues sans l'aide d'instruments tels que des télescopes, grâce à leur lumière vive et à leur proximité relative. Et enfin, les frais peuvent également varier en fonction du mode et de la rapidité de livraison que vous choisissez.</p>
     </article>
+    
     <article>
         <h3>Comment nommer une étoile ?</h3>
         <p>Choisissez entre les étoiles standard, zodiacales et binaires.

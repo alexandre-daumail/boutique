@@ -64,7 +64,7 @@ if (isset($_POST['connect']) && count($_POST) > 0) {
 
     </form>
 
-    <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" id="2">
+    <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" >
 
         <fieldset>
 
@@ -80,7 +80,7 @@ if (isset($_POST['connect']) && count($_POST) > 0) {
 
             <input type="password" name="pwd_connect" id="7" placeholder="Mot de passe" required>
 
-            <button type="submit" name="connect" form="2">Se connecter</button>
+            <button type="submit" name="connect" >Se connecter</button>
 
         </fieldset>
 
