@@ -18,8 +18,4 @@ require_once('process/header.php');
     
 </main>
 
-<?php
-
-require('process/footer.php');
-
-?>
+<?php require('process/footer.php');?>

@@ -48,11 +48,12 @@
                         <div class="under-title">
                             <ul>
 
-                                <li><a href="#">Accueil</a></li>
-                                <li><a href="#">Mon Compte</a></li>
+                                <li><a href="../index.php">Accueil</a></li>
+                                <li><a href="../authenticate.php">Mon Compte</a></li>
                                 <li><a href="#">Informations</a></li>
                                 <li><a href="#">Nos Etoiles</a></li>
-                                <li><a href="#">Nos Offres</a></li>
+                                <li><a href="../boutique/offres.php">Nos Offres</a></li>
+                                <li><a href="../boutique/edit-certificate.php">Créer un Certificat</a></li>
 
                             </ul>
                         </div>

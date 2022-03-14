@@ -48,10 +48,6 @@
             $errors['email'] = "Désolé mais cet email existe déjà.";
         }
 
-        if (strlen($password) < 7) {
-            $errors['password'] = "Le mot de passe doit faire minimum 7 caractères";
-        }
-
         if (count($errors) > 0) {           
             $errors['error']['signup'] = "Veuillez corriger les champs erronés";
             return $errors;

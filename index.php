@@ -14,51 +14,60 @@ require('process/header.php');
 
         </div>
         <div class="right">
-            <img id="star-certificate" src="./public/img/CERTIFICAT.png" alt="certificat">
+            <img id="star-certificate" src="./public/img/certificat4.png" alt="certificat">
         </div>
     </section>
-    <section class="container">
+    <section class="container1">
 
         <div class="card">
 
-            <img id="product-card" src="public/img/img-card.png" alt="img-card">
+            <img src="./public/img/NOVA SHOP.png">
 
-            <p class="txt-card">texte article</p>
-            <p class="price-card">PRIX €</p>
+            <p>En choisissant notre offre Star Traditionnelle, vous pouvez adopter une véritable star dans l'espace ! Mieux encore, l'étoile que vous nommez est celle qui peut être vue n'importe où sur Terre, à tout moment de l'année. Votre étoile sera toujours avec vous !</p>
+            <span>
+                <p>40€</p>
+            </span>
 
-            <button class="card-button"><a href="edit-certificate.php">Buy</a></button>
-
-        </div>
-        <div class="card">
-
-            <img id="product-card" src="public/img/img-card.png" alt="img-card">
-
-            <p class="txt-card">texte article</p>
-            <p class="price-card">PRIX €</p>
-
-            <button class="card-button"><a href="edit-certificate.php">Buy</a></button>
+            <a href="#">Acheter maintenant</a>
 
         </div>
 
         <div class="card">
 
-            <img id="product-card" src="public/img/img-card.png" alt="img-card">
+            <img src="./public/img/NOVA SHOP.png">
 
-            <p class="txt-card">texte article</p>
-            <p class="price-card">PRIX €</p>
+            <p>En choisissant notre offre Star Traditionnelle, vous pouvez adopter une véritable star dans l'espace ! Mieux encore, l'étoile que vous nommez est celle qui peut être vue n'importe où sur Terre, à tout moment de l'année. Votre étoile sera toujours avec vous !</p>
+            <span>
+                <p>40€</p>
+            </span>
 
-            <button class="card-button"><a href="edit-certificate.php">Buy</a></button>
+            <a href="#">Acheter maintenant</a>
 
         </div>
 
         <div class="card">
 
-            <img id="product-card" src="public/img/img-card.png" alt="img-card">
+            <img src="./public/img/NOVA SHOP.png">
 
-            <p class="txt-card">texte article</p>
-            <p class="price-card">PRIX €</p>
+            <p>En choisissant notre offre Star Traditionnelle, vous pouvez adopter une véritable star dans l'espace ! Mieux encore, l'étoile que vous nommez est celle qui peut être vue n'importe où sur Terre, à tout moment de l'année. Votre étoile sera toujours avec vous !</p>
+            <span>
+                <p>40€</p>
+            </span>
 
-            <button class="card-button"><a href="edit-certificate.php">Buy</a></button>
+            <a href="#">Acheter maintenant</a>
+
+        </div>
+
+        <div class="card">
+
+            <img src="./public/img/NOVA SHOP.png">
+
+            <p>En choisissant notre offre Star Traditionnelle, vous pouvez adopter une véritable étoile dans l'espace ! Mieux encore, l'étoile que vous nommez est celle qui peut être vue n'importe où sur Terre, à tout moment de l'année. Votre étoile sera toujours avec vous !</p>
+            <span>
+                <p>40€</p>
+            </span>
+
+            <a href="#">Acheter maintenant</a>
 
         </div>
 
@@ -81,7 +90,7 @@ require('process/header.php');
                 </div>
             </div>
 
-            <button class="card-button"><a href="edit-certificate.php">Buy</a></button>
+            <a href="edit-certificate.php">Acheter maintenant</a>
 
         </div>
 
@@ -100,7 +109,7 @@ require('process/header.php');
                 </div>
             </div>
 
-            <button class="card-button"><a href="edit-certificate.php">Buy</a></button>
+            <a href="edit-certificate.php">Acheter maintenant</a>
 
         </div>
 
@@ -118,7 +127,7 @@ require('process/header.php');
                 Dans notre galaxie, il y a plus de 100 milliards d'étoiles.
                 Nous sommes sûrs que chacun d'entre nous a un proche qui mérite un cadeau unique et original.
 
-                Peut-être avez-vous vécu des moments de la vie qui ne devraient jamais être oubliés - et c'est une excellente occasion de nommer une star et de les rendre inoubliables.
+                Peut-être avez-vous vécu des moments de la vie qui ne devraient jamais être oubliés - et c'est une excellente occasion de nommer une étoile et de les rendre inoubliables.
 
                 Regardez le ciel nocturne, pensez aux personnes que vous aimez et nous sommes convaincus que tout le monde peut trouver une raison de créer un cadeau magnifique et attentionné pour ses proches.
             </p>
