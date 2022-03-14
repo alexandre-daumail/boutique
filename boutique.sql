@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 14 mars 2022 à 09:11
+-- Généré le : lun. 14 mars 2022 à 09:31
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 8.1.2
 
@@ -30,16 +30,16 @@ SET time_zone = "+00:00";
 CREATE TABLE `stars` (
   `id` int(11) NOT NULL,
   `reference` varchar(10) DEFAULT NULL,
-  `COORDONNEES` varchar(31) DEFAULT NULL,
-  `CONSTELLATION` varchar(16) DEFAULT NULL,
-  `NOM_ARTICLE` varchar(35) DEFAULT NULL
+  `coordonnees` varchar(31) DEFAULT NULL,
+  `constellation` varchar(16) DEFAULT NULL,
+  `nom` varchar(35) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `stars`
 --
 
-INSERT INTO `stars` (`id`, `reference`, `COORDONNEES`, `CONSTELLATION`, `NOM_ARTICLE`) VALUES
+INSERT INTO `stars` (`id`, `reference`, `coordonnees`, `constellation`, `nom`) VALUES
 (1, '43HAMCG4YE', 'RA 19h 57m 06s Dec -58° 54\' 5\"', 'Pavo', 'Mare'),
 (2, 'VNSXMPP9GB', 'RA 07h 14m 26s Dec 24° 42\' 38\"', 'Gemini', 'Steven Smith'),
 (3, 'TWJRS69YGX', 'RA 07h 45m 15s Dec -37° 58\' 6\"', 'Puppis', 'Ryan Bailey'),

@@ -63,7 +63,7 @@ if (isset($_POST['connect']) && count($_POST) > 0) {
         </fieldset>
 
     </form>
-
+    
     <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" >
 
         <fieldset>
