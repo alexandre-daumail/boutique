@@ -42,24 +42,24 @@ function test($var){
             <div class="button-area">
                 <div class="under-button">
                     <a href="index.php">Accueil</a>
-                    <img id="under-button" src="public/img/under-button.png" alt="">
+                    <img id="under-button" src="public/img/under-button.png" alt="logo">
                 </div>
                 <div class="under-button">
                     <a href="apropos.php">Information</a>
-                    <img id="under-button" src="public/img/under-button.png" alt="">
+                    <img id="under-button" src="public/img/under-button.png" alt="logo">
                 </div>
                 <div class="under-button">
                     <a href="stars.php">Nos Étoiles</a>
-                    <img id="under-button" src="public/img/under-button.png" alt="">
+                    <img id="under-button" src="public/img/under-button.png" alt="logo">
                 </div>
                 <div class="under-button">
                     <a href="offres.php">Nos Offres</a>
-                    <img id="under-button" src="public/img/under-button.png" alt="">
+                    <img id="under-button" src="public/img/under-button.png" alt="logo">
 
                 </div>
                 <div class="under-button">
                     <a href="contact.php">Nous Contacter</a>
-                    <img id="under-button" src="public/img/under-button.png" alt="">
+                    <img id="under-button" src="public/img/under-button.png" alt="logo">
 
                 </div>
 
