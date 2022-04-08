@@ -8,9 +8,11 @@ require('process/header.php');
     <section class="hero">
         <div class="left">
             <h2>Achetez une Étoile dans le Ciel !<h2>
-                    <p>Nomme une Étoile. <br>
-                        C'est le plus beau cadeau de l'univers!
-                    </p>
+                    <p>Nomme une Étoile. </p>
+                    <p>C'est le plus beau cadeau de l'univers!</p>
+
+                    <a href="offres.php">Acheter maintenant</a>
+
 
         </div>
         <div class="right">

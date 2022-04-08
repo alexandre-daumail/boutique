@@ -68,7 +68,7 @@ require('process/header.php');
 
         <div>
             <p>Rejoignez le panthéon des étoiles</p>
-            <a href="#">Découvrir notre registre</a>
+            <a href="stars.php">Découvrir notre registre</a>
         </div>
 
         <div>
