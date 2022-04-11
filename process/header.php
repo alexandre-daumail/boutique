@@ -70,7 +70,7 @@ function test($var){
                 <a href="panier.php"><img id="icon-header" src="public/img/icon/Vectorcart.png" alt="logo du panier" ></a>
                 
                 <!-- Lorque l'utilisateur est connecté, afficher les liens de compte et de ses favoris -->
-                <?= isset($_SESSION['current_session']) && $_SESSION['current_session']['status'] == 1 ? '<a href="account.php"><img id="icon-header" src="public/img/icon/Vectoraccount.png" alt="logo-myaccount"></a><a href="favorites.php"><img id="icon-header" src="public\img\icon\fav.png" alt="logo des favoris" title="Vos étoiles favorites"></a><a href="logout.php"><img id="icon-header" src="public/img/icon/logout.png" alt="logout logo"></a>' : '<a href="inscription.php">Inscription</a><a href="connexion.php">Connexion</a>' ;?>
+                <?= isset($_SESSION['current_session']) && $_SESSION['current_session']['status'] == 1 ? '<a href="profil.php"><img id="icon-header" src="public/img/icon/Vectoraccount.png" alt="logo-myaccount"></a><a href="favorites.php"><img id="icon-header" src="public\img\icon\fav.png" alt="logo des favoris" title="Vos étoiles favorites"></a><a href="logout.php"><img id="icon-header" src="public/img/icon/logout.png" alt="logout logo"></a><a href="commandes.php">Mes Commandes</a>"' : '<a href="inscription.php">Inscription</a><a href="connexion.php">Connexion</a>' ;?>
 
             </div>
             <!-- <div class="search-area">
