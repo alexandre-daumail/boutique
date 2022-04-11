@@ -9,7 +9,8 @@ $res1 = $info->getUser($_SESSION['current_session']['user']['login']);
 
 $droits = new Droits();
 
-$res2 = $droits->getDroitsById($res1[0]["id_droits"]);
+$res2 = $droits->getDroitsById($res1[0]["id_droit"]);
+echo $res1[0]["id_droit"];
 
 if (isset($_POST['submit']) && !empty($_POST)) {
 

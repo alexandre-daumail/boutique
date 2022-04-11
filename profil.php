@@ -31,9 +31,6 @@ require_once('process/profilManager.php');
                     <label for="nom">Nom</label>
                     <input id="nom" name="nom" type="text" placeholder="Nom actuel : <?= $res1[0]['nom'] ?>" />
 
-                    <label for="date">Date de Naissance: <?= $res1[0]['naissance'] ?></label>
-                    <input id="date" type="date">
-
                     <label for="email">Email</label>
                     <input id="email" name="email" type="text" placeholder="Email actuel : <?= $res1[0]['email'] ?>" />
 
