@@ -11,12 +11,12 @@ require('process/header.php');
                     <p>Nomme une Étoile. </p>
                     <p>C'est le plus beau cadeau de l'univers!</p>
 
-                    <a href="offres.php">Acheter maintenant</a>
+                    <a id="bttn" href="offres.php">Acheter maintenant</a>
 
 
         </div>
         <div class="right">
-            <img id="star-certificate" src="./public/img/certificat4.png" alt="certificat">
+            <a href="offres.php"><img id="star-certificate" src="./public/img/certificat4.png" alt="certificat"></a>
         </div>
     </section>
     <section class="container1">

@@ -150,7 +150,7 @@
   margin-bottom: 40px;
 }
 
-.card a {
+.card a , .left a{
   width: 80%;
   font-size: 20px;
   margin-bottom: 20px;
