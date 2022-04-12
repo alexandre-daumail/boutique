@@ -67,7 +67,7 @@
             
             if ($registration) {
            
-                header("Location: index.php");
+                header("Location: connexion.php");
                 
             } else {
 
