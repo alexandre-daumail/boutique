@@ -11,7 +11,6 @@ if (isset($_POST['submit']) && !empty($_POST)) {
     switch ($_POST) {
 
         case !empty($_POST['login']):
-
             
             $info->setInfo($_POST['login'], 'login');
             break;
@@ -31,14 +30,27 @@ if (isset($_POST['submit']) && !empty($_POST)) {
             $info->setInfo($_POST['email'], 'email');
             break;
 
-        case !empty($_POST['old_password']) && !empty($_POST['password']) && !empty($_POST['old_password']):
+        case !empty($_POST['old_password']) && !empty($_POST['password']) && !empty($_POST['confirm']):
 
-            $info->setInfo($_POST['email'], 'email');
-            break;
+            if ($_POST['password'] != $_POST['confirm']) {
+
+                echo "Désolé, les mots de passe de correspondent pas";
+                break;
+
+            } elseif (password_verify($_POST['old_password'], $_SESSION['current_session']['user']['password'])) {
+
+                $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+                
+                $info->setInfo($password, 'password');
+
+                echo "mdp modifié avec succès";
+                break;
+            } else {
+
+                echo "L'ancien mot de passe ne correspond pas";
+                break;
+            }
         
-        default:
-            # code...
-            break;
     }
     
 }
