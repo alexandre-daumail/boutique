@@ -111,9 +111,9 @@ class User extends Dbh
 
     public function setInfo($post, $row, $login)
     {
-       $setInfo = $this->DbHandler()->prepare("UPDATE utilisateurs SET :row = :post WHERE utilisateurs.login = :login");
+       $setInfo = $this->DbHandler()->prepare("UPDATE utilisateurs SET $row = :post WHERE utilisateurs.login = :login");
 
-       $setInfo->execute([":row" => $row, ":post" => $post, ":login" => $login]);
+       $setInfo->execute([":post" => $post, ":login" => $login]);
 
        $_SESSION["current_session"]["user"][$row] = $post;
 
