@@ -1,10 +1,8 @@
 <?php
 
 require_once('classes/User.php');
-require_once('classes/Droits.php');
 
 $info = new User();
-$droits = new Droits();
 
 if (isset($_POST['submit']) && !empty($_POST)) {
 
@@ -45,18 +43,21 @@ if (isset($_POST['submit']) && !empty($_POST)) {
 
                 echo "mdp modifié avec succès";
                 break;
+
             } else {
 
                 echo "L'ancien mot de passe ne correspond pas";
                 break;
+                
             }
+        
+        
         
     }
     
-}
+} else if (isset($_POST['delete'])) {
 
-if (isset($_POST['delete'])) {
+    $info->deleteUser($_SESSION['current_session']['user']['id']);
 
-    header("location:delete.php");
 }
 

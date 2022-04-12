@@ -95,21 +95,31 @@ class User extends Dbh
 
     public function setInfo($post, $row)
     {
-       $setInfo = $this->DbHandler()->prepare("UPDATE utilisateurs SET $row = :post WHERE utilisateurs.login = :login");
+        $setInfo = $this->DbHandler()->prepare("UPDATE utilisateurs SET $row = :post, updated_at = :time WHERE utilisateurs.login = :login");
 
-       $setInfo->execute([":post" => $post, ":login" => $_SESSION['current_session']['user']['login']]);
+        $modification = date('Y-m-d H:i:s');
 
-       $_SESSION["current_session"]["user"][$row] = $post;
+        $setInfo->execute([
+            ":post" => $post, ":login" => $_SESSION['current_session']['user']['login'],
+            ":time" => $modification
+        ]);
 
+        $_SESSION["current_session"]["user"][$row] = $post;
     }
 
 
     public function deleteUser($id)
     {
 
-        $sth = $this->DbHandler()->prepare("UPDATE `utilisateurs` SET `login` = 'Utilisateur supprimé', `password` = 'Meline,Sirine,Alex,Oliv MVP' WHERE id = :id");
-        $sth->execute(array(':id' => $id));
-        echo "<p>Nous vous confirmons la Suppression de Votre Compte </p>";
+        $sth = $this->DbHandler()->prepare("UPDATE `utilisateurs` SET `login` = 'Utilisateur supprimé', `password` = :pwd, status = 0 WHERE id = :id");
+        $sth->execute([
+            ':id' => $id,
+            ':pwd' => password_hash("adminadmin", PASSWORD_DEFAULT)
+        ]);
+
+        session_destroy();
+        header('location: index.php');
+        exit;
     }
 
     // Modifier les droits d'un utilisateur

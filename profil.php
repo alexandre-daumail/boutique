@@ -13,7 +13,7 @@ require_once('process/profilManager.php');
 
     <section>
 
-        <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+        <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" id="1">
 
             <fieldset>
 
