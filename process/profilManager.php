@@ -4,13 +4,7 @@ require_once('classes/User.php');
 require_once('classes/Droits.php');
 
 $info = new User();
-
-$res1 = $info->getUser($_SESSION['current_session']['user']['login']);
-
 $droits = new Droits();
-
-$res2 = $droits->getDroitsById($res1[0]["id_droit"]);
-echo $res1[0]["id_droit"];
 
 if (isset($_POST['submit']) && !empty($_POST)) {
 
@@ -18,7 +12,27 @@ if (isset($_POST['submit']) && !empty($_POST)) {
 
         case !empty($_POST['login']):
 
-            $info->setInfo($_POST['login'], 'login', $_SESSION['current_session']['user']['login']);
+            $info->setInfo($_POST['login'], 'login');
+            break;
+
+        case !empty($_POST['prenom']):
+
+            $info->setInfo($_POST['prenom'], 'prénom');
+            break;
+
+        case !empty($_POST['nom']):
+
+            $info->setInfo($_POST['nom'], 'nom');
+            break;
+
+        case !empty($_POST['email']):
+
+            $info->setInfo($_POST['email'], 'email');
+            break;
+
+        case !empty($_POST['old_password']) && !empty($_POST['password']) && !empty($_POST['old_password']):
+
+            $info->setInfo($_POST['email'], 'email');
             break;
         
         default:

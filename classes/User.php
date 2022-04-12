@@ -93,27 +93,11 @@ class User extends Dbh
         echo "<p>Modification prise en compte</p>";
     }
 
-    public function update($login, $password, $email, $id_utilisateur)
-    {
-        $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
-
-        $sth2 = $this->DbHandler()->prepare("UPDATE utilisateurs SET login = :login, password = :password, email = :email WHERE utilisateurs.id = :id");
-
-        $sth2->execute(array(
-            ":login" => $login,
-            ":password" => $hashedPwd,
-            ":email" => $email,
-            ":id" => $id_utilisateur
-        ));
-
-        $_SESSION['login'] = $login;
-    }
-
-    public function setInfo($post, $row, $login)
+    public function setInfo($post, $row)
     {
        $setInfo = $this->DbHandler()->prepare("UPDATE utilisateurs SET $row = :post WHERE utilisateurs.login = :login");
 
-       $setInfo->execute([":post" => $post, ":login" => $login]);
+       $setInfo->execute([":post" => $post, ":login" => $_SESSION['current_session']['user']['login']]);
 
        $_SESSION["current_session"]["user"][$row] = $post;
 
