@@ -12,6 +12,7 @@ if (isset($_POST['submit']) && !empty($_POST)) {
 
         case !empty($_POST['login']):
 
+            
             $info->setInfo($_POST['login'], 'login');
             break;
 
