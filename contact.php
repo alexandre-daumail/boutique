@@ -15,7 +15,7 @@ require('process/header.php');
 
         <div class="text">
 
-            <h2>Get in touch with us</h2>
+            <h2>Gardez le contact avec nous !</h2>
 
             <p>
 
