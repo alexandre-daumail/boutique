@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 14 mars 2022 à 09:31
+-- Généré le : mer. 13 avr. 2022 à 16:29
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 8.1.2
 
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `boutique`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `droits`
+--
+
+CREATE TABLE `droits` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(80) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `droits`
+--
+
+INSERT INTO `droits` (`id`, `nom`) VALUES
+(1, 'utilisateur'),
+(1337, 'administrateur');
 
 -- --------------------------------------------------------
 
@@ -261,12 +280,28 @@ CREATE TABLE `utilisateurs` (
   `password` varchar(255) NOT NULL,
   `status` int(1) NOT NULL DEFAULT 1,
   `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL
+  `updated_at` datetime NOT NULL,
+  `id_droit` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `utilisateurs`
+--
+
+INSERT INTO `utilisateurs` (`id`, `login`, `prénom`, `nom`, `civilité`, `email`, `password`, `status`, `created_at`, `updated_at`, `id_droit`) VALUES
+(1, 'admin', 'admin', 'admin', 'mr', 'admin@g.com', '$2y$10$z6XN.nNtQ3UHAM9RwVE6UO5wtCBA.7Ytg2N4djkBnuOijf04Aa5f6', 1, '2022-04-11 10:09:30', '0000-00-00 00:00:00', 1337),
+(3, 'Utilisateur supprimé', 'pendule', 'test', 'mme', 'nouvelleadresse@gmail.com', '$2y$10$VQR72ILQ4eWYSx85/rEMy.p9DUtPvndbNBzX3VwrdI42eKo3v86Ju', 0, '2022-04-11 10:50:10', '0000-00-00 00:00:00', 1),
+(4, 'utilisateur', 'azeaze', 'azeaze', 'mme', 'aze@g.c', '$2y$10$cTB78YF3dr7euKxSV3SXfuQtHuNmBXThqn7ehNMnFUVjJvFt7BJSy', 1, '2022-04-12 14:21:23', '2022-04-13 15:40:49', 1);
 
 --
 -- Index pour les tables déchargées
 --
+
+--
+-- Index pour la table `droits`
+--
+ALTER TABLE `droits`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `stars`
@@ -289,6 +324,12 @@ ALTER TABLE `utilisateurs`
 --
 ALTER TABLE `stars`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=205;
+
+--
+-- AUTO_INCREMENT pour la table `utilisateurs`
+--
+ALTER TABLE `utilisateurs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
