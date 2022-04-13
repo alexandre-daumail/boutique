@@ -92,7 +92,7 @@ require('process/header.php');
                 </div>
             </div>
 
-            <a href="edit-certificate.php">Acheter maintenant</a>
+            <a href="certificate.php">Acheter maintenant</a>
 
         </div>
 
@@ -111,7 +111,7 @@ require('process/header.php');
                 </div>
             </div>
 
-            <a href="edit-certificate.php">Acheter maintenant</a>
+            <a href="certificate.php">Acheter maintenant</a>
 
         </div>
 

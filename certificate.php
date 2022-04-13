@@ -1,7 +1,7 @@
 <?php
 
 $title = "Création du Certifcat";
-$css = "edit-certificate";
+$css = "certificate";
 require('process/header.php');
 
 ?>

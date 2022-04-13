@@ -19,7 +19,7 @@ require('process/header.php');
                 <p>40€</p>
             </span>
 
-            <a href="#">Acheter maintenant</a>
+            <a href="certificate.php">Acheter maintenant</a>
 
         </div>
 

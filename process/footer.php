@@ -53,7 +53,7 @@
                                 <li><a href="#">Informations</a></li>
                                 <li><a href="#">Nos Etoiles</a></li>
                                 <li><a href="../boutique/offres.php">Nos Offres</a></li>
-                                <li><a href="../boutique/edit-certificate.php">Créer un Certificat</a></li>
+                                <li><a href="../boutique/certificate.php">Créer un Certificat</a></li>
 
                             </ul>
                         </div>
