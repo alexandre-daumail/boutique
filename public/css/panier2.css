@@ -29,7 +29,9 @@ main h2 {
 main h1 {
     font-size: 25px; 
     text-align: start; 
-    margin: 40px;  
+    margin-left: 30px; 
+    margin-bottom: 20px; 
+    font-weight: 200;
 }
 
 main a {
