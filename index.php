@@ -2,9 +2,13 @@
 $title = "Accueil";
 $css = "index";
 require('process/header.php');
+require('classes/Offre.php');
+$offre = new Offre;
 
 ?>
 <main>
+
+
     <section class="hero">
         <div class="left">
             <h2>Achetez une Étoile dans le Ciel !<h2>
@@ -21,57 +25,7 @@ require('process/header.php');
     </section>
     <section class="container1">
 
-        <div class="card">
-
-            <img src="./public/img/NOVA SHOP.png">
-
-            <p>En choisissant notre offre Star Traditionnelle, vous pouvez adopter une véritable star dans l'espace ! Mieux encore, l'étoile que vous nommez est celle qui peut être vue n'importe où sur Terre, à tout moment de l'année. Votre étoile sera toujours avec vous !</p>
-            <span>
-                <p>40€</p>
-            </span>
-
-            <a href="#">Acheter maintenant</a>
-
-        </div>
-
-        <div class="card">
-
-            <img src="./public/img/NOVA SHOP.png">
-
-            <p>En choisissant notre offre Star Traditionnelle, vous pouvez adopter une véritable star dans l'espace ! Mieux encore, l'étoile que vous nommez est celle qui peut être vue n'importe où sur Terre, à tout moment de l'année. Votre étoile sera toujours avec vous !</p>
-            <span>
-                <p>40€</p>
-            </span>
-
-            <a href="#">Acheter maintenant</a>
-
-        </div>
-
-        <div class="card">
-
-            <img src="./public/img/NOVA SHOP.png">
-
-            <p>En choisissant notre offre Star Traditionnelle, vous pouvez adopter une véritable star dans l'espace ! Mieux encore, l'étoile que vous nommez est celle qui peut être vue n'importe où sur Terre, à tout moment de l'année. Votre étoile sera toujours avec vous !</p>
-            <span>
-                <p>40€</p>
-            </span>
-
-            <a href="#">Acheter maintenant</a>
-
-        </div>
-
-        <div class="card">
-
-            <img src="./public/img/NOVA SHOP.png">
-
-            <p>En choisissant notre offre Star Traditionnelle, vous pouvez adopter une véritable étoile dans l'espace ! Mieux encore, l'étoile que vous nommez est celle qui peut être vue n'importe où sur Terre, à tout moment de l'année. Votre étoile sera toujours avec vous !</p>
-            <span>
-                <p>40€</p>
-            </span>
-
-            <a href="#">Acheter maintenant</a>
-
-        </div>
+    <?= $offre->topOffre(); ?>
 
     </section>
 
