@@ -2,7 +2,8 @@
 $title = "Nos Offres";
 $css = "offres";
 require('process/header.php');
-
+require('classes/Offre.php');
+$offre = new Offre();
 ?>
 <main>
 
@@ -10,57 +11,8 @@ require('process/header.php');
 
     <section class="container1">
 
-        <div class="card">
+    <?= $offre->getOffres(); ?>
 
-            <img src="./public/img/NOVA SHOP.png">
-
-            <p>En choisissant notre offre Star Traditionnelle, vous pouvez adopter une véritable star dans l'espace ! Mieux encore, l'étoile que vous nommez est celle qui peut être vue n'importe où sur Terre, à tout moment de l'année. Votre étoile sera toujours avec vous !</p>
-            <span>
-                <p>40€</p>
-            </span>
-
-            <a href="certificate.php">Acheter maintenant</a>
-
-        </div>
-
-        <div class="card">
-
-            <img src="./public/img/NOVA SHOP.png">
-
-            <p>En choisissant notre offre Star Traditionnelle, vous pouvez adopter une véritable star dans l'espace ! Mieux encore, l'étoile que vous nommez est celle qui peut être vue n'importe où sur Terre, à tout moment de l'année. Votre étoile sera toujours avec vous !</p>
-            <span>
-                <p>40€</p>
-            </span>
-
-            <a href="#">Acheter maintenant</a>
-
-        </div>
-
-        <div class="card">
-
-            <img src="./public/img/NOVA SHOP.png">
-
-            <p>En choisissant notre offre Star Traditionnelle, vous pouvez adopter une véritable star dans l'espace ! Mieux encore, l'étoile que vous nommez est celle qui peut être vue n'importe où sur Terre, à tout moment de l'année. Votre étoile sera toujours avec vous !</p>
-            <span>
-                <p>40€</p>
-            </span>
-
-            <a href="#">Acheter maintenant</a>
-
-        </div>
-
-        <div class="card">
-
-            <img src="./public/img/NOVA SHOP.png">
-
-            <p>En choisissant notre offre Star Traditionnelle, vous pouvez adopter une véritable star dans l'espace ! Mieux encore, l'étoile que vous nommez est celle qui peut être vue n'importe où sur Terre, à tout moment de l'année. Votre étoile sera toujours avec vous !</p>
-            <span>
-                <p>40€</p>
-            </span>
-
-            <a href="#">Acheter maintenant</a>
-
-        </div>
 
     </section>
 
@@ -73,7 +25,7 @@ require('process/header.php');
 
         <div>
             <p>Visualiser votre étoile</p>
-            <a href="#">Voir la carte intéractive</a>
+            <a href="#">Voir la carte intéractive (en cours de développement)</a>
         </div>
 
 

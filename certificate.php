@@ -14,7 +14,9 @@ require('process/header.php');
         <form action="#" method="POST">
 
             <fieldset class="field-1">
+
                 <h4>Choisir le support</h4>
+
                 <ul>
                     <li>
                         <input type="radio" id="myCheckbox1" name="support" value="certif1" hidden />
@@ -33,9 +35,13 @@ require('process/header.php');
                         <label for="myCheckbox4"><img src="public/img/trophe.png" /></label>
                     </li>
                 </ul>
+
             </fieldset>
+
             <fieldset class="field-2">
+
                 <h4>Choisissez la Brillance de votre étoile</h4>
+                
                 <ul>
                     <li>
                         <input type="radio" id="myCheckbox5" name="brightness" value="normal" hidden />
@@ -62,12 +68,14 @@ require('process/header.php');
                         </label>
                     </li>
                 </ul>
+                
             </fieldset class="field-3">
 
             <fieldset>
 
+                <input id="submit-certificate" type="submit" value="Valider" id="submit">
+                
             </fieldset>
-            <input id="submit-certificate" type="submit" value="Valider" id="submit">
 
         </form>
     </section>

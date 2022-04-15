@@ -29,6 +29,31 @@ class Offre extends Dbh
         }
         
     }
+    
+    public function getOffres()
+    {
+        $sth = $this->DbHandler()->prepare("SELECT * FROM `offres` WHERE status = 1 ");
+        $sth->execute();
+        $res = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($res as $offre){
+
+            echo "<div class='card'>
+
+            <img src='./public/img/NOVA SHOP.png'>
+
+            <p>" . $offre["description"] . "</p>
+            
+            <span>
+                <p>" . $offre["prix"] . "€</p>
+            </span>
+
+            <a href='certificate.php'>Acheter maintenant</a>
+
+            </div>";
+        }
+        
+    }
 
     public function getAllInfoById($id)
     {

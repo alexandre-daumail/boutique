@@ -10,7 +10,9 @@ $offre = new Offre;
 
 
     <section class="hero">
+
         <div class="left">
+            
             <h2>Achetez une Étoile dans le Ciel !<h2>
                     <p>Nomme une Étoile. </p>
                     <p>C'est le plus beau cadeau de l'univers!</p>
@@ -19,13 +21,15 @@ $offre = new Offre;
 
 
         </div>
+
         <div class="right">
             <a href="offres.php"><img id="star-certificate" src="./public/img/certificat4.png" alt="certificat"></a>
         </div>
     </section>
+    
     <section class="container1">
 
-    <?= $offre->topOffre(); ?>
+        <?= $offre->topOffre(); ?>
 
     </section>
 
