@@ -29,7 +29,7 @@ $offre = new Offre;
 
     </section>
 
-    <section class="promo-card">
+    <!-- <section class="promo-card">
 
         <div class="card-promo">
 
@@ -70,7 +70,7 @@ $offre = new Offre;
         </div>
 
 
-    </section>
+    </section> -->
 
     <section class="constellation">
 
