@@ -37,6 +37,7 @@ function test($var){
         <section class="logo-area">
             <img id="logo-header" src="public/img/logo-header.png" alt="logo-header">
         </section>
+        
         <section class="search-button-area">
             
             <div class="button-area">
@@ -45,34 +46,38 @@ function test($var){
                     <img id="under-button" src="public/img/under-button.png" alt="logo">
                 </div>
                 <div class="under-button">
+                    <a href="offres.php">Certificats</a>
+                    <img id="under-button" src="public/img/under-button.png" alt="logo">
+                </div>
+                <div class="under-button">
+                    <a href="articles.php">Boutique</a>
+                    <img id="under-button" src="public/img/under-button.png" alt="logo">
+                </div>
+                <div class="under-button">
+
                     <a href="apropos.php">Information</a>
                     <img id="under-button" src="public/img/under-button.png" alt="logo">
                 </div>
                 <div class="under-button">
-                    <a href="stars.php">Nos Étoiles</a>
+                    <a href="stars.php">Étoiles</a>
                     <img id="under-button" src="public/img/under-button.png" alt="logo">
-                </div>
+                </div>       
                 <div class="under-button">
-                    <a href="offres.php">Nos Offres</a>
+                    <a href="contact.php">Contact</a>
                     <img id="under-button" src="public/img/under-button.png" alt="logo">
 
                 </div>
-                <div class="under-button">
-                    <a href="contact.php">Nous Contacter</a>
-                    <img id="under-button" src="public/img/under-button.png" alt="logo">
-
+                
+                <div class="icon-header">
+                                
+                                <a href="panier.php"><img id="icon-header" src="public/img/icon/Vectorcart.png" alt="logo du panier" ></a>
+                                
+                                <!-- Lorque l'utilisateur est connecté, afficher les liens de compte et de ses favoris -->
+                                <?= isset($_SESSION['current_session']) && $_SESSION['current_session']['status'] == 1 ? '<a href="profil.php"><img id="icon-header" src="public/img/icon/Vectoraccount.png" alt="logo-myaccount"></a><a href="favorites.php"><img id="icon-header" src="public\img\icon\fav.png" alt="logo des favoris" title="Vos étoiles favorites"></a><a href="logout.php"><img id="icon-header" src="public/img/icon/logout.png" alt="logout logo"></a><a href="commandes.php">Mes Commandes</a>"' : '<a href="inscription.php">Inscription</a><a href="connexion.php">Connexion</a>' ;?>
                 </div>
-
             </div>
 
-            <div class="icon-header">
-                
-                <a href="panier.php"><img id="icon-header" src="public/img/icon/Vectorcart.png" alt="logo du panier" ></a>
-                
-                <!-- Lorque l'utilisateur est connecté, afficher les liens de compte et de ses favoris -->
-                <?= isset($_SESSION['current_session']) && $_SESSION['current_session']['status'] == 1 ? '<a href="profil.php"><img id="icon-header" src="public/img/icon/Vectoraccount.png" alt="logo-myaccount"></a><a href="favorites.php"><img id="icon-header" src="public\img\icon\fav.png" alt="logo des favoris" title="Vos étoiles favorites"></a><a href="logout.php"><img id="icon-header" src="public/img/icon/logout.png" alt="logout logo"></a><a href="commandes.php">Mes Commandes</a>"' : '<a href="inscription.php">Inscription</a><a href="connexion.php">Connexion</a>' ;?>
-
-            </div>
+            
             <!-- <div class="search-area">
 
                 <form class="searchbox" action="http://thecodeblock.com">
@@ -82,10 +87,6 @@ function test($var){
 
             </div> -->
 
-        </section>
-
-        <section class="logo-area">
-            <img id="logo-header" src="public/img/logo-header.png" alt="logo-header">
         </section>
 
     </header>

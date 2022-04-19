@@ -40,11 +40,11 @@ require('process/header.php');
                         $item_price = $item["quantity"] * $item["price"];
                     ?>
 
-                        <td><img src="<?= $item["image"]; ?>" /><?= $item["name"]; ?></td>
+                        <!-- <td><img src="<?= $item["image"]; ?>" /><?= $item["name"]; ?></td> -->
                         <td><?= $item["price"]; ?></td>
                         <td><?= $item["quantity"]; ?></td>
                         <td><?= "€ " . number_format($item_price, 2); ?></td>
-                        <td><a href="panier.php?action=remove&code=<?= $item["code"]; ?>" class="btnRemoveAction"><img src="icon-delete.png" alt="Remove Item" /></a></td>
+                        <td><a href="panier.php?action=remove&code=<?= $item["code"]; ?>" class="btnRemoveAction"></a></td>
 
                     <?php
                         $total_quantity += $item["quantity"];

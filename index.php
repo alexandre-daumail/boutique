@@ -1,4 +1,5 @@
 <?php
+
 $title = "Accueil";
 $css = "index";
 require('process/header.php');
@@ -6,18 +7,20 @@ require('classes/Offre.php');
 $offre = new Offre;
 
 ?>
+
 <main>
 
 
     <section class="hero">
 
         <div class="left">
-            
-            <h2>Achetez une Étoile dans le Ciel !<h2>
-                    <p>Nomme une Étoile. </p>
-                    <p>C'est le plus beau cadeau de l'univers!</p>
 
-                    <a id="bttn" href="offres.php">Acheter maintenant</a>
+            <h2>Achetez une Étoile dans le Ciel !<h2>
+
+                <p>Nomme une Étoile. </p>
+                <p>C'est le plus beau cadeau de l'univers!</p>
+
+                <a id="bttn" href="offres.php">Acheter maintenant</a>
 
 
         </div>
@@ -26,7 +29,7 @@ $offre = new Offre;
             <a href="offres.php"><img id="star-certificate" src="./public/img/certificat4.png" alt="certificat"></a>
         </div>
     </section>
-    
+
     <section class="container1">
 
         <?= $offre->topOffre(); ?>
