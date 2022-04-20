@@ -4,11 +4,36 @@ $title = "Mon Panier";
 $css = "panier";
 
 require('process/header.php');
+if (!empty($_GET["action"])) {
 
+    switch ($_GET["action"]) {
+
+        case "remove":  
+        
+            if (!empty($_SESSION["cart_item"])) {
+
+                foreach ($_SESSION["cart_item"] as $k => $v) {
+                    if ($_GET["code"] == $k)
+                        unset($_SESSION["cart_item"][$k]);
+                    if (empty($_SESSION["cart_item"]))
+                        unset($_SESSION["cart_item"]);
+                }
+            
+            }
+            break;
+            
+        case "empty":
+			unset($_SESSION["cart_item"]);
+			break;
+    }
+}
 ?>
 
 <main>
+<div id="shopping-cart">
+		<h1>Votre Panier</h1>
 
+		<a id="btnEmpty" href="panier.php?action=empty">Vider le panier</a>
     <?php
     if (isset($_SESSION["cart_item"])) {
         $total_quantity = 0;
@@ -31,7 +56,7 @@ require('process/header.php');
 
             <tbody>
 
-                <tr>
+                
 
                     <?php
 
@@ -39,26 +64,27 @@ require('process/header.php');
 
                         $item_price = $item["quantity"] * $item["price"];
                     ?>
-
-                        <!-- <td><img src="<?= $item["image"]; ?>" /><?= $item["name"]; ?></td> -->
-                        <td><?= $item["price"]; ?></td>
+<tr>
+                        <td><?= $item["name"]; ?></td>
+                        <td><?= $item["price"]; ?>€</td>
                         <td><?= $item["quantity"]; ?></td>
-                        <td><?= "€ " . number_format($item_price, 2); ?></td>
-                        <td><a href="panier.php?action=remove&code=<?= $item["code"]; ?>" class="btnRemoveAction"></a></td>
-
+                        <td><?= number_format($item_price, 2); ?>€</td>
+                        <td><a href="panier.php?action=remove&code=<?= $item["id"]; ?>" class="btnRemoveAction"></a></td>
+                        <td style="text-align:center;"><a href="panier.php?action=remove&code=<?= $item["id"]; ?>" class="btnRemoveAction"><img src="public\img\icon\icon-delete.png" alt="Remove Item" /></a></td>
+                        </tr>
                     <?php
                         $total_quantity += $item["quantity"];
                         $total_price += ($item["price"] * $item["quantity"]);
                     }
                     ?>
 
-                </tr>
+              
 
                 <tr>
 
                     <td colspan="2">Total:</td>
-                    <td><?php echo $total_quantity; ?></td>
-                    <td colspan="2"><strong><?php echo "$ " . number_format($total_price, 2); ?></strong></td>
+                    <td><?= $total_quantity; ?></td>
+                    <td colspan="2"><strong><?= number_format($total_price, 2); ?>€</strong></td>
                     <td></td>
                     
                 </tr>
@@ -75,5 +101,12 @@ require('process/header.php');
     }
 
     ?>
+</div>
 
 </main>
+
+<?php
+
+require('process/footer.php');
+
+?>

@@ -13,28 +13,17 @@ class Item extends Dbh
         $jour = $date->format('Y-m-d H:i:s');
         $sth->execute(array($titre, $article, $id_utilisateur, $id_categorie, $jour));
 
-
     }
 
-    public function getArticleById($id_article)
+    public function getItemById($id)
     {
-        $sth = $this->DbHandler()->prepare("SELECT articles.titre, articles.article, utilisateurs.login, articles.date FROM articles INNER JOIN utilisateurs ON articles.id_utilisateur = utilisateurs.id WHERE articles.id = $id_article ;");
+        $sth = $this->DbHandler()->prepare("SELECT * FROM items  WHERE items.id = $id;");
 
         $sth->execute();
 
-        $article= $sth->fetchAll();
+        $itemArray= $sth->fetchAll();
 
-        foreach ($article as $array) {
-                                
-            echo "<article><h2>" . $array["titre"] . "</h2>";
-        
-            echo "<p>" . $array["article"] . "</p>";
-        
-            echo "<p>Auteur : " . $array["login"] . "</p>";
-        
-            echo "<p>Ecrit le : " . $array["date"] . "</p>";
-                    
-        }       
+        return $itemArray;       
         
     }
 

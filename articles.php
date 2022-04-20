@@ -10,17 +10,17 @@ if (!empty($_GET["action"])) {
 
     if (!empty($_POST["quantity"])) {
 
-        $productByCode = $db_handle->runQuery("SELECT * FROM tblproduct WHERE code='" . $_GET["code"] . "'");
+        $itemById = $item->getItemById($_GET["code"]);
         
-        $itemArray = array($productByCode[0]["code"] => array('name' => $productByCode[0]["name"], 'code' => $productByCode[0]["code"], 'quantity' => $_POST["quantity"], 'price' => $productByCode[0]["price"], 'image' => $productByCode[0]["image"]));
+        $itemArray = array($itemById[0]["id"] => array('name' => $itemById[0]["name"], 'id' => $itemById[0]["id"], 'quantity' => $_POST["quantity"], 'price' => $itemById[0]["price"]));
 
         if (!empty($_SESSION["cart_item"])) {
 
-            if (in_array($productByCode[0]["code"], array_keys($_SESSION["cart_item"]))) {
+            if (in_array($itemById[0]["id"], array_keys($_SESSION["cart_item"]))) {
 
                 foreach ($_SESSION["cart_item"] as $k => $v) {
 
-                    if ($productByCode[0]["code"] == $k) {
+                    if ($itemById[0]["id"] == $k) {
 
                         if (empty($_SESSION["cart_item"][$k]["quantity"])) {
 
