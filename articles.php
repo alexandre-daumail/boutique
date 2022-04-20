@@ -9,7 +9,7 @@ require('classes/Item.php');
 $item = new Item();
 
 //Exécute l'action "add" pour mettre les objets dans le panier
-require('process/addArticles.php');
+require('process/ajouterArticles.php');
 
 ?>
 

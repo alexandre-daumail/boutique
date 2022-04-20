@@ -5,32 +5,15 @@ $css = "panier";
 
 require('process/header.php');
 
-if (!empty($_GET["action"])) {
+require('process/actionsPanier.php');
 
-    switch ($_GET["action"]) {
-
-        case "remove":
-			if (!empty($_SESSION["cart_item"])) {
-				foreach ($_SESSION["cart_item"] as $k => $v) {
-					if ($_GET["code"] == $k)
-						unset($_SESSION["cart_item"][$k]);
-					if (empty($_SESSION["cart_item"]))
-						unset($_SESSION["cart_item"]);
-				}
-			}
-			break;
-		case "empty":
-			unset($_SESSION["cart_item"]);
-			break;
-    }
-}
 ?>
 
 <main>
 <div id="shopping-cart">
 		<div class="txt-heading">Shopping Cart</div>
 
-		<a id="btnEmpty" href="index.php?action=empty">Empty Cart</a>
+		<a id="btnEmpty" href="panier.php?action=empty">Empty Cart</a>
 		<?php
 		if (isset($_SESSION["cart_item"])) {
 			$total_quantity = 0;
@@ -58,11 +41,11 @@ if (!empty($_GET["action"])) {
 							<td style="text-align:right;"><?= number_format($item_price, 2). " €"; ?></td>
 
 							<td style="text-align:center;">
-                                <a href="index.php?action=remove&code=<?= $item["code"]; ?>" class="btnRemoveAction">
+                                <a href="panier.php?action=remove&code=<?= $item["code"]; ?>" class="btnRemoveAction">
                                     <img src="icon-delete.png" alt="Remove Item" />
                                 </a>
                             </td>
-                            
+
 						</tr>
 					<?php
 						$total_quantity += $item["quantity"];
