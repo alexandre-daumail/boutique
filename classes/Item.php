@@ -31,6 +31,18 @@ class Item extends Dbh
         
     }
 
+    public function getItemsbyCode($code)
+    {
+        $sth = $this->DbHandler()->prepare("SELECT * FROM items WHERE code = :code");
+
+        $sth->execute([':code' => $code]);
+
+        $itemArray= $sth->fetchAll();
+
+        return $itemArray;       
+        
+    }
+
     public function totalPages($id_categorie)
     {
         // On prépare la requête

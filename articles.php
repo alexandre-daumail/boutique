@@ -1,7 +1,7 @@
 <?php
 
 $title = "Articles";
-$css = "article";
+$css = "articles";
 
 require('process/header.php');
 require('classes/Item.php');
@@ -9,7 +9,7 @@ require('classes/Item.php');
 $item = new Item();
 
 //Exécute l'action "add" pour mettre les objets dans le panier
-require('process/ajouterArticles.php');
+include('process/ajouterArticles.php');
 
 ?>
 
