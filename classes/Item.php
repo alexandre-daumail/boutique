@@ -81,7 +81,7 @@ class Item extends Dbh
             
         } else {
 
-            $getItems = $this->DbHandler()->prepare("SELECT items.id, items.name, items.description, items.price, sub_category.id FROM items INNER JOIN sub_category on sub_category.id = items.id_subcategory LIMIT :start,:limit");
+            $getItems = $this->DbHandler()->prepare("SELECT items.id, items.name, items.description, items.price FROM items INNER JOIN sub_category on sub_category.id = items.id_subcategory LIMIT :start,:limit");
 
             $getItems->bindValue(':start', $start, PDO::PARAM_INT);
             $getItems->bindValue(':limit', $limit, PDO::PARAM_INT);

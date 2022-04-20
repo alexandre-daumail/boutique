@@ -2,8 +2,8 @@
 
 $title = "Mon Panier";
 $css = "panier";
-
 require('process/header.php');
+test($_SESSION["cart_item"]);
 if (!empty($_GET["action"])) {
 
     switch ($_GET["action"]) {
@@ -12,9 +12,9 @@ if (!empty($_GET["action"])) {
         
             if (!empty($_SESSION["cart_item"])) {
 
-                foreach ($_SESSION["cart_item"] as $k => $v) {
-                    if ($_GET["code"] == $k)
-                        unset($_SESSION["cart_item"][$k]);
+                foreach ($_SESSION["cart_item"] as $key => $value) {
+                    if ($_GET["code"] == $key)
+                        unset($_SESSION["cart_item"][$key]);
                     if (empty($_SESSION["cart_item"]))
                         unset($_SESSION["cart_item"]);
                 }

@@ -18,17 +18,17 @@ if (!empty($_GET["action"])) {
 
             if (in_array($itemById[0]["id"], array_keys($_SESSION["cart_item"]))) {
 
-                foreach ($_SESSION["cart_item"] as $k => $v) {
+                foreach ($_SESSION["cart_item"] as $key => $value) {
 
-                    if ($itemById[0]["id"] == $k) {
+                    if ($itemById[0]["id"] == $key) {
 
-                        if (empty($_SESSION["cart_item"][$k]["quantity"])) {
+                        if (empty($_SESSION["cart_item"][$key]["quantity"])) {
 
-                            $_SESSION["cart_item"][$k]["quantity"] = 0;
+                            $_SESSION["cart_item"][$key]["quantity"] = 0;
 
                         }
 
-                        $_SESSION["cart_item"][$k]["quantity"] += $_POST["quantity"];
+                        $_SESSION["cart_item"][$key]["quantity"] += $_POST["quantity"];
 
                     }
 
@@ -93,6 +93,7 @@ if (!empty($_GET["action"])) {
             echo "<h1>Articles les plus récents</h1>";
 
             $item = $item->getArticles(5, 0);
+            test($item);
         }
     }
 
