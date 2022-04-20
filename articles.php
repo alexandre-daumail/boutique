@@ -2,106 +2,64 @@
 
 $title = "Articles";
 $css = "article";
+
 require('process/header.php');
 require('classes/Item.php');
+
 $item = new Item();
 
-if (!empty($_GET["action"])) {
-
-    if (!empty($_POST["quantity"])) {
-
-        $itemById = $item->getItemById($_GET["code"]);
-        
-        $itemArray = array($itemById[0]["id"] => array('name' => $itemById[0]["name"], 'id' => $itemById[0]["id"], 'quantity' => $_POST["quantity"], 'price' => $itemById[0]["price"]));
-
-        if (!empty($_SESSION["cart_item"])) {
-
-            if (in_array($itemById[0]["id"], array_keys($_SESSION["cart_item"]))) {
-
-                foreach ($_SESSION["cart_item"] as $key => $value) {
-
-                    if ($itemById[0]["id"] == $key) {
-
-                        if (empty($_SESSION["cart_item"][$key]["quantity"])) {
-
-                            $_SESSION["cart_item"][$key]["quantity"] = 0;
-
-                        }
-
-                        $_SESSION["cart_item"][$key]["quantity"] += $_POST["quantity"];
-
-                    }
-
-                }
-            } else {
-
-                $_SESSION["cart_item"] = array_merge($_SESSION["cart_item"], $itemArray);
-
-            }
-
-        } else {
-
-            $_SESSION["cart_item"] = $itemArray;
-            
-        }
-    }
-}
+//Exécute l'action "add" pour mettre les objets dans le panier
+require('process/addArticles.php');
 
 ?>
 
 <main>
 
-    <?php
-    // On détermine sur quelle page on se trouve
-    if (isset($_GET['start']) && !empty($_GET['start'])) {
+    <body>
 
-        $currentPage = (int) strip_tags($_GET['start']);
+        <section id="product-grid">
+            
+            <h1>Articles</h1>
 
-        if (isset($_GET['categorie']) && !empty($_GET['categorie'])) {
+            <?php
 
-            // Calcul du 1er article de la page
-            $start = $currentPage * 5 - 5;
+                $product_array = $item->getItems();
 
-            $categories = $categorie->getAllInfoById($_GET['categorie']);
+                if (!empty($product_array)) {
+                    
+                    foreach ($product_array as $key => $value) {
 
-            echo "<h1>" . $categories[0]['nom'] . "</h1>";
+            ?>
+                        <div class="product-item">
 
-            $item = $item->getArticles(5, $start, $_GET['categorie']);
-        } else {
+                            <form method="post" action="articles.php?action=add&code=<?= $product_array[$key]["code"]; ?>">
 
-            $currentPage = (int) strip_tags($_GET['start']);
+                                <div class="product-image"><img src="<?= $product_array[$key]["image"]; ?>"></div>
 
-            $start = $currentPage * 5 - 5;
+                                <div class="product-tile-footer">
 
-            echo "<h1>Articles les plus récents</h1>";
+                                    <div class="product-title"><?= $product_array[$key]["name"]; ?></div>
 
-            $item = $item->getArticles(5, $start, '');
-        }
-    } else {
+                                    <div class="product-price"><?= $product_array[$key]["price"] . "€"; ?></div>
 
-        $currentPage = 1;
+                                    <div class="cart-action">
+                                        <input type="text" class="product-quantity" name="quantity" value="1" size="2" />
+                                        <input type="submit" value="Add to Cart" class="btnAddAction" />
+                                    </div>
 
-        if (isset($_GET['categorie']) && !empty($_GET['categorie'])) {
+                                </div>
 
-            $categories = $categorie->getAllInfoById($_GET['categorie']);
+                            </form>
 
-            echo "<h1>" . $categories[0]['nom'] . "</h1>";
+                        </div>
+            
+            <?php
+                }
+            }
+            ?>
+        </section>
 
-            $item = $item->getArticles(5, 0, $_GET['categorie']);
-        } else {
-
-            echo "<h1>Articles les plus récents</h1>";
-
-            $item = $item->getArticles(5, 0);
-            test($item);
-        }
-    }
-
-    ?>
-
-    <nav>
-
-    </nav>
+    </body>
 
 </main>
 

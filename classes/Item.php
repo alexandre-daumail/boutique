@@ -15,9 +15,9 @@ class Item extends Dbh
 
     }
 
-    public function getItemById($id)
+    public function getItems()
     {
-        $sth = $this->DbHandler()->prepare("SELECT * FROM items  WHERE items.id = $id;");
+        $sth = $this->DbHandler()->prepare("SELECT * FROM items ORDER BY id ASC");
 
         $sth->execute();
 
