@@ -8,10 +8,14 @@ class Item extends Dbh
     {
 
         $sth = $this->DbHandler()->prepare("INSERT INTO `articles`(`titre`,`article`,`id_utilisateur`,`id_categorie`,`date`) VALUES(?,?,?,?,?)");
+
         $date = new DateTime();
+
         $date->setTimestamp(time());
+
         $jour = $date->format('Y-m-d H:i:s');
-        $sth->execute(array($titre, $article, $id_utilisateur, $id_categorie, $jour));
+
+        $sth->execute([$titre, $article, $id_utilisateur, $id_categorie, $jour]);
 
     }
 

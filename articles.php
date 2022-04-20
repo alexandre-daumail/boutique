@@ -26,7 +26,7 @@ require('process/addArticles.php');
                 $product_array = $item->getItems();
 
                 if (!empty($product_array)) {
-                    
+
                     foreach ($product_array as $key => $value) {
 
             ?>
@@ -43,7 +43,7 @@ require('process/addArticles.php');
                                     <div class="product-price"><?= $product_array[$key]["price"] . "€"; ?></div>
 
                                     <div class="cart-action">
-                                        <input type="text" class="product-quantity" name="quantity" value="1" size="2" />
+                                        <input type="number" class="product-quantity" name="quantity" value="1" />
                                         <input type="submit" value="Add to Cart" class="btnAddAction" />
                                     </div>
 
