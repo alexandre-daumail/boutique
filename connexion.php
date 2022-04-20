@@ -4,10 +4,10 @@ $title = "Connexion";
 $css = "authenticate";
 
 require_once('process/header.php');
-require_once('process/Login.php');
+require_once('process/login.php');
 
 if (isset($_POST['connect']) && count($_POST) > 0) {
-    $process = Login($_POST);
+    $process = login($_POST);
 }
 
 ?>

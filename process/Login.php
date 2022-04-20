@@ -3,7 +3,7 @@
   require_once('classes/User.php');
   
   // Receives an email address and password from the $_POST superglobal and matches it against the databse records to authenticate the user
-  function Login(array $data)
+  function login(array $data)
   {
 
     $data = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
