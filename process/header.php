@@ -89,7 +89,9 @@ function test($var){
                         <img src="public/img/icon/logout.png" alt="logout logo">
                     </a>
 
-                    <a href="commandes.php">Mes Commandes</a>
+                    <a href="commandes.php">
+                        <img src="public/img/icon/ordering.jpg" alt="icône représentant le lien d'historique d'achats'" title="Mes Commandes">
+                    </a>
                             
                     <?php
 
