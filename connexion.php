@@ -4,10 +4,10 @@ $title = "Connexion";
 $css = "authenticate";
 
 require_once('process/header.php');
-require_once('process/Login.php');
+require_once('process/login.php');
 
 if (isset($_POST['connect']) && count($_POST) > 0) {
-    $process = Login($_POST);
+    $process = login($_POST);
 }
 
 ?>
@@ -25,11 +25,11 @@ if (isset($_POST['connect']) && count($_POST) > 0) {
 
             <label for="6">Identifiant</label>
 
-            <input type="text" name="login_connect" id="6" placeholder="Login ou Email" required>
+            <input id="6"vtype="text" name="login_connect" placeholder="Login ou Email" required>
 
             <label for="7">Mot de Passe</label>
 
-            <input type="password" name="pwd_connect" id="7" placeholder="Mot de passe" required>
+            <input id="7" type="password" name="pwd_connect" placeholder="Mot de passe" required>
 
             <button type="submit" name="connect" >Se connecter</button>
 
