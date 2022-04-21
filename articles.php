@@ -23,7 +23,7 @@ include('process/ajouterArticles.php');
             <ul>
                 <li><a href="articles.php">Tous nos articles</a></li>
                 <li class="dropdown">
-                    <?= $menu = $category->categoryDropdown(); ?>
+                    <?= $category->categoryDropdown(); ?>
                 </li>
             </ul>
         </nav>
@@ -32,38 +32,21 @@ include('process/ajouterArticles.php');
 
             <?php
 
-            $product_array = $item->getItems();
+            if(isset($_GET['category']) && !empty($_GET['category']) && !isset($_GET['sub_category'])) {
 
-            if (!empty($product_array)) {
+                $item->displayItems($item->getItemsbyCategory($_GET['category']));
 
-                foreach ($product_array as $key => $value) {
+                
+            } else if (isset($_GET['sub_category']) && !empty($_GET['sub_category']) && !isset($_GET['category'])){
 
-            ?>
-                    <div class="product-item">
+                $item->displayItems($item->getItemsbySubCategory($_GET['sub_category']));
 
-                        <form method="post" action="articles.php?action=add&code=<?= $product_array[$key]["code"]; ?>">
+            }
+            
+            else {
 
-                            <div class="product-image"><img src="<?= $product_array[$key]["image"]; ?>"></div>
+                $item->displayItems($item->getItems());
 
-                            <div class="product-tile-footer">
-
-                                <div class="product-title"><?= $product_array[$key]["name"]; ?></div>
-
-                                <div class="product-price"><?= $product_array[$key]["price"] . "€"; ?></div>
-
-                                <div class="cart-action">
-                                    <input type="number" class="product-quantity" name="quantity" value="1" />
-                                    <input type="submit" value="Add to Cart" class="btnAddAction" />
-                                </div>
-
-                            </div>
-
-                        </form>
-
-                    </div>
-
-            <?php
-                }
             }
             ?>
         </section>
