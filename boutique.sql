@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 13 avr. 2022 à 16:29
+-- Généré le : jeu. 21 avr. 2022 à 17:57
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 8.1.2
 
@@ -24,6 +24,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `category`
+--
+
+CREATE TABLE `category` (
+  `id` int(11) NOT NULL,
+  `category_name` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `category`
+--
+
+INSERT INTO `category` (`id`, `category_name`) VALUES
+(1, 'Vêtements'),
+(3, 'Accessoires'),
+(4, 'Jouets'),
+(5, 'Collections'),
+(6, 'Livres'),
+(7, 'Gourmandises');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `droits`
 --
 
@@ -39,6 +62,56 @@ CREATE TABLE `droits` (
 INSERT INTO `droits` (`id`, `nom`) VALUES
 (1, 'utilisateur'),
 (1337, 'administrateur');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `items`
+--
+
+CREATE TABLE `items` (
+  `id` int(11) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `description` text NOT NULL,
+  `price` int(11) NOT NULL,
+  `subcategory_id` int(11) NOT NULL,
+  `code` varchar(255) NOT NULL,
+  `image` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `items`
+--
+
+INSERT INTO `items` (`id`, `name`, `description`, `price`, `subcategory_id`, `code`, `image`) VALUES
+(1, ' T-SHIRT JAMES WEBB', 'The James Webb Space Telescope’s revolutionary technology will study every phase of cosmic history—from within our solar system to the most distant observable galaxies in the early universe. Webb’s infrared telescope will explore a wide range of science questions to help us understand the origins of the universe and our place in it.', 17, 1, '3DcAM02', 'public/img/jwebtshirt.png'),
+(2, 'T-SHIRT WOMAN ON THE MOON ', 'Woman on the Moon shirt featuring the goddess Artemis, the twin sister of Apollo.', 17, 3, '3DcAM05', ''),
+(3, 'YOUTH APOLLO 11 JACKET', 'Youth Apollo 11 Flight Jacket featuring the Apollo 11 insignia on the back with the phrase \"That\'s one small step for man, one giant leap for mankind\" circling it. ', 45, 4, '3DcAM55', ''),
+(4, 'NASA VINTAGE COTTON TWILL CAP', 'This one\'s really special thanks to the intricate embroidery detail and the washed-out vintage feel.', 17, 6, '3DcjM01', ''),
+(5, 'WHITE ASTRONAUT FLIGHT SUIT', 'White Astronaut Flight Suit featuring the Shuttle Program patch, the NASA Commander patch, the USA Flag patch, as well as the iconic NASA Meatball patch.', 17, 7, '3DcAP01', '');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `offres`
+--
+
+CREATE TABLE `offres` (
+  `id` int(11) NOT NULL,
+  `titre` varchar(255) NOT NULL,
+  `description` varchar(500) NOT NULL,
+  `prix` int(11) NOT NULL,
+  `topOffre` int(1) NOT NULL DEFAULT 0,
+  `status` int(1) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `offres`
+--
+
+INSERT INTO `offres` (`id`, `titre`, `description`, `prix`, `topOffre`, `status`) VALUES
+(1, 'Traditionnelle', 'En choisissant notre offre Star Traditionnelle, vous pouvez adopter une véritable star dans l\'espace ! Mieux encore, l\'étoile que vous nommez est celle qui peut être vue n\'importe où sur Terre, à tout moment de l\'année. Votre étoile sera toujours avec vous !', 29, 1, 1),
+(2, 'Poussière', 'Une poussière dans le ciel', 15, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -267,6 +340,43 @@ INSERT INTO `stars` (`id`, `reference`, `coordonnees`, `constellation`, `nom`) V
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `sub_category`
+--
+
+CREATE TABLE `sub_category` (
+  `id` int(11) NOT NULL,
+  `sub_category_name` varchar(30) NOT NULL,
+  `category_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `sub_category`
+--
+
+INSERT INTO `sub_category` (`id`, `sub_category_name`, `category_id`) VALUES
+(1, 'Homme', 1),
+(3, 'Femme', 1),
+(4, 'Garçon', 1),
+(5, 'Fille', 1),
+(6, 'Casquettes', 1),
+(7, 'Déguisements', 3),
+(8, 'Montres', 3),
+(9, 'Colliers', 3),
+(10, 'Peluches', 4),
+(11, 'Ludothèque', 4),
+(12, 'Jeux de plateau', 4),
+(13, 'Puzzles', 4),
+(14, 'Figurines', 5),
+(15, 'Tableaux', 5),
+(16, 'Autocollants', 5),
+(17, 'Pins', 5),
+(18, 'Médaillons', 5),
+(19, 'Puériculture', 6),
+(20, 'Etudes et publications', 6);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `utilisateurs`
 --
 
@@ -289,13 +399,20 @@ CREATE TABLE `utilisateurs` (
 --
 
 INSERT INTO `utilisateurs` (`id`, `login`, `prénom`, `nom`, `civilité`, `email`, `password`, `status`, `created_at`, `updated_at`, `id_droit`) VALUES
-(1, 'admin', 'admin', 'admin', 'mr', 'admin@g.com', '$2y$10$z6XN.nNtQ3UHAM9RwVE6UO5wtCBA.7Ytg2N4djkBnuOijf04Aa5f6', 1, '2022-04-11 10:09:30', '0000-00-00 00:00:00', 1337),
 (3, 'Utilisateur supprimé', 'pendule', 'test', 'mme', 'nouvelleadresse@gmail.com', '$2y$10$VQR72ILQ4eWYSx85/rEMy.p9DUtPvndbNBzX3VwrdI42eKo3v86Ju', 0, '2022-04-11 10:50:10', '0000-00-00 00:00:00', 1),
-(4, 'utilisateur', 'azeaze', 'azeaze', 'mme', 'aze@g.c', '$2y$10$cTB78YF3dr7euKxSV3SXfuQtHuNmBXThqn7ehNMnFUVjJvFt7BJSy', 1, '2022-04-12 14:21:23', '2022-04-13 15:40:49', 1);
+(4, 'utilisateur', 'azeaze', 'azeaze', 'mme', 'aze@g.c', '$2y$10$cTB78YF3dr7euKxSV3SXfuQtHuNmBXThqn7ehNMnFUVjJvFt7BJSy', 1, '2022-04-12 14:21:23', '2022-04-13 15:40:49', 1),
+(5, 'admin', 'admin', 'admin', 'mr', 'admin@gmail.com', '$2y$10$5dfqJVSSna2iVISzU1wMw.ZCB9MpWQhJGH8BP7NaXWev7JsScr0vm', 1, '2022-04-20 16:41:29', '0000-00-00 00:00:00', 1),
+(6, 'test11', 'azeaze', 'dqqsd', 'mme', 'test@gmail.com', '$2y$10$WMClojFXBxnLUfFFghWJn.s.JCIjbZ7yBgyeU/OnmnIMzNOAMSQdW', 1, '2022-04-20 17:22:41', '0000-00-00 00:00:00', 1);
 
 --
 -- Index pour les tables déchargées
 --
+
+--
+-- Index pour la table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `droits`
@@ -304,9 +421,27 @@ ALTER TABLE `droits`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `items`
+--
+ALTER TABLE `items`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `offres`
+--
+ALTER TABLE `offres`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `stars`
 --
 ALTER TABLE `stars`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `sub_category`
+--
+ALTER TABLE `sub_category`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -320,16 +455,40 @@ ALTER TABLE `utilisateurs`
 --
 
 --
+-- AUTO_INCREMENT pour la table `category`
+--
+ALTER TABLE `category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT pour la table `items`
+--
+ALTER TABLE `items`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT pour la table `offres`
+--
+ALTER TABLE `offres`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT pour la table `stars`
 --
 ALTER TABLE `stars`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=205;
 
 --
+-- AUTO_INCREMENT pour la table `sub_category`
+--
+ALTER TABLE `sub_category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
