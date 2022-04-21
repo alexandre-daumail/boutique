@@ -1,4 +1,4 @@
-ul {
+body nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -6,11 +6,11 @@ ul {
     background-color: #333;
   }
   
-  li {
+  body nav li {
     float: left;
   }
   
-  li a, .dropbtn {
+  body nav li a, .dropbtn {
     display: inline-block;
     color: white;
     text-align: center;
@@ -18,11 +18,11 @@ ul {
     text-decoration: none;
   }
   
-  li a:hover, .dropdown:hover .dropbtn {
+  body nav li a:hover, .dropdown:hover .dropbtn {
     background-color: red;
   }
   
-  li.dropdown {
+  body nav li.dropdown {
     display: inline-block;
   }
   
