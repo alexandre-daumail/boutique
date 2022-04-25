@@ -102,3 +102,6 @@
     object-fit:cover;
   }
   
+  .container2 a {
+    text-align: center;
+  }

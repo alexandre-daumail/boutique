@@ -25,7 +25,7 @@ $offre = new Offre();
 
         <div>
             <p>Visualiser votre étoile</p>
-            <a href="#">Voir la carte intéractive (en cours de développement)</a>
+            <a href="#">Voir la carte intéractive <br>(en cours de développement)</a>
         </div>
 
 
