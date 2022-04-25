@@ -69,6 +69,17 @@ function test($var){
                     <a href="contact.php">Contact</a>
                     <img src="public/img/logo2.png" alt="logo">
                 </div>
+
+                <?php
+
+                if (isset($_SESSION['current_session']) && $_SESSION['current_session']['status'] == 1 && $_SESSION['current_session']['user']['id_droit'] == 1337 ){
+                   echo '<div class="logo2">
+                    <a href="admin.php">Admin</a>
+                    <img src="public/img/logo2.png" alt="logo">
+                </div>';
+                }
+
+                ?>
                 
                 <div class="icon-header">
                                 

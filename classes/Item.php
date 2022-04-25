@@ -82,4 +82,16 @@ class Item extends Dbh
 
     }
 
+    public function getList()
+    {
+        $getList = $this->DbHandler()->prepare("SELECT articles.id, articles.titre, articles.date, utilisateurs.login, articles.id_categorie FROM items INNER JOIN utilisateurs on utilisateurs.id = articles.id_utilisateur ORDER BY date DESC;");
+
+        $getList->execute();
+
+        $res = $getList->fetchAll(PDO::FETCH_ASSOC);
+
+        return $res;
+
+    }
+
 }
