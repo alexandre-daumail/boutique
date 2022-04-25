@@ -5,7 +5,7 @@ class Category extends Dbh
 {
     public function getCategories()
     {
-        $sth = $this->DbHandler()->prepare("SELECT * FROM `categories` ");
+        $sth = $this->DbHandler()->prepare("SELECT * FROM `category` ");
         $sth->execute();
         $res = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $res;

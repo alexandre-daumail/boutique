@@ -2,22 +2,27 @@
 
 $title = "Panneau Admin";
 $css = "admin";
-require('php/include/header.php');
 
-if ($_SESSION['current_session']['user']['id_droits'] != 1337) {
+require('process/header.php');
+require('classes/User.php');
+require('classes/Item.php');
+require('classes/Category.php');
+
+if ($_SESSION['current_session']['user']['id_droit'] != 1337) {
     header('Location: index.php');
     exit;
 }
 
 $user = new User();
-$article = new Item();
+$item = new Item();
 $categorie = new Category();
 
-$res1 = $user->getList();
-$articles = $article->getList();
+$user = $user->getList();
+$items = $item->getItems();
 $getCategories = $categorie->getCategories();
 
 ?>
+
 <main>
 
     <aside>
@@ -42,13 +47,13 @@ $getCategories = $categorie->getCategories();
 
             <?php
 
-            foreach ($res1 as $key => $value) {
+            foreach ($user as $array) {
 
                 echo '<tr>';
 
-                foreach ($value as $key1 => $value1) {
+                foreach ($array as $key => $value) {
 
-                    echo "<td>$value1</td>";
+                    echo "<td>$value</td>";
                 }
 
                 echo "<td>
@@ -83,19 +88,19 @@ $getCategories = $categorie->getCategories();
 
     </section>
 
-    <section class="gestion-article">
+    <section class="gestion-item">
 
-        <h1>Gestion des Articles</h1>
+        <h1>Gestion des articles</h1>
 
         <table>
 
             <?php
 
-            foreach ($articles as $key => $article) {
+            foreach ($items as $key => $item) {
 
                 echo '<tr>';
 
-                foreach ($article as $key1 => $value) {
+                foreach ($item as $key => $value) {
 
                     echo "<td>$value</td>";
                 }
@@ -103,7 +108,7 @@ $getCategories = $categorie->getCategories();
                 echo "<td>
                                 <form action='php/include/admin_process.php' method='POST'>
 
-                                <input type='text' name='id_article' value='" . $article['id'] . "' hidden>
+                                <input type='text' name='id_item' value='" . $item['id'] . "' hidden>
                                 
                                     <select name='id_categorie' id='catégorie'>
 
@@ -117,7 +122,7 @@ $getCategories = $categorie->getCategories();
                                 
                                     <button type='submit' name='modif_categorie'>Modifier la catégorie</button>
 
-                                    <button type='submit' name='delete_article'>Supprimer Article</button>
+                                    <button type='submit' name='delete_item'>Supprimer item</button>
 
                                 </form>
                                     
@@ -144,7 +149,7 @@ $getCategories = $categorie->getCategories();
 
                 echo '<tr>';
 
-                foreach ($categorie as $key1 => $value2) {
+                foreach ($categorie as $key => $value2) {
 
                     echo "<td>$value2</td>";
                 }

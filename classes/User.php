@@ -70,7 +70,7 @@ class User extends Dbh
     public function getList()
     {
 
-        $sth = $this->DbHandler()->prepare("SELECT `id`,`login`,`email`, `id_droits` FROM `utilisateurs`");
+        $sth = $this->DbHandler()->prepare("SELECT `id`,`login`,`email`, `id_droit` FROM `utilisateurs`");
         $sth->execute();
         $res = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $res;
