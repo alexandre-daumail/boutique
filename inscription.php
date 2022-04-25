@@ -4,10 +4,10 @@ $title = "Inscription";
 $css = "authenticate";
 
 require_once('process/header.php');
-require_once('process/Signup.php');
+require_once('process/signup.php');
 
 if (isset($_POST['signup']) && count($_POST) > 0) {
-    $process = Signup($_POST);
+    $process = signup($_POST);
 }
 
 ?>

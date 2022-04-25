@@ -60,6 +60,11 @@ require_once('process/profilManager.php');
 
     </section>
 
+    <aside>
+        <h6>Compte créé le : <?= $_SESSION['current_session']['user']['created_at']; ?></h6>
+        <h6>Dernière modification le : <?= $_SESSION['current_session']['user']['updated_at']; ?></h6>
+    </aside>
+
 </main>
 
 <?php require('process/footer.php'); ?>

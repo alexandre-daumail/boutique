@@ -4,7 +4,7 @@
 
     //Reçoit un array contenant les info utilisateur de l'inscription pour tenter de créer un nouvel utilisateur.
 
-    function Signup(array $data) : array
+    function signup(array $data) : array
     {
         $data = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         
