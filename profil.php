@@ -6,9 +6,6 @@ $css = "profil";
 require_once('process/header.php');
 require_once('process/profilManager.php');
 
-if (!isset($_SESSION['id'])) {
-    header('Location:index.php');
-}
 
 
 ?>
