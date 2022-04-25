@@ -3,6 +3,14 @@
 
 class Category extends Dbh
 {
+    public function getCategories()
+    {
+        $sth = $this->DbHandler()->prepare("SELECT * FROM `categories` ");
+        $sth->execute();
+        $res = $sth->fetchAll(PDO::FETCH_ASSOC);
+        return $res;
+    }
+
     //récuperer les sous catégories affiliées à leurs catégories en vue de faire un menu
     public function categoryDropdown()
     {
