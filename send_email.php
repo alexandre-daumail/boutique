@@ -53,8 +53,7 @@ if(isset($_POST)) {
         $s = htmlspecialchars_decode('&nbsp;');
 
         $mail->Subject = "Nouveau message de " . $_POST['name'];
-        $mail->Body = "Message de :&nbsp;" . $_POST['name'] . '&nbsp;' . $_POST['lname'] . '<br><br>Pour contacter cette personne :&nbsp;' . $_POST['email'] . '<br><br>' .$_POST['message'];
-        $mail->AltBody = "Ceci est un message venant de la page contact de NovaShop.";
+        $mail->Body = $_POST['object'] . "<br><br>Message de :&nbsp;" . $_POST['name'] . '&nbsp;' . $_POST['lname'] . '<br><br>Pour contacter cette personne :&nbsp;' . $_POST['email'] . '<br><br>' .$_POST['message'];
 
         $mail->send();
 
