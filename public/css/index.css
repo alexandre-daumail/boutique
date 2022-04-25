@@ -150,22 +150,7 @@
   margin-bottom: 40px;
 }
 
-.left a{
-  padding: 7px;
-  width: 80%;
-  font-size: 20px;
-  font-weight: 200;
-  margin-bottom: 20px;
-  line-height: 50px;
-  text-align: center;
-  border: 1px solid #192b4bcc;
-  border-radius: 25px;
-  background-color: #192b4bcc;
-  color: white;
-  transition: all 0.2s;
-}
-
-.card a{
+.card a , .left a{
   width: 80%;
   font-size: 20px;
   margin-bottom: 20px;

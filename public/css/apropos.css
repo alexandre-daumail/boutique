@@ -15,5 +15,7 @@ article{
 }
 main > article > ul > li {
   list-style-type: circle;
+  margin: 20px 0;
 }
+
 
