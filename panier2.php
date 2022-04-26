@@ -5,11 +5,15 @@ $css = "panier2";
 
 require('process/header.php');
 
+if(!isset($_SESSION['starname'])) {
+        header('Location:index.php');
+}
+
 ?>
 
 <main>
 
-    <h1>Votre Panier</h1>
+    <h1>Récapitulatif du certificat</h1>
 
     <div class="cart-container">
 
@@ -17,8 +21,8 @@ require('process/header.php');
 
             <div class="title">
 
-                <h2>the stars of zodiac</h2>
-                <a href="">Supprimer</a>
+                <h2>votre certificat</h2>
+                <a href="certificate.php">Modifier</a>
 
             </div>
 
@@ -40,7 +44,31 @@ require('process/header.php');
                         <div>
 
                             <h5>Prix</h5>
-                            <p>60€</p>
+                            <p>
+                                
+                            <?php
+
+                            if($_SESSION['brightness'] == "Normal"){
+                            
+                                echo "40€";
+
+                            }
+
+                            if($_SESSION['brightness'] == "Brillant"){
+                            
+                                echo "55€";
+
+                            }
+
+                            if($_SESSION['brightness'] == "Très brillant"){
+                            
+                                echo "60€";
+
+                            }
+                            
+                            ?>
+
+                            </p>
 
                         </div>
 
@@ -51,16 +79,16 @@ require('process/header.php');
                         <div>
 
                             <h5>Brillance de l'étoile</h5>
-                            <p>Normal</p>
+                            <p><?= $_SESSION['brightness'];?></p>
 
                             <h5>Nom de l'étoile</h5>
-                            <p>NovaShop</p>
+                            <p><?= $_SESSION['starname'];?></p>
 
-                            <h5>Certificat choisi</h5>
-                            <p>Design n°1</p>
+                            <h5>Design choisi</h5>
+                            <p><?= $_SESSION['support'];?></p>
 
                             <h5>Date d'enregistrement</h5>
-                            <p>10/10/10</p>
+                            <p><?php echo date('d-m-Y'); ?></p>
 
                             <h5>Constellation</h5>
                             <p>Assigné par le registre des étoiles</p>
@@ -69,8 +97,34 @@ require('process/header.php');
 
                         <div>
 
-                            <img src="public\img\CERTIFICAT.png" alt="img">
+                        <?php 
+                            
+                            if($_SESSION['support'] == "Design n°1") {
 
+                                echo '<img src="public\img\CERTIFICAT.png" alt="img">';
+
+                            }
+
+                            if($_SESSION['support'] == "Design n°2") {
+
+                                echo '<img src="public\img\certificat1.png" alt="img">';
+
+                            }
+
+                            if($_SESSION['support'] == "Design n°3") {
+
+                                echo '<img src="public\img\certificat2.png" alt="img">';
+
+                            }
+
+                            if($_SESSION['support'] == "Design n°4") {
+
+                                echo '<img src="public\img\trophe.png" alt="img">';
+
+                            }
+
+                            ?>
+                       
                         </div>
 
                     </div>
@@ -93,12 +147,36 @@ require('process/header.php');
                 <div class="total-price">
 
                     <p>40€<p>
-                    <p>60€<p>    
+                    <p>
+                        
+                    <?php
+
+                        if($_SESSION['brightness'] == "Normal"){
+                        
+                            echo "40€";
+
+                        }
+
+                        if($_SESSION['brightness'] == "Brillant"){
+                        
+                            echo "55€";
+
+                        }
+
+                        if($_SESSION['brightness'] == "Très brillant"){
+                        
+                            echo "60€";
+
+                        }
+                            
+                    ?>
+                    
+                    <p>    
                 </div>
 
             </div>
 
-            <a href="">Procéder au paiement</a>
+            <a href="">Ajouter au panier</a>
 
         </div>
 

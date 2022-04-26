@@ -114,6 +114,7 @@ label img {
   color: white;
   transition: all 0.2s;
   margin: 20px;
+  cursor:pointer;
 }
 fieldset {
   width: 85%;
@@ -137,4 +138,16 @@ h5 {
 
 #myCheckbox8 {
   height: 175px;
+}
+
+input[type=text] {
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 25px;
+    border: none;
+    background: none;
+    outline: none;
 }
