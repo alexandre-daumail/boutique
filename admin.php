@@ -25,7 +25,7 @@ $getCategories = $categorie->getCategories();
 
 <main>
 
-    <section class="gestion-user">
+    <section>
 
         <h1>Gestion des Utilisateurs</h1>
 
@@ -74,7 +74,7 @@ $getCategories = $categorie->getCategories();
 
     </section>
 
-    <section class="gestion-item">
+    <section>
 
         <h1>Gestion des articles</h1>
 
@@ -123,7 +123,7 @@ $getCategories = $categorie->getCategories();
 
     </section>
 
-    <section class="gestion-cat">
+    <section>
 
         <h1>Gestion des Catégories</h1>
 

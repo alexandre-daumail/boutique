@@ -21,7 +21,7 @@ main {
     font-size: 25px;
   }
   
-  .gestion-user{
+  section{
     padding: 15px;
     margin: 20px;
     height: fit-content;
@@ -35,42 +35,6 @@ main {
     align-content: center;
     align-items: center;
   }
-  .gestion-article{
-    padding: 15px;
-    margin: 20px;
-    height: fit-content;
-    width: fit-content;
-    /* border-radius: 20px; */
-    box-shadow: 16px -14px 5px 0px rgb(76 76 84 / 20%);
-    background-color: #3181c5bf;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .gestion-cat{
-    padding: 15px;
-    margin: 20px;
-    height: fit-content;
-    width: fit-content;
-    /* border-radius: 20px; */
-    box-shadow: 16px -14px 5px 0px rgb(76 76 84 / 20%);
-    background-color: #3181c5bf;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .gestion-com{
-    padding: 15px;
-    margin: 20px;
-    height: fit-content;
-    width: fit-content;
-    /* border-radius: 20px; */
-    box-shadow: 16px -14px 5px 0px rgb(76 76 84 / 20%);
-    background-color: #3181c5bf;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
   p {
     text-align: left;
     margin: 10px;
@@ -83,8 +47,8 @@ main {
     flex-direction: column;
     justify-content: center;
   }
-  table,
-  td {
+
+  table,  td {
     color: white;
     padding: 5px;
     margin: 5px;
