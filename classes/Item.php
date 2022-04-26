@@ -6,11 +6,11 @@ class Item extends Dbh
     public function getItems()
     {
 
-        $sth = $this->DbHandler()->prepare("SELECT * FROM items ORDER BY id ASC");
+        $sth = $this->DbHandler()->prepare("SELECT items.id, items.name,     items.price, items.image, items.code, sub_category.sub_category_name FROM items INNER JOIN sub_category ON sub_category.id = items.subcategory_id ORDER BY sub_category.sub_category_name ASC;");
 
         $sth->execute();
 
-        $itemArray= $sth->fetchAll();
+        $itemArray= $sth->fetchAll(PDO::FETCH_ASSOC);
 
         return $itemArray;       
         
@@ -84,7 +84,7 @@ class Item extends Dbh
 
     public function getList()
     {
-        $getList = $this->DbHandler()->prepare("SELECT articles.id, articles.titre, articles.date, utilisateurs.login, articles.id_categorie FROM items INNER JOIN utilisateurs on utilisateurs.id = articles.id_utilisateur ORDER BY date DESC;");
+        $getList = $this->DbHandler()->prepare("SELECT items.id, items.name, items.description, items, items.id_categorie FROM items INNER JOIN utilisateurs ON utilisateurs.id = articles.id_utilisateur;");
 
         $getList->execute();
 
