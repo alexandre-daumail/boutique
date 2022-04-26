@@ -7,6 +7,7 @@ require('process/header.php');
 require('classes/User.php');
 require('classes/Item.php');
 require('classes/Category.php');
+require('classes/SubCategory.php');
 
 if ($_SESSION['current_session']['user']['id_droit'] != 1337) {
     header('Location: index.php');
@@ -16,10 +17,12 @@ if ($_SESSION['current_session']['user']['id_droit'] != 1337) {
 $user = new User();
 $item = new Item();
 $categorie = new Category();
+$SubCategorie = new SubCategory();
 
 $res1 = $user->getList();
 $items = $item->getItems();
 $getCategories = $categorie->getCategories();
+$getSubCategories = $SubCategorie->getSubCategories();
 
 ?>
 
@@ -157,6 +160,69 @@ $getCategories = $categorie->getCategories();
                                 <form action='php/include/admin_process.php' method='POST'>
 
                                     <input type='text' name='id_categorie' value='" . $categorie['id'] . "' hidden>
+                                
+                                </form>    
+                            </td>
+
+
+                        </tr>";
+            }
+
+            ?>
+
+        </table>
+
+        <div class="categ">
+
+            <h3>Nouvelle Catégorie</h3>
+
+            <form action='php/include/admin_process.php' method='POST' class='new-categ'>
+
+                <label for="new_categ">Titre de la Nouvelle Catégorie</label>
+                <input type="text" name="titre_new_categ" id="new_categ">
+
+                <button type="submit" name="new_categorie">Nouvelle Catégorie</button>
+
+            </form>
+
+        </div>
+
+    </section>
+    <section>
+
+        <h1>Gestion des Sous-Catégories</h1>
+
+        <table>
+
+            <?php
+
+            foreach ($getSubCategories as $key => $array) {
+
+                echo '<tr>';
+
+                foreach ($array as $key => $value2) {
+
+                    echo "<td>$value2</td>";
+                }
+
+                echo "<td>
+
+                                <form action='php/include/admin_process.php' method='POST'>
+
+                                    <input type='text' name='id_categorie' value='" . $array['id'] . "' hidden>
+
+                                    <button type='submit' name='delete_categorie'>Modifier sous-catégorie</button>
+                                    <button type='submit' name='delete_categorie'>Supprimer sous-catégorie</button>
+
+                                </form>
+                                    
+                            </td>
+
+                            <td>
+
+                                <form action='php/include/admin_process.php' method='POST'>
+
+                                    <input type='text' name='id_sub_categorie' value='" . $array['id'] . "' hidden>
                                 
                                 </form>    
                             </td>
