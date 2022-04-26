@@ -58,6 +58,8 @@ if (isset($_POST['submit']) && !empty($_POST)) {
 } else if (isset($_POST['delete'])) {
 
     $info->deleteUser($_SESSION['current_session']['user']['id']);
+    session_destroy();
+    header('location: index.php');
 
 }
 

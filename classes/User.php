@@ -70,7 +70,7 @@ class User extends Dbh
     public function getList()
     {
 
-        $sth = $this->DbHandler()->prepare("SELECT `id`,`login`,`email`, `id_droit` FROM `utilisateurs`");
+        $sth = $this->DbHandler()->prepare("SELECT `id`,`login`,`email`, `id_droit` FROM `utilisateurs` WHERE status = 1");
         $sth->execute();
         $res = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $res;
@@ -111,15 +111,12 @@ class User extends Dbh
     public function deleteUser($id)
     {
 
-        $sth = $this->DbHandler()->prepare("UPDATE `utilisateurs` SET `login` = 'Utilisateur supprimé', `password` = :pwd, status = 0 WHERE id = :id");
+        $sth = $this->DbHandler()->prepare("UPDATE `utilisateurs` SET `login` = 'Utilisateur supprimé', prénom = 'Utilisateur supprimé', nom = 'N/C', email = 'N/C', `password` = :pwd, status = 0 WHERE id = :id");
         $sth->execute([
             ':id' => $id,
             ':pwd' => password_hash("adminadmin", PASSWORD_DEFAULT)
         ]);
 
-        session_destroy();
-        header('location: index.php');
-        exit;
     }
 
     // Modifier les droits d'un utilisateur
