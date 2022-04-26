@@ -6,7 +6,7 @@ class Item extends Dbh
     public function getItems()
     {
 
-        $sth = $this->DbHandler()->prepare("SELECT items.id, items.name,     items.price, items.image, items.code, sub_category.sub_category_name FROM items INNER JOIN sub_category ON sub_category.id = items.subcategory_id ORDER BY sub_category.sub_category_name ASC;");
+        $sth = $this->DbHandler()->prepare("SELECT items.id, items.name,     items.price, items.image, items.code, sub_category.sub_category_name FROM items INNER JOIN sub_category ON sub_category.id = items.sub_category_id ORDER BY sub_category.sub_category_name ASC;");
 
         $sth->execute();
 
@@ -18,7 +18,7 @@ class Item extends Dbh
 
     public function getItemsbyCategory($id_category)
     {
-        $sth = $this->DbHandler()->prepare("SELECT items.name, items.description, items.price, items.image, items.code, category.category_name FROM items INNER JOIN sub_category ON sub_category.id = items.subcategory_id INNER JOIN category ON category.id = sub_category.category_id WHERE category.id = :id_category;");
+        $sth = $this->DbHandler()->prepare("SELECT items.name, items.description, items.price, items.image, items.code, category.category_name FROM items INNER JOIN sub_category ON sub_category.id = items.sub_category_id INNER JOIN category ON category.id = sub_category.category_id WHERE category.id = :id_category;");
 
         $sth->execute([':id_category' => $id_category]);
 
@@ -29,7 +29,7 @@ class Item extends Dbh
 
     public function getItemsbySubCategory($id_sub_category)
     {
-        $sth = $this->DbHandler()->prepare("SELECT items.name, items.description, items.price, items.image, items.code, sub_category.sub_category_name FROM items INNER JOIN sub_category ON sub_category.id = items.subcategory_id WHERE sub_category.id = :id_sub_category;");
+        $sth = $this->DbHandler()->prepare("SELECT items.name, items.description, items.price, items.image, items.code, sub_category.sub_category_name FROM items INNER JOIN sub_category ON sub_category.id = items.sub_category_id WHERE sub_category.id = :id_sub_category;");
 
         $sth->execute([':id_sub_category' => $id_sub_category]);
 
@@ -93,5 +93,18 @@ class Item extends Dbh
         return $res;
 
     }
+
+    public function setSubCategorie( $id_sub_categorie,$id_article)
+    {
+        $sth=$this->DbHandler()->prepare("UPDATE items SET sub_category_id = :sub_categorie WHERE id = :id ");
+        $sth->execute(array(':sub_categorie' => $id_sub_categorie, ':id' => $id_article));
+    }
+
+    public function deleteItem($id_article)
+    {
+        $sth=$this->DbHandler()->prepare("DELETE FROM `items` WHERE id = :id");
+        $sth->execute([':id' => $id_article]);
+    }
+
 
 }

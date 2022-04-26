@@ -111,11 +111,11 @@ require('process/adminProcess.php');
                 }
 
                 echo "<td>
-                                <form action='process/adminProcess.php' method='POST'>
+                                <form action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "' method='POST'>
 
                                 <input type='text' name='id_item' value='" . $item['id'] . "' hidden>
                                 
-                                    <select name='id_categorie' id='catégorie'>
+                                    <select name='id_sub_categorie' id='sub_catégorie'>
 
                                         <option>- Sous-Catégorie -</option>";
                 foreach ($getSubCategories as $key => $value) {

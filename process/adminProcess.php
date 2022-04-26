@@ -10,7 +10,7 @@ if (isset($_POST) && !empty($_POST)) {
         if ($_POST['id'] != $_SESSION['current_session']['user']['id'] && $_POST['id'] != 0) {
             
             $res1 = $user->deleteUser($_POST['id']);
-            $_SESSION['success'] = "<h6>Utilisateur supprimé</h6>";
+            header('location: admin.php');
             break;
 
         } else {
@@ -37,14 +37,20 @@ if (isset($_POST) && !empty($_POST)) {
 
         break;
 
-    // Modification de la catégorie d'un article
+    // Modification de la sous-catégorie d'un article
     case isset($_POST['modif_categorie']);
         
-        $article->setCategorie($_POST['id_categorie'], $_POST['id_article']);
-        $_SESSION['success'] = "Modification réussie";
-        header(('location: ../../admin.php'));
+        $item->setSubCategorie($_POST['id_sub_categorie'], $_POST['id_item']);
+        header('location: admin.php');
+
         break;
 
+    // Suppression d'un article
+    case isset($_POST['delete_item']);
+
+        $item->deleteItem($_POST['id_item']);
+        header('location: admin.php');
+        break;
 
     // Nouvelle Catégorie
     case isset($_POST['new_categorie']):
@@ -53,13 +59,7 @@ if (isset($_POST) && !empty($_POST)) {
         header('location: ../../admin.php');
         break;
 
-    // Suppression d'un article
-    case isset($_POST['delete_article']);
-
-    $article->deleteArticle($_POST['id_article']);
-    $_SESSION['success'] = "Article supprimé";
-    header(('location: ../../admin.php'));
-    break;
+    
 
     // Suppression d'une catégorie
     case isset($_POST['delete_categorie']);
@@ -72,4 +72,3 @@ if (isset($_POST) && !empty($_POST)) {
     
 }
 }
-?>
