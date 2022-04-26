@@ -52,7 +52,6 @@ $getCategories = $categorie->getCategories();
 
                     <option>- Droits -</option>
                     <option value='1'>Utilisateurs</option>
-                    <option value='42'>Modérateur</option>
                     <option value='1337'>Admin</option>
 
                 </select>
