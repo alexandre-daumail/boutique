@@ -8,6 +8,7 @@ require('classes/User.php');
 require('classes/Item.php');
 require('classes/Category.php');
 require('classes/SubCategory.php');
+require('process/adminProcess.php');
 
 if ($_SESSION['current_session']['user']['id_droit'] != 1337) {
     header('Location: index.php');
@@ -28,6 +29,21 @@ $getSubCategories = $SubCategorie->getSubCategories();
 
 <main>
 
+    <aside>
+        <?php
+        if (isset($_SESSION["error"])) {
+            echo $_SESSION["error"];
+            unset($_SESSION["error"]);
+        }
+
+        if (isset($_SESSION["success"])) {
+            echo $_SESSION["success"];
+            unset($_SESSION["success"]);
+        }
+        ?>
+    </aside>
+
+
     <section>
 
         <h1>Gestion des Utilisateurs</h1>
@@ -47,7 +63,7 @@ $getSubCategories = $SubCategorie->getSubCategories();
 
                 echo "<td>
 
-            <form action='php/include/admin_process.php' method='POST'>
+            <form action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "' method='POST'>
 
                 <input type='text' name='id' value='" . $value['id'] . "' hidden>
 
@@ -94,16 +110,16 @@ $getSubCategories = $SubCategorie->getSubCategories();
                 }
 
                 echo "<td>
-                                <form action='php/include/admin_process.php' method='POST'>
+                                <form action='process/adminProcess.php' method='POST'>
 
                                 <input type='text' name='id_item' value='" . $item['id'] . "' hidden>
                                 
                                     <select name='id_categorie' id='catégorie'>
 
-                                        <option>- Catégorie -</option>";
-                foreach ($getCategories as $index => $categorie) {
+                                        <option>- Sous-Catégorie -</option>";
+                foreach ($getSubCategories as $key => $value) {
 
-                    echo "<option value = '" . $categorie['id'] . "'> - " . $categorie['id'] . " - " . $categorie['nom'] . "</option>";
+                    echo "<option value = '" . $value['id'] . "'> - " . $value['id'] . " - " . $value['sub_category_name'] . "</option>";
                 }
 
                 echo "</select>
@@ -144,7 +160,7 @@ $getSubCategories = $SubCategorie->getSubCategories();
 
                 echo "<td>
 
-                                <form action='php/include/admin_process.php' method='POST'>
+                                <form action='process/adminProcess.php' method='POST'>
 
                                     <input type='text' name='id_categorie' value='" . $categorie['id'] . "' hidden>
 
@@ -157,7 +173,7 @@ $getSubCategories = $SubCategorie->getSubCategories();
 
                             <td>
 
-                                <form action='php/include/admin_process.php' method='POST'>
+                                <form action='process/adminProcess.php' method='POST'>
 
                                     <input type='text' name='id_categorie' value='" . $categorie['id'] . "' hidden>
                                 
@@ -176,7 +192,7 @@ $getSubCategories = $SubCategorie->getSubCategories();
 
             <h3>Nouvelle Catégorie</h3>
 
-            <form action='php/include/admin_process.php' method='POST' class='new-categ'>
+            <form action='process/adminProcess.php' method='POST' class='new-categ'>
 
                 <label for="new_categ">Titre de la Nouvelle Catégorie</label>
                 <input type="text" name="titre_new_categ" id="new_categ">
@@ -207,7 +223,7 @@ $getSubCategories = $SubCategorie->getSubCategories();
 
                 echo "<td>
 
-                                <form action='php/include/admin_process.php' method='POST'>
+                                <form action='process/adminProcess.php' method='POST'>
 
                                     <input type='text' name='id_categorie' value='" . $array['id'] . "' hidden>
 
@@ -220,7 +236,7 @@ $getSubCategories = $SubCategorie->getSubCategories();
 
                             <td>
 
-                                <form action='php/include/admin_process.php' method='POST'>
+                                <form action='process/admin_process.php' method='POST'>
 
                                     <input type='text' name='id_sub_categorie' value='" . $array['id'] . "' hidden>
                                 
@@ -239,7 +255,7 @@ $getSubCategories = $SubCategorie->getSubCategories();
 
             <h3>Nouvelle Catégorie</h3>
 
-            <form action='php/include/admin_process.php' method='POST' class='new-categ'>
+            <form action='process/admin_process.php' method='POST' class='new-categ'>
 
                 <label for="new_categ">Titre de la Nouvelle Catégorie</label>
                 <input type="text" name="titre_new_categ" id="new_categ">
