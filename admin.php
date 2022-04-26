@@ -97,6 +97,8 @@ require('process/adminProcess.php');
 
         <h1>Gestion des articles</h1>
 
+        <h3><a href="addItem.php">Ajouter</a>un article à la boutique</h3>
+
         <table>
 
             <?php
