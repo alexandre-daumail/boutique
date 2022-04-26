@@ -6,11 +6,11 @@ class Item extends Dbh
     public function getItems()
     {
 
-        $sth = $this->DbHandler()->prepare("SELECT items.id, items.name, items.description, items.price, items.image, items.code, sub_category.sub_category_name FROM items INNER JOIN sub_category ON sub_category.id = items.subcategory_id ORDER BY sub_category.sub_category_name DESC;");
+        $sth = $this->DbHandler()->prepare("SELECT items.id, items.name,     items.price, items.image, items.code, sub_category.sub_category_name FROM items INNER JOIN sub_category ON sub_category.id = items.subcategory_id ORDER BY sub_category.sub_category_name DESC;");
 
         $sth->execute();
 
-        $itemArray= $sth->fetchAll();
+        $itemArray= $sth->fetchAll(PDO::FETCH_ASSOC);
 
         return $itemArray;       
         
