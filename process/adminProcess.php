@@ -1,7 +1,7 @@
 <?php
-if (isset($_POST['submit']) && !empty($_POST)) {
+if (isset($_POST) && !empty($_POST)) {
 
-switch ($_POST) {
+    switch ($_POST) {
 
     // Suppression d'utilisateur
     case isset($_POST['delete_user']):
@@ -25,10 +25,9 @@ switch ($_POST) {
     case isset($_POST['modif_droit']);
 
         // Vérification que l'utilisateur en question n'est pas l'admin connecté
-        if ($_POST['id'] != $_SESSION['id']) {
+        if ($_POST['id'] != $_SESSION['current_session']['user']['id']) {
 
             $user->setDroit($_POST['select-droits'], $_POST['id']);
-            header('location: ../../index.php');
             
         } else {
 

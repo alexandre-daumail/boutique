@@ -126,10 +126,10 @@ class User extends Dbh
     public function setDroit($id_droit, $id_utilisateur)
     {
 
-        $set = $this->DbHandler()->prepare("UPDATE utilisateurs SET id_droits = :id_droit WHERE id = :id ;");
+        $set = $this->DbHandler()->prepare("UPDATE utilisateurs SET id_droit = :id_droit WHERE id = :id ;");
 
         $res = $set->execute(array(':id_droit' => $id_droit, ':id' => $id_utilisateur));
 
-        header("location:../../admin.php");
+        header("location:admin.php?success");
     }
 }

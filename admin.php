@@ -5,10 +5,10 @@ $css = "admin";
 
 require('process/header.php');
 require('classes/User.php');
+require('classes/Droits.php');
 require('classes/Item.php');
 require('classes/Category.php');
 require('classes/SubCategory.php');
-require('process/adminProcess.php');
 
 if ($_SESSION['current_session']['user']['id_droit'] != 1337) {
     header('Location: index.php');
@@ -25,6 +25,7 @@ $items = $item->getItems();
 $getCategories = $categorie->getCategories();
 $getSubCategories = $SubCategorie->getSubCategories();
 
+require('process/adminProcess.php');
 ?>
 
 <main>
