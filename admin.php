@@ -17,27 +17,13 @@ $user = new User();
 $item = new Item();
 $categorie = new Category();
 
-$user = $user->getList();
+$res1 = $user->getList();
 $items = $item->getItems();
 $getCategories = $categorie->getCategories();
 
 ?>
 
 <main>
-
-    <aside>
-        <?php
-        if (isset($_SESSION["error"])) {
-            echo $_SESSION["error"];
-            unset($_SESSION["error"]);
-        }
-
-        if (isset($_SESSION["success"])) {
-            echo $_SESSION["success"];
-            unset($_SESSION["success"]);
-        }
-        ?>
-    </aside>
 
     <section class="gestion-user">
 
@@ -47,37 +33,37 @@ $getCategories = $categorie->getCategories();
 
             <?php
 
-            foreach ($user as $array) {
+            foreach ($res1 as $key => $value) {
 
                 echo '<tr>';
 
-                foreach ($array as $key => $value) {
+                foreach ($value as $key1 => $value1) {
 
-                    echo "<td>$value</td>";
+                    echo "<td>$value1</td>";
                 }
 
                 echo "<td>
 
-                                <form action='php/include/admin_process.php' method='POST'>
+            <form action='php/include/admin_process.php' method='POST'>
 
-                                    <input type='text' name='id' value='" . $value['id'] . "' hidden>
+                <input type='text' name='id' value='" . $value['id'] . "' hidden>
 
-                                    <select name='select-droits' id='select-droitd'>
+                <select name='select-droits' id='select-droitd'>
 
-                                        <option>- Droits -</option>
-                                        <option value='1'>Utilisateurs</option>
-                                        <option value='42'>Modérateur</option>
-                                        <option value='1337'>Admin</option>
+                    <option>- Droits -</option>
+                    <option value='1'>Utilisateurs</option>
+                    <option value='42'>Modérateur</option>
+                    <option value='1337'>Admin</option>
 
-                                    </select>
-                                
-                                    <button type='submit' name='modif_droit'>Modifier les Droits</button>
+                </select>
+            
+                <button type='submit' name='modif_droit'>Modifier les Droits</button>
 
-                                    <button type='submit' name='delete_user'>Supprimer</button>
+                <button type='submit' name='delete_user'>Supprimer</button>
 
-                                </form>
-                                    
-                            </td>";
+            </form>
+                
+        </td>";
 
                 echo '</tr>';
             }
@@ -203,4 +189,4 @@ $getCategories = $categorie->getCategories();
 
 </main>
 
-<?php require 'php/include/footer.php'; ?>
+<?php require 'process/footer.php'; ?>
