@@ -53,22 +53,45 @@ if (isset($_POST) && !empty($_POST)) {
         break;
 
     // Nouvelle Catégorie
-    case isset($_POST['new_categorie']):
+    case isset($_POST['new_category']):
         
-        $categorie->createCategories($_POST['titre_new_categ']);
-        header('location: ../../admin.php');
+        $categorie-> newCategory($_POST['category_name']);
+        header('location: admin.php');
         break;
 
-    
+    // Modification d'une catégorie
+    case isset($_POST['update_categorie']);
+
+        $categorie->setCategory($_POST['id'], $_POST['category_name']);
+        header(('location: admin.php'));
+        break;
 
     // Suppression d'une catégorie
     case isset($_POST['delete_categorie']);
 
-    $categorie->deleteCategorie($_POST['id_categorie']);
-    $_SESSION['success'] = "Catégorie supprimée";
-    header(('location: ../../admin.php'));
-    break;
+        $categorie->deleteCategory($_POST['id']);
+        header(('location: admin.php'));
+        break;
 
-    
+    // Nouvelle Sous-Catégorie
+    case isset($_POST['new_sub_category']):
+        
+       $SubCategorie->createCategories($_POST['titre_new_sub_categ']);
+        header('location: admin.php');
+        break;
+
+    // Modification d'une sous-catégorie
+    case isset($_POST['update_sub_categorie']);
+
+       $SubCategorie->setSubCategory($_POST['id'], $_POST['sub_category_name']);
+        header(('location: admin.php'));
+        break;
+
+    // Suppression d'une sous-catégorie
+    case isset($_POST['delete_sub_categorie']);
+
+       $SubCategorie->deleteSubCategory($_POST['id']);
+        header(('location: admin.php'));
+        break;
 }
 }

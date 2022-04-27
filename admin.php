@@ -4,11 +4,6 @@ $title = "Panneau Admin";
 $css = "admin";
 
 require('process/header.php');
-require('classes/User.php');
-require('classes/Droits.php');
-require('classes/Item.php');
-require('classes/Category.php');
-require('classes/SubCategory.php');
 
 if ($_SESSION['current_session']['user']['id_droit'] != 1337) {
     header('Location: index.php');
@@ -97,7 +92,7 @@ require('process/adminProcess.php');
 
         <h1>Gestion des articles</h1>
 
-        <h3><a href="addItem.php">Ajouter</a>un article à la boutique</h3>
+        <h3><a href="addItem.php">Ajouter </a>un article à la boutique</h3>
 
         <table>
 
@@ -163,12 +158,14 @@ require('process/adminProcess.php');
 
                 echo "<td>
 
-                                <form action='process/adminProcess.php' method='POST'>
+                                <form action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "' method='POST'>
 
-                                    <input type='text' name='id_categorie' value='" . $categorie['id'] . "' hidden>
+                                    <input type='text' name='id' value='" . $categorie['id'] . "' hidden>
 
-                                    <button type='submit' name='delete_categorie'>Modifier Catégorie</button>
-                                    <button type='submit' name='delete_categorie'>Supprimer Catégorie</button>
+                                    <input type='text' name='category_name' placeholder='Modifier catégorie'>
+
+                                    <button type='submit' name='update_categorie'>Modifier</button>
+                                    <button type='submit' name='delete_categorie'>Supprimer</button>
 
                                 </form>
                                     
@@ -195,12 +192,12 @@ require('process/adminProcess.php');
 
             <h3>Nouvelle Catégorie</h3>
 
-            <form action='process/adminProcess.php' method='POST' class='new-categ'>
+            <form action='<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>' method='POST' class='new-categ'>
 
                 <label for="new_categ">Titre de la Nouvelle Catégorie</label>
-                <input type="text" name="titre_new_categ" id="new_categ">
+                <input id="new_categ" type="text" name="category_name" placeholder="Nom catégorie">
 
-                <button type="submit" name="new_categorie">Nouvelle Catégorie</button>
+                <button type="submit" name="new_category">Nouvelle Catégorie</button>
 
             </form>
 
@@ -215,39 +212,31 @@ require('process/adminProcess.php');
 
             <?php
 
-            foreach ($getSubCategories as $key => $array) {
+            foreach ($getSubCategories as $key => $subCategory) {
 
                 echo '<tr>';
 
-                foreach ($array as $key => $value2) {
+                foreach ($subCategory as $key => $value) {
 
-                    echo "<td>$value2</td>";
+                    echo "<td>$value</td>";
                 }
 
                 echo "<td>
 
-                                <form action='process/adminProcess.php' method='POST'>
+                    <form action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "' method='POST'>
 
-                                    <input type='text' name='id_categorie' value='" . $array['id'] . "' hidden>
+                        <input type='text' name='id' value='" . $subCategory['id'] . "' hidden>
 
-                                    <button type='submit' name='delete_categorie'>Modifier sous-catégorie</button>
-                                    <button type='submit' name='delete_categorie'>Supprimer sous-catégorie</button>
+                        <input type='text' name='sub_category_name' placeholder='Modifier sous-catégorie'>
 
-                                </form>
-                                    
-                            </td>
+                        <button type='submit' name='update_sub_categorie'>Modifier</button>
+                        <button type='submit' name='delete_sub_categorie'>Supprimer</button>
 
-                            <td>
+                    </form>
+                        
+                </td>
 
-                                <form action='process/admin_process.php' method='POST'>
-
-                                    <input type='text' name='id_sub_categorie' value='" . $array['id'] . "' hidden>
-                                
-                                </form>    
-                            </td>
-
-
-                        </tr>";
+            </tr>";
             }
 
             ?>
