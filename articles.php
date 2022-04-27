@@ -4,8 +4,6 @@ $title = "Articles";
 $css = "articles";
 
 require('process/header.php');
-require('classes/Item.php');
-require('classes/Category.php');
 
 $item = new Item();
 $category = new Category();
