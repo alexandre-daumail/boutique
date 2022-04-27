@@ -76,21 +76,21 @@ if (isset($_POST) && !empty($_POST)) {
     // Nouvelle Sous-Catégorie
     case isset($_POST['new_sub_category']):
         
-       $SubCategorie->createCategories($_POST['titre_new_sub_categ']);
+        $subCategorie->newSubCategory($_POST['name'], $_POST['category_id'] );
         header('location: admin.php');
         break;
 
     // Modification d'une sous-catégorie
     case isset($_POST['update_sub_categorie']);
 
-       $SubCategorie->setSubCategory($_POST['id'], $_POST['sub_category_name']);
+        $subCategorie->setSubCategory($_POST['id'], $_POST['sub_category_name']);
         header(('location: admin.php'));
         break;
 
     // Suppression d'une sous-catégorie
     case isset($_POST['delete_sub_categorie']);
 
-       $SubCategorie->deleteSubCategory($_POST['id']);
+        $subCategorie->deleteSubCategory($_POST['id']);
         header(('location: admin.php'));
         break;
 }

@@ -19,6 +19,13 @@ class SubCategory extends Dbh
         return $result;
     }
 
+    public function newSubCategory ($name, $category_id) {
+
+        $query = $this->DbHandler()->prepare("INSERT INTO `sub_category` ( `sub_category_name`, `category_id`) VALUES (:name, :category_id);");
+        $query->execute([":name" => $name, ':category_id' => $category_id]);
+    
+    }
+
     public function setSubCategory ($id, $sub_category_name) {
 
         $query = $this->DbHandler()->prepare("UPDATE `sub_category` SET `sub_category_name` = :sub_category_name WHERE `sub_category`.`id` = :id;");

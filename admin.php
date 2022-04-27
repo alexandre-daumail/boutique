@@ -13,13 +13,12 @@ if ($_SESSION['current_session']['user']['id_droit'] != 1337) {
 $user = new User();
 $item = new Item();
 $categorie = new Category();
-$SubCategorie = new SubCategory();
+$subCategorie = new SubCategory();
 
 $res1 = $user->getList();
 $items = $item->getItems();
 $getCategories = $categorie->getCategories();
-$getSubCategories = $SubCategorie->getSubCategories();
-
+$getSubCategories = $subCategorie->getSubCategories();
 require('process/adminProcess.php');
 ?>
 
@@ -245,14 +244,28 @@ require('process/adminProcess.php');
 
         <div class="categ">
 
-            <h3>Nouvelle Catégorie</h3>
+            <form action='<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>' method='POST' class='new-categ'>
 
-            <form action='process/admin_process.php' method='POST' class='new-categ'>
+                <label for="new_categ">Création de Sous-Catégorie</label>
+                <input id="new_categ" type="text" name="name" placeholder="Entrez un nom" required>
 
-                <label for="new_categ">Titre de la Nouvelle Catégorie</label>
-                <input type="text" name="titre_new_categ" id="new_categ">
+                <select name='category_id' required>
 
-                <button type="submit" name="new_categorie">Nouvelle Catégorie</button>
+                    <option>- Sélectionner la catégorie -</option>
+                    
+                    <?php
+
+                        foreach ($getCategories as $key => $category) {
+
+                                echo "<option value='" . $category['id'] . "'> - " . $category['id'] . " - " . $category['category_name'] . "</option>";
+
+                        }
+
+                    ?>
+
+                </select>
+
+                <button type="submit" name="new_sub_category">Ajouter la sous-catégorie</button>
 
             </form>
 
