@@ -72,7 +72,7 @@ main img {
 
 .total-container {
     display: flex;
-    margin: 50px;
+    margin: 50px 16px;
 }
 
 .total-container p {
@@ -81,8 +81,8 @@ main img {
 }
 
 .big-container a {
+    margin: 50px;
     padding: 10px;
-    margin: 90px;
     font-size: 25px;
     border: 2px solid white;
     border-radius: 25px;

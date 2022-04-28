@@ -139,14 +139,12 @@ if(!isset($_SESSION['starname'])) {
 
                 <div class="total">
 
-                    <p>Sous-total<p>
                     <p>Total<p>  
                         
                 </div>
 
                 <div class="total-price">
 
-                    <p>40€<p>
                     <p>
                         
                     <?php
