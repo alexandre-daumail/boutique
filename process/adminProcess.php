@@ -66,13 +66,6 @@ if (isset($_POST) && !empty($_POST)) {
         header(('location: admin.php'));
         break;
 
-    // Suppression d'une catégorie
-    case isset($_POST['delete_categorie']);
-
-        $categorie->deleteCategory($_POST['id']);
-        header(('location: admin.php'));
-        break;
-
     // Nouvelle Sous-Catégorie
     case isset($_POST['new_sub_category']):
         
@@ -84,13 +77,6 @@ if (isset($_POST) && !empty($_POST)) {
     case isset($_POST['update_sub_categorie']);
 
         $subCategorie->setSubCategory($_POST['id'], $_POST['sub_category_name']);
-        header(('location: admin.php'));
-        break;
-
-    // Suppression d'une sous-catégorie
-    case isset($_POST['delete_sub_categorie']);
-
-        $subCategorie->deleteSubCategory($_POST['id']);
         header(('location: admin.php'));
         break;
 }

@@ -63,8 +63,10 @@ class Category extends Dbh
     // Supprimer la catégorie sélectionnée
     public function deleteCategory($id_categorie)
     {
-        $sth=$this->DbHandler()->prepare("DELETE FROM `category` WHERE `category`.`id` = :id");
-        $sth->execute(array(':id' => $id_categorie));
+        $sth = $this->DbHandler()->prepare("DELETE FROM category WHERE category.id = :id; 
+        DELETE FROM sub_category WHERE sub_category.category_id = :id;
+        DELETE items FROM items INNER JOIN sub_category ON items.sub_category_id = sub_category.id WHERE sub_category.category_id = :id;");
+        $sth->execute([':id' => $id_categorie]);
     }
     
 }

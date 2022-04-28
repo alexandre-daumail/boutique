@@ -157,30 +157,26 @@ require('process/adminProcess.php');
 
                 echo "<td>
 
-                                <form action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "' method='POST'>
+                    <form action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "' method='POST'>
 
-                                    <input type='text' name='id' value='" . $categorie['id'] . "' hidden>
+                        <input type='text' name='id' value='" . $categorie['id'] . "' hidden>
 
-                                    <input type='text' name='category_name' placeholder='Modifier catégorie'>
+                        <input type='text' name='category_name' placeholder='Modifier catégorie'>
 
-                                    <button type='submit' name='update_categorie'>Modifier</button>
-                                    <button type='submit' name='delete_categorie'>Supprimer</button>
+                        <button type='submit' name='update_categorie'>Modifier</button>
+                    </form>
 
-                                </form>
-                                    
-                            </td>
+                    <form action='deleteCat.php' method='POST'>
 
-                            <td>
+                        <input type='text' name='id' value='" . $categorie['id'] . "' hidden>
 
-                                <form action='process/adminProcess.php' method='POST'>
+                        <button type='submit' name='delete_categorie'>Supprimer</button>
 
-                                    <input type='text' name='id_categorie' value='" . $categorie['id'] . "' hidden>
-                                
-                                </form>    
-                            </td>
+                    </form>
+                        
+                </td>
 
-
-                        </tr>";
+                </tr>";
             }
 
             ?>
@@ -222,16 +218,23 @@ require('process/adminProcess.php');
 
                 echo "<td>
 
-                    <form action='deleteCat.php' method='POST'>
+                <form action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "' method='POST'>
 
-                        <input type='text' name='id' value='" . $subCategory['id'] . "' hidden>
+                    <input type='text' name='id' value='" . $subCategory['id'] . "' hidden>
+                    
+                    <input type='text' name='sub_category_name' placeholder='Modifier sous-catégorie'>
+                
+                    <button type='submit' name='update_sub_categorie'>Modifier</button>
 
-                        <input type='text' name='sub_category_name' placeholder='Modifier sous-catégorie'>
+                </form>
 
-                        <button type='submit' name='update_sub_categorie'>Modifier</button>
-                        <button type='submit' name='delete_sub_categorie'>Supprimer</button>
+                <form action='deleteSubCat.php' method='POST'>
 
-                    </form>
+                    <input type='text' name='id' value='" . $subCategory['id'] . "' hidden>
+
+                    <button type='submit' name='delete'>Supprimer</button>
+
+                </form>
                         
                 </td>
 
@@ -252,14 +255,13 @@ require('process/adminProcess.php');
                 <select name='category_id' required>
 
                     <option>- Sélectionner la catégorie -</option>
-                    
+
                     <?php
 
-                        foreach ($getCategories as $key => $category) {
+                    foreach ($getCategories as $key => $category) {
 
-                                echo "<option value='" . $category['id'] . "'> - " . $category['id'] . " - " . $category['category_name'] . "</option>";
-
-                        }
+                        echo "<option value='" . $category['id'] . "'> - " . $category['id'] . " - " . $category['category_name'] . "</option>";
+                    }
 
                     ?>
 
