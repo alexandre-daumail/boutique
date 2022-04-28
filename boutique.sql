@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : jeu. 21 avr. 2022 à 17:57
--- Version du serveur : 10.4.22-MariaDB
--- Version de PHP : 8.1.2
+-- Hôte : 127.0.0.1:3306
+-- Généré le : jeu. 28 avr. 2022 à 12:01
+-- Version du serveur :  5.7.31
+-- Version de PHP : 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,10 +27,12 @@ SET time_zone = "+00:00";
 -- Structure de la table `category`
 --
 
-CREATE TABLE `category` (
-  `id` int(11) NOT NULL,
-  `category_name` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+DROP TABLE IF EXISTS `category`;
+CREATE TABLE IF NOT EXISTS `category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `category_name` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `category`
@@ -42,7 +44,7 @@ INSERT INTO `category` (`id`, `category_name`) VALUES
 (4, 'Jouets'),
 (5, 'Collections'),
 (6, 'Livres'),
-(7, 'Gourmandises');
+(7, 'Consommables');
 
 -- --------------------------------------------------------
 
@@ -50,9 +52,11 @@ INSERT INTO `category` (`id`, `category_name`) VALUES
 -- Structure de la table `droits`
 --
 
-CREATE TABLE `droits` (
+DROP TABLE IF EXISTS `droits`;
+CREATE TABLE IF NOT EXISTS `droits` (
   `id` int(11) NOT NULL,
-  `nom` varchar(80) NOT NULL
+  `nom` varchar(80) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -69,15 +73,17 @@ INSERT INTO `droits` (`id`, `nom`) VALUES
 -- Structure de la table `items`
 --
 
-CREATE TABLE `items` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `items`;
+CREATE TABLE IF NOT EXISTS `items` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
   `description` text NOT NULL,
   `price` int(11) NOT NULL,
   `sub_category_id` int(11) NOT NULL,
   `code` varchar(255) NOT NULL,
-  `image` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `image` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `items`
@@ -88,7 +94,26 @@ INSERT INTO `items` (`id`, `name`, `description`, `price`, `sub_category_id`, `c
 (2, 'T-SHIRT WOMAN ON THE MOON ', 'Woman on the Moon shirt featuring the goddess Artemis, the twin sister of Apollo.', 17, 3, '3DcAM05', ''),
 (3, 'YOUTH APOLLO 11 JACKET', 'Youth Apollo 11 Flight Jacket featuring the Apollo 11 insignia on the back with the phrase \"That\'s one small step for man, one giant leap for mankind\" circling it. ', 45, 4, '3DcAM55', ''),
 (4, 'NASA VINTAGE COTTON TWILL CAP', 'This one\'s really special thanks to the intricate embroidery detail and the washed-out vintage feel.', 17, 6, '3DcjM01', ''),
-(5, 'WHITE ASTRONAUT FLIGHT SUIT', 'White Astronaut Flight Suit featuring the Shuttle Program patch, the NASA Commander patch, the USA Flag patch, as well as the iconic NASA Meatball patch.', 17, 7, '3DcAP01', '');
+(5, 'WHITE ASTRONAUT FLIGHT SUIT', 'White Astronaut Flight Suit featuring the Shuttle Program patch, the NASA Commander patch, the USA Flag patch, as well as the iconic NASA Meatball patch.', 17, 7, '3DcAP01', ''),
+(6, 'L\'univers à portée de main', 'Un ouvrage de Christophe Galfard - Meilleur livre de sciences', 9, 20, 'LVR1', 'public/img/Livre1.jpg'),
+(7, 'Objectif Astronaute', '100 tests et exercices - Devenez le prochain THOMAS PESQUET', 9, 20, 'LVR2', 'public/img/Livre2.jpg'),
+(8, 'Guide astronome débutant', 'Bien commencer dans l\'observation du ciel', 7, 20, 'LVR3', 'public/img/Livre3.jpg'),
+(9, 'Livre des étoiles', 'Une histoire de l\'univers au cent astres - Florian Freistetter', 7, 20, 'LVR4', 'public/img/Livre4.jpg'),
+(10, 'Déguisement Alien', 'Un déguisement de martien en taille S', 27, 7, 'DEG1', 'public/img/Deg2.jpg'),
+(11, 'Déguisement Fusée', 'Un déguisement en forme de fusée en taille S', 27, 7, 'DEG2', 'public/img/Deg1.jpg'),
+(12, 'Déguisement Astronaute', 'Un déguisement d\'astronaute en taille M', 34, 7, 'DEG3', 'public/img/Deg3.jpg'),
+(13, 'Banane Astronaute', 'Nourriture d\'astronaute - Goût Banane', 14, 23, 'GOUR1', 'public/img/Gour1.jpg'),
+(14, 'Crème glacée Astronaute ', 'Nourriture d\'astronaute - Crème glacée Goût Chocolat', 17, 23, 'GOUR2', 'public/img/Gour2.jpg'),
+(15, 'Crème glacée Astronaute', 'Nourriture d\'astronaute - Crème glacée Goût Coconut', 17, 23, 'GOUR3', 'public/img/Gour3.jpg'),
+(16, 'Neapolitan Ice Cream Sandwich', 'Nourriture d\'astronaute - Napolitain glacée ', 14, 23, 'GOUR4', 'public/img/Gour4.jpg'),
+(17, 'Peluche Etoile Projecteur', 'Peluche en forme d\'étoile lumineuse pour enfant - Peut projeter des étoiles au plafond', 23, 10, 'PEL1', 'public/img/Pel1.jpg'),
+(18, 'Peluche Etoile Jaune', 'Une peluche en forme d\'étoile de couleur jaune', 9, 10, 'PEL2', 'public/img/Pel2.jpg'),
+(19, 'Jeu de plateau - Not Alone', 'Un jeu de plateau opposant créature & traquées pour tout public', 34, 12, 'JEU1', 'public/img/Jeu1.jpg'),
+(20, 'Figurine Astronaute', 'Petite figurine d\'astronaute sur la lune très bien pour une table de nuit', 12, 14, 'FIG1', 'public/img/Fig1.jpg'),
+(21, ' Montre en métal de fusée', 'Une montre faite à partir du métal de la fusée d\'Ariane 5', 359, 8, 'WATCH1', 'public/img/Montre1.jpg'),
+(22, 'Montre Gousset', 'Une montre gousset qui s\'illumine dans le noir', 58, 8, 'WATCH2', 'public/img/Montre2.jpg'),
+(23, 'Pendentif Astronaute & Etoile', 'Pendentif en argent - Astronaute portant une étoile dans sa main', 69, 9, 'PEND1', 'public/img/Pend1.jpg'),
+(24, 'Pendentif Astronaute & Lune', 'Pendentif en acier inoxydable - Astronaute & Lune', 15, 9, 'PEND2', 'public/img/Pend2.jpg');
 
 -- --------------------------------------------------------
 
@@ -96,14 +121,16 @@ INSERT INTO `items` (`id`, `name`, `description`, `price`, `sub_category_id`, `c
 -- Structure de la table `offres`
 --
 
-CREATE TABLE `offres` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `offres`;
+CREATE TABLE IF NOT EXISTS `offres` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `titre` varchar(255) NOT NULL,
   `description` varchar(500) NOT NULL,
   `prix` int(11) NOT NULL,
-  `topOffre` int(1) NOT NULL DEFAULT 0,
-  `status` int(1) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `topOffre` int(1) NOT NULL DEFAULT '0',
+  `status` int(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `offres`
@@ -119,13 +146,15 @@ INSERT INTO `offres` (`id`, `titre`, `description`, `prix`, `topOffre`, `status`
 -- Structure de la table `stars`
 --
 
-CREATE TABLE `stars` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `stars`;
+CREATE TABLE IF NOT EXISTS `stars` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `reference` varchar(10) DEFAULT NULL,
   `coordonnees` varchar(31) DEFAULT NULL,
   `constellation` varchar(16) DEFAULT NULL,
-  `nom` varchar(35) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `nom` varchar(35) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=205 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `stars`
@@ -343,11 +372,13 @@ INSERT INTO `stars` (`id`, `reference`, `coordonnees`, `constellation`, `nom`) V
 -- Structure de la table `sub_category`
 --
 
-CREATE TABLE `sub_category` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `sub_category`;
+CREATE TABLE IF NOT EXISTS `sub_category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `sub_category_name` varchar(30) NOT NULL,
-  `category_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `category_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `sub_category`
@@ -372,7 +403,8 @@ INSERT INTO `sub_category` (`id`, `sub_category_name`, `category_id`) VALUES
 (17, 'Pins', 5),
 (18, 'Médaillons', 5),
 (19, 'Puériculture', 6),
-(20, 'Etudes et publications', 6);
+(20, 'Etudes et publications', 6),
+(23, 'Gourmandises', 7);
 
 -- --------------------------------------------------------
 
@@ -380,19 +412,21 @@ INSERT INTO `sub_category` (`id`, `sub_category_name`, `category_id`) VALUES
 -- Structure de la table `utilisateurs`
 --
 
-CREATE TABLE `utilisateurs` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `utilisateurs`;
+CREATE TABLE IF NOT EXISTS `utilisateurs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `login` varchar(255) NOT NULL,
   `prénom` varchar(255) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `civilité` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `status` int(1) NOT NULL DEFAULT 1,
+  `status` int(1) NOT NULL DEFAULT '1',
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
-  `id_droit` int(11) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id_droit` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `utilisateurs`
@@ -403,92 +437,6 @@ INSERT INTO `utilisateurs` (`id`, `login`, `prénom`, `nom`, `civilité`, `email
 (4, 'utilisateur', 'azeaze', 'azeaze', 'mme', 'aze@g.c', '$2y$10$cTB78YF3dr7euKxSV3SXfuQtHuNmBXThqn7ehNMnFUVjJvFt7BJSy', 1, '2022-04-12 14:21:23', '2022-04-13 15:40:49', 1),
 (5, 'admin', 'admin', 'admin', 'mr', 'admin@gmail.com', '$2y$10$5dfqJVSSna2iVISzU1wMw.ZCB9MpWQhJGH8BP7NaXWev7JsScr0vm', 1, '2022-04-20 16:41:29', '0000-00-00 00:00:00', 1),
 (6, 'test11', 'azeaze', 'dqqsd', 'mme', 'test@gmail.com', '$2y$10$WMClojFXBxnLUfFFghWJn.s.JCIjbZ7yBgyeU/OnmnIMzNOAMSQdW', 1, '2022-04-20 17:22:41', '0000-00-00 00:00:00', 1);
-
---
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `category`
---
-ALTER TABLE `category`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `droits`
---
-ALTER TABLE `droits`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `items`
---
-ALTER TABLE `items`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `offres`
---
-ALTER TABLE `offres`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `stars`
---
-ALTER TABLE `stars`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `sub_category`
---
-ALTER TABLE `sub_category`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `utilisateurs`
---
-ALTER TABLE `utilisateurs`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `category`
---
-ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT pour la table `items`
---
-ALTER TABLE `items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT pour la table `offres`
---
-ALTER TABLE `offres`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT pour la table `stars`
---
-ALTER TABLE `stars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=205;
-
---
--- AUTO_INCREMENT pour la table `sub_category`
---
-ALTER TABLE `sub_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
-
---
--- AUTO_INCREMENT pour la table `utilisateurs`
---
-ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
