@@ -1,8 +1,9 @@
 <?php
+
 $title = "Nos Offres";
 $css = "offres";
 require('process/header.php');
-require('classes/Offre.php');
+
 $offre = new Offre();
 ?>
 <main>

@@ -3,6 +3,14 @@
 session_start();
 
 require('classes/Dbh.php');
+require('classes/User.php');
+require('classes/Droits.php');
+require('classes/Item.php');
+require('classes/Category.php');
+require('classes/SubCategory.php');
+require('classes/Star.php');
+require('classes/Offre.php');
+
 
 function test($var){
     echo '<pre>';
@@ -28,6 +36,7 @@ function test($var){
 
 
     <title><?= $title ?></title>
+    
 </head>
 
 <body>

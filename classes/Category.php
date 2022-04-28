@@ -45,4 +45,28 @@ class Category extends Dbh
 
         return $result;
     }
+
+    public function newCategory ($category_name) {
+
+        $query = $this->DbHandler()->prepare("INSERT INTO `category` (`category_name`) VALUES (:category_name);");
+        $query->execute([":category_name" => $category_name]);
+    
+    }
+
+    public function setCategory ($id, $category_name) {
+
+        $query = $this->DbHandler()->prepare("UPDATE `category` SET `category_name` = :category_name WHERE `category`.`id` = :id;");
+        $query->execute([":id" => $id, ":category_name" => $category_name]);
+    
+    }
+
+    // Supprimer la catégorie sélectionnée
+    public function deleteCategory($id_categorie)
+    {
+        $sth = $this->DbHandler()->prepare("DELETE FROM category WHERE category.id = :id; 
+        DELETE FROM sub_category WHERE sub_category.category_id = :id;
+        DELETE items FROM items INNER JOIN sub_category ON items.sub_category_id = sub_category.id WHERE sub_category.category_id = :id;");
+        $sth->execute([':id' => $id_categorie]);
+    }
+    
 }

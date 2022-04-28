@@ -74,7 +74,7 @@ CREATE TABLE `items` (
   `name` varchar(30) NOT NULL,
   `description` text NOT NULL,
   `price` int(11) NOT NULL,
-  `subcategory_id` int(11) NOT NULL,
+  `sub_category_id` int(11) NOT NULL,
   `code` varchar(255) NOT NULL,
   `image` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -83,7 +83,7 @@ CREATE TABLE `items` (
 -- Déchargement des données de la table `items`
 --
 
-INSERT INTO `items` (`id`, `name`, `description`, `price`, `subcategory_id`, `code`, `image`) VALUES
+INSERT INTO `items` (`id`, `name`, `description`, `price`, `sub_category_id`, `code`, `image`) VALUES
 (1, ' T-SHIRT JAMES WEBB', 'The James Webb Space Telescope’s revolutionary technology will study every phase of cosmic history—from within our solar system to the most distant observable galaxies in the early universe. Webb’s infrared telescope will explore a wide range of science questions to help us understand the origins of the universe and our place in it.', 17, 1, '3DcAM02', 'public/img/jwebtshirt.png'),
 (2, 'T-SHIRT WOMAN ON THE MOON ', 'Woman on the Moon shirt featuring the goddess Artemis, the twin sister of Apollo.', 17, 3, '3DcAM05', ''),
 (3, 'YOUTH APOLLO 11 JACKET', 'Youth Apollo 11 Flight Jacket featuring the Apollo 11 insignia on the back with the phrase \"That\'s one small step for man, one giant leap for mankind\" circling it. ', 45, 4, '3DcAM55', ''),

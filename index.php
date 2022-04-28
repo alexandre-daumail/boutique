@@ -3,7 +3,7 @@
 $title = "Accueil";
 $css = "index";
 require('process/header.php');
-require('classes/Offre.php');
+
 $offre = new Offre;
 
 ?>

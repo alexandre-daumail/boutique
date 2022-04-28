@@ -3,7 +3,6 @@
 $title = "Nos étoiles";
 $css = "stars";
 require('process/header.php');
-require('classes/Star.php');
 
 $star = new Star();
 $pages = $star->totalPages();
