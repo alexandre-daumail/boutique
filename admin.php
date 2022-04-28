@@ -222,7 +222,7 @@ require('process/adminProcess.php');
 
                 echo "<td>
 
-                    <form action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "' method='POST'>
+                    <form action='deleteCat.php' method='POST'>
 
                         <input type='text' name='id' value='" . $subCategory['id'] . "' hidden>
 
