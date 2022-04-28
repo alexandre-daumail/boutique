@@ -106,15 +106,18 @@ class Item extends Dbh
         $sth->execute([':id' => $id_article]);
     }
 
-    public function addItem($titre, $article, $id_utilisateur, $id_categorie)
+    public function addItem($name, $description, $price, $sub_category_id, $code, $image)
     {
 
-        $sth = $this->DbHandler()->prepare("INSERT INTO `items`(`titre`,`article`,`id_utilisateur`,`id_categorie`,`date`) VALUES(?,?,?,?,?)");
-        $date = new DateTime();
-        $date->setTimestamp(time());
-        $jour = $date->format('Y-m-d H:i:s');
-        $sth->execute(array($titre, $article, $id_utilisateur, $id_categorie, $jour));
-
+        $sth = $this->DbHandler()->prepare("INSERT INTO items(name, description, price, sub_category_id, code, image) VALUES(:name, :description, :price, :sub_category_id,:code, :image)");
+        $sth->execute([
+            ':name' => $name, 
+            ':description' => $description, 
+            ':price' => $price, 
+            ':sub_category_id' => $sub_category_id, 
+            ':code' => $code,
+            ':image' => $image
+        ]);
 
     }
 
