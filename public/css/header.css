@@ -16,66 +16,68 @@
 
 header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   background-image: url(https://images8.alphacoders.com/601/thumb-1920-601973.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  /* min-height: 220px; */
+  min-height: 220px;
   width: 100%;
+  padding: 20px;
 }
 
-header > img{
+/* logo site */
+header > img {
   height: 150px;
 }
 
-header > nav{
+header > nav {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  align-content: center;
-  align-items: center;
-  margin: 10px 50px 10px 50px;
-  height: fit-content;
+  flex-grow: 2;
+  justify-content: center;
 }
 
-nav a {
-  text-decoration: none;
-  font-size: medium;
-  color: #ffffff;
-}
-
-.button-area {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-
-.icon-header img {
+/* Logo panier */
+nav a:last-child > img  {
   height: 30px;
   margin: 10px;
-}
-
-.logo2 {
+  align-self:flex-end;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  /* width: 100px; */
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: auto;
+
 }
-.logo2 > img {
+
+header > nav > a {
+  text-decoration: none;
+  font-size: medium;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+
+}
+
+/* Logos sous liens du nav */
+header > nav > a > img {
   height: 70px;
   margin: 15px 5px 0px 0px;
 }
 
-.icon-header {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
+@media screen and (max-width: 900px) {
+
+  header > nav > a{
+    display: none;
+  }
+  .icon-header {
+    flex-direction: row;
+  }
+
+  header > img {
+    flex-grow: 2;
+  }
+  
 }
 /* ________________________________________________________________________________________________________________ */
 /*                                             CSS COMMUN A TOUTES LES PAGES                                       */

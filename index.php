@@ -20,7 +20,7 @@ $offre = new Offre;
                 <p>Nomme une Étoile. </p>
                 <p>C'est le plus beau cadeau de l'univers!</p>
 
-                <a id="bttn" href="offres.php">Acheter maintenant</a>
+                <a id="bttn" href="certificate.php">Acheter maintenant</a>
 
 
         </div>

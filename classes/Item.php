@@ -60,7 +60,7 @@ class Item extends Dbh
 
                     <form method="post" action="articles.php?action=add&code=' . $array["code"] . '">
 
-                        <div class="product-image"><img src="public/img/' . $array["image"]. '"></div>
+                        <div class="product-image"><img src="' . $array["image"]. '"></div>
 
                         <div class="product-tile-footer">
 
