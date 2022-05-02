@@ -92,8 +92,12 @@ function test($var)
             <?php
             }
 
+            if (isset($_SESSION['cart_item'])) {
+                echo '<a href="panier.php" >Panier &#9989;<img src="public/img/logo2.png" alt="logo" ></a>';
+            } else {
+                echo '<a href="panier.php" >Panier<img src="public/img/logo2.png" alt="logo" ></a>';
+            }
             ?>
-            <a href="panier.php"><img src="public/img/icon/Vectorcart.png" alt="logo du panier" title="Panier"></a>
 
         </nav>
 

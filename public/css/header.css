@@ -36,18 +36,6 @@ header > nav {
   justify-content: center;
 }
 
-/* Logo panier */
-nav a:last-child > img  {
-  height: 30px;
-  margin: 10px;
-  align-self:flex-end;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: auto;
-
-}
-
 header > nav > a {
   text-decoration: none;
   font-size: medium;

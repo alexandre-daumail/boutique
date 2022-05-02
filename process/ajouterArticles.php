@@ -30,11 +30,14 @@ if (!empty($_GET["action"])) {
             } else {
                 
                 $_SESSION["cart_item"] = array_merge($_SESSION["cart_item"], $itemArray);
+
                 
             }
             
         } else {
             $_SESSION["cart_item"] = $itemArray;
+            header("Location:". htmlspecialchars($_SERVER['PHP_SELF']) ."");
+
         }
     }
 }
