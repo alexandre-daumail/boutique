@@ -1,7 +1,5 @@
 <?php
 
-require_once('classes/User.php');
-
 $info = new User();
 
 if (isset($_POST['submit']) && !empty($_POST)) {

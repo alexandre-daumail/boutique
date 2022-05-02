@@ -22,7 +22,7 @@
         if (preg_match('/[^A-Za-z0-9_]/', $login)) {
             $errors['login'] = "Désolé, veuillez entrer un pseudo valide";
         }
-        if (preg_match('/[^A-Za-z0-9_]/', $first_name)) {
+        if (preg_match('/[^A-Za-z_]/', $first_name)) {
             $errors['first_name'] = "Désolé, veuillez entrer un prénom valide";
         }
 
@@ -55,7 +55,6 @@
 
             //Créer un nouvel utilisateur
             $data = [
-                'civilite' => $data['civilite'],
                 'first_name' => $first_name,
                 'last_name' => $last_name,
                 'email' => $email,
