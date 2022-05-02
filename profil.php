@@ -4,6 +4,12 @@ $title = "Mon profil";
 $css = "profil";
 
 require_once('process/header.php');
+
+if (!isset($_SESSION['current_session'])) {
+    header('Location: index.php');
+    exit;
+}
+
 require_once('process/profilManager.php');
 
 
