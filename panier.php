@@ -73,11 +73,10 @@ require('process/actionsPanier.php');
 
             </table>
 
-
             <?php
 
             if (!isset($_SESSION['current_session'])) {
-                echo "<p> Veuillez vous <a href='inscription.php'>inscrire</a> et vous <a href='connexion.php'>connecter</a> afin de passer <a href='checkout.php'>commande</a>.</p>";
+                echo "<p> Veuillez vous <a href='inscription.php'>inscrire</a> et vous <a href='connexion.php'>connecter</a> afin de passer commande.</p>";
             } else {
                 echo "<a href='checkout.php'>Commander</a>";
             }
