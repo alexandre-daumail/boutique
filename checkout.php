@@ -5,7 +5,12 @@ $css = "checkout";
 
 require('process/header.php');
 
-require('process/actionsPanier.php');
+if (!isset($_SESSION['current_session'])) {
+    echo "Veuillez vous inscrire ou vous connecter afin de passer commande.";
+    header('Location: inscription.php');
+    ;
+}
+
 
 ?>
 
