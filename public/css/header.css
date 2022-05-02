@@ -35,6 +35,12 @@ header > nav{
   height: fit-content;
 }
 
+nav > a {
+  text-decoration: none;
+  font-size: medium;
+  color: #ffffff;
+}
+
 .button-area {
   display: flex;
   flex-direction: row;
@@ -86,35 +92,7 @@ p {
   font-size: 20px;
 }
 
-.byline {
-  text-align: center;
-  font-size: 18px;
-}
-.byline a {
-  text-decoration: none;
-  color: #ce0000;
-}
 
-
-nav a {
-  text-decoration: none;
-  font-size: medium;
-  color: #ffffff;
-}
-
-.header-button {
-  padding: 10px;
-  width: 109px;
-
-  border-radius: 5px;
-  border: 2px solid #ffffff;
-}
-
-.icon-area {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 .icon-header img {
   height: 30px;
   margin: 10px;
