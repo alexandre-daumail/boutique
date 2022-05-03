@@ -75,7 +75,6 @@ $offre = new Offre;
 
     <section class="constellation">
 
-        <div class="constellation-1">
 
             <h3>Raisons d'acheter une étoile</h3>
 
@@ -88,12 +87,9 @@ $offre = new Offre;
 
                 Regardez le ciel nocturne, pensez aux personnes que vous aimez et nous sommes convaincus que tout le monde peut trouver une raison de créer un cadeau magnifique et attentionné pour ses proches.
             </p>
+    </section>
 
-        </div>
-
-        <div class="constellation-2">
-
-            <div class="constellation-3">
+    <section class="constellation">
 
                 <h3>Achetez une étoila dans n'importe qu'elle constellation</h3>
 
@@ -101,15 +97,7 @@ $offre = new Offre;
                     Nous offrons à nos clients uniquement le nom d'étoiles facilement visibles. Si vous n'êtes pas satisfait de l'étoile que vous avez nommée, vous pouvez nous demander de nommer n'importe quelle autre étoile pour vous. Vous avez également le droit de demander un remboursement complet de votre achat. Vous pouvez facilement trouver les étoiles que vous souhaitez adopter dans notre registre, et nous vous enverrons votre certificat d'enregistrement de nom d'étoile et votre carte des étoiles immédiatement après l'achat. Nous pouvons également vous les envoyer par e-mail sous forme de copies numériques si vous en avez besoin immédiatement.
                 </p>
 
-            </div>
-
-            <div class="constellation-4">
-
                 <img id="stars-map" src="./public/img/IMG_0096-removebg-preview.png" alt="">
-
-            </div>
-
-        </div>
 
     </section>
 

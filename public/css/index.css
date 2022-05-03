@@ -73,21 +73,29 @@
   color: #000; 
   font-size: large;
   text-align: center;
+  margin: 50px;
+  padding: 50px;
+  border-radius: 44px;
+  box-shadow:  14px -14px 9px #60708c, -14px 14px 9px #b2d0ff;
+
 }
 
 #stars-map {
-  height: auto;
-  width: 100%;
+  width: auto;
+  max-height: 359px;
 }
 
-.constellation-2 {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  align-items: center;
-  margin: 50px;
-}
-/* HERO */
+  /* .constellation-2 {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 50px;
+    border-radius: 44px;
+    box-shadow:  14px -14px 9px #60708c, -14px 14px 9px #b2d0ff;
+
+  }
+ *//* HERO */
 
 .hero {
   display: flex;
