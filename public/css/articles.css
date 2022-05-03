@@ -66,9 +66,8 @@ body nav ul {
     margin: 40px;
     display: flex;
     border-radius: 44px;
-background: #89A0C8;
-box-shadow:  14px -14px 9px #60708c,
-             -14px 14px 9px #b2d0ff;
+    background: #89A0C8;
+    box-shadow:  14px -14px 9px #60708c, -14px 14px 9px #b2d0ff;
   }
 
   .product-image {
@@ -81,6 +80,8 @@ box-shadow:  14px -14px 9px #60708c,
     max-width: 45%;
     display: block;
     margin: auto;
+    max-height: 97%;
+
     
   }
 
