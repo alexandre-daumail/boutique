@@ -1,76 +1,6 @@
-.cards-img {
-  height: 250px;
-  width: 250px;
-  margin: 10px;
-  display: flex;
-  justify-content: center;
-}
-
-.cards-text {
-  height: 150px;
-  width: 250px;
-  margin: 10px;
-  background-color: brown;
-}
-
-#product-card {
-  height: 150px;
-}
-
-.txt-card {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-.price-card {
-  color: #5b2a86;
-  font-size: medium;
-}
-.txt-card {
-  font-size: small;
-}
-
-.card-promo {
-  height: 320px;
-  width: 420px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  background-color: white;
-  border-radius: 4px;
-  margin: 50px;
-  padding: 20px;
-}
-
-.format {
-  display: flex;
-  justify-content: space-between;
-}
-
-.format1 {
-  margin: 20px;
-}
-.format2 {
-  margin: 20px;
-  text-align: center;
-}
-
-.promo-card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  justify-content: center;
-  align-items: center;
-}
-
-#product-card-trophe {
-  height: 250px;
-}
-
-.constellation {
+article {
   color: #000; 
+  background-color: #192b4bcc;
   font-size: large;
   text-align: center;
   margin: 50px;
@@ -85,19 +15,9 @@
   max-height: 359px;
 }
 
-  /* .constellation-2 {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 50px;
-    border-radius: 44px;
-    box-shadow:  14px -14px 9px #60708c, -14px 14px 9px #b2d0ff;
+ /* HERO */
 
-  }
- *//* HERO */
-
-.hero {
+section {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -212,35 +132,6 @@ h1 {
   justify-content: center;
 }
 
-.container2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.container2 div {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  margin: 30px;
-  background-color: #fff;
-  border-radius: 4px;
-  overflow: hidden;
-  width: 660px;
-  height: 300px;
-  font-family: "Montserrat", sans-serif;
-  border: 2px solid white;
-  transition: all 0.4s;
-}
-
-.container2 img {
-  background-image: url(../img/STAR.jpg);
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-}
 
 .promo-card > .card-promo > a {
   width: 80%;
@@ -260,3 +151,74 @@ h1 {
     flex-direction: column;
   }
 }
+
+/* .cards-img {
+  height: 250px;
+  width: 250px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.cards-text {
+  height: 150px;
+  width: 250px;
+  margin: 10px;
+  background-color: brown;
+}
+
+#product-card {
+  height: 150px;
+}
+
+.txt-card {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.price-card {
+  color: #5b2a86;
+  font-size: medium;
+}
+.txt-card {
+  font-size: small;
+}
+
+.card-promo {
+  height: 320px;
+  width: 420px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  background-color: white;
+  border-radius: 4px;
+  margin: 50px;
+  padding: 20px;
+}
+
+.format {
+  display: flex;
+  justify-content: space-between;
+}
+
+.format1 {
+  margin: 20px;
+}
+.format2 {
+  margin: 20px;
+  text-align: center;
+}
+
+.promo-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+}
+
+#product-card-trophe {
+  height: 250px;
+} */
