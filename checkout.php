@@ -79,27 +79,42 @@ if(isset($_POST) AND !empty($_POST) ) {
 
             if (strlen($_POST['code']) <= 16 && strlen($_POST['code']) >= 16) {
 
-                if (strlen($_POST['crypt']) <= 3 && strlen($_POST['crypt']) >= 3) {
+                $date = date("n");
 
-                    $code=htmlspecialchars($_POST['code']);
-                    $crypt=htmlspecialchars($_POST['crypt']);
+                if ($_POST['month'] >= $date) {
 
-                    $time = date("Y-m-d");
-                    $content = implode('/', $array);
-                    $insert->insertOrder($content, $total_price, $total_quantity, $time, $_SESSION['current_session']['user']['id']);
-                    unset($_SESSION["cart_item"]);
+                    if (strlen($_POST['crypt']) <= 3 && strlen($_POST['crypt']) >= 3) {
 
-                    echo '<div class="success"><p>Carte accepté. Redirection...</p></div>';
 
-                    header('Location:validation.php');
-                }
+                        $code=htmlspecialchars($_POST['code']);
+                        $crypt=htmlspecialchars($_POST['crypt']);
 
-                else {  
+                        $rand = rand();
+                        $time = date("Y-m-d");
+                        $content = implode("/n", $array);
+                        $insert->insertOrder($content, $total_price, $total_quantity, $time, $rand, $_SESSION['current_session']['user']['id']);
+                        unset($_SESSION["cart_item"]);
+
+                        echo '<div class="success"><p>Carte accepté. Redirection...</p></div>';
+
+                        $_SESSION['crypt'] = 123;
+
+                        header('Location:validation.php');
+                    }
+
+                    else {  
 
                     echo '<div class="error"><p>Cryptogramme non valide.</p></div>';
 
-                }
+                    }
 
+                }
+                
+                else {
+
+                    echo "<div class='error'><p>Date d'expiration non valide.</p></div>";
+
+                }
             }
 
             else {
@@ -138,22 +153,22 @@ if(isset($_POST) AND !empty($_POST) ) {
 
                 <div>
                     <label>Numéro de carte :</label><br>
-                    <input type="text" name="code" required/>
+                    <input type="text" name="code" required maxlength="16"/>
                 <div>
 
                 <label>Date d'expiration :<label><br>
                 
                 <div>
                     <select name="month">
-                        <option value="01">Janvier</option>
-                        <option value="02">Février</option>
-                        <option value="03">Mars</option>
-                        <option value="04">Avril</option>
-                        <option value="05">Mai</option>
-                        <option value="06">Juin</option>
-                        <option value="07">Juillet</option>
-                        <option value="08">Août</option>
-                        <option value="09">Septembre</option>
+                        <option value="1">Janvier</option>
+                        <option value="2">Février</option>
+                        <option value="3">Mars</option>
+                        <option value="4">Avril</option>
+                        <option value="5">Mai</option>
+                        <option value="6">Juin</option>
+                        <option value="7">Juillet</option>
+                        <option value="8">Août</option>
+                        <option value="9">Septembre</option>
                         <option value="10">Octobre</option>
                         <option value="11">Novembre</option>
                         <option value="12">Décembre</option>
