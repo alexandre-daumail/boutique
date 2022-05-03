@@ -26,15 +26,10 @@ $offre = new Offre;
         </div>
 
         <div class="right">
-            <a href="offres.php"><img id="star-certificate" src="./public/img/certificat4.png" alt="certificat"></a>
+            <a href="certificate.php"><img id="star-certificate" src="./public/img/certificat4.png" alt="certificat"></a>
         </div>
     </section>
 
-    <section class="container1">
-
-        <?= $offre->topOffre(); ?>
-
-    </section>
 
     <!-- <section class="promo-card">
 

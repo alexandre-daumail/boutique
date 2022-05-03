@@ -62,8 +62,9 @@ header > nav > a > img {
     flex-direction: row;
   }
 
-  header > img {
+  header > a {
     flex-grow: 2;
+    align-items: center;
   }
   
 }
@@ -77,6 +78,10 @@ body {
   background-color: #89A0C8;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+main {
+  padding: 50px;
 }
 
 h1 {
@@ -113,4 +118,12 @@ h5{
 p {
   margin-bottom: 30px;
   font-size: 20px;
+}
+
+@media screen and (min-width: 1441px) {
+
+  main {
+    width: 70%;
+    margin: 0 auto;
+  }
 }

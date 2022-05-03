@@ -77,12 +77,12 @@
 
 #stars-map {
   height: 450px;
-  margin: 50px;
 }
 
 .constellation-2 {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
   align-items: center;
   margin: 50px;
 }
@@ -91,6 +91,7 @@
 .hero {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 #star-certificate {
@@ -237,4 +238,10 @@ h1 {
   background-color: #192b4bcc;
   color: white;
   transition: all 0.2s;
+}
+
+@media screen and (max-width:800px){
+  main {
+    flex-direction: column;
+  }
 }
