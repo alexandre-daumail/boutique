@@ -10,6 +10,7 @@ require('classes/Category.php');
 require('classes/SubCategory.php');
 require('classes/Star.php');
 require('classes/Offre.php');
+require('classes/Orders.php');
 
 
 function test($var)
