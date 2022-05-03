@@ -10,7 +10,6 @@ $offre = new Offre;
 
 <main>
 
-
     <section>
 
         <div class="left">
@@ -28,7 +27,6 @@ $offre = new Offre;
         </div>
 
     </section>
-
 
     <!-- <section class="promo-card">
 
@@ -84,7 +82,7 @@ $offre = new Offre;
         <p>Peut-être avez-vous vécu des moments de la vie qui ne devraient jamais être oubliés - et c'est une excellente occasion de nommer une étoile et de les rendre inoubliables.</p>
 
         <p>Regardez le ciel nocturne, pensez aux personnes que vous aimez et nous sommes convaincus que tout le monde peut trouver une raison de créer un cadeau magnifique et attentionné pour ses proches.</p>
-        
+
     </article>
 
     <article>
