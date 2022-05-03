@@ -1,6 +1,17 @@
 <?php
 if (isset($_POST) && !empty($_POST)) {
 
+    if(isset($_POST['csrf_token'])){
+        $msgs[] = "CSRF Token Verification Success";
+        if($_SESSION['csrf_token'] === $_POST['csrf_token']){
+            $msgs[] = "CSRF Token Validation success";
+        }else{
+            $csrferrors[] = "CSRF Token Validation Failed";
+        }
+    }else{
+        $csrferrors[] = "CSRF Token Verification Failed";
+    }
+
     switch ($_POST) {
 
     // Suppression d'utilisateur
@@ -34,8 +45,6 @@ if (isset($_POST) && !empty($_POST)) {
             $_SESSION['error'] = "<h6>Vous ne pouvez pas modifier ces droits</h6>";
             break;
         }
-
-        break;
 
     // Modification de la sous-catégorie d'un article
     case isset($_POST['modif_categorie']);

@@ -9,6 +9,10 @@ if ($_SESSION['current_session']['user']['id_droit'] != 1337) {
     header('Location: index.php');
     exit;
 }
+//create CSRF Token
+$token = md5(uniqid(rand(), TRUE));
+//assign token to session
+$_SESSION['csrf_token'] = $token;
 
 $user = new User();
 $item = new Item();
@@ -19,6 +23,7 @@ $res1 = $user->getList();
 $items = $item->getItems();
 $getCategories = $categorie->getCategories();
 $getSubCategories = $subCategorie->getSubCategories();
+
 require('process/adminProcess.php');
 ?>
 
@@ -74,6 +79,8 @@ require('process/adminProcess.php');
 
                 <button type='submit' name='delete_user'>Supprimer</button>
 
+                <input type='hidden' name='csrf_token' value='$token'>
+
             </form>
                 
         </td>";
@@ -124,6 +131,7 @@ require('process/adminProcess.php');
                                     <button type='submit' name='modif_categorie'>Modifier la catégorie</button>
 
                                     <button type='submit' name='delete_item'>Supprimer item</button>
+                                    <input type='hidden' name='csrf_token' value='$token'>
 
                                 </form>
                                     
@@ -164,6 +172,8 @@ require('process/adminProcess.php');
                         <input type='text' name='category_name' placeholder='Modifier catégorie'>
 
                         <button type='submit' name='update_categorie'>Modifier</button>
+                        <input type='hidden' name='csrf_token' value='$token'>
+
                     </form>
 
                     <form action='deleteCat.php' method='POST'>
@@ -171,6 +181,8 @@ require('process/adminProcess.php');
                         <input type='text' name='id' value='" . $categorie['id'] . "' hidden>
 
                         <button type='submit' name='delete_categorie'>Supprimer</button>
+                        <input type='hidden' name='csrf_token' value='$token'>
+
 
                     </form>
                         
@@ -193,6 +205,9 @@ require('process/adminProcess.php');
                 <input id="new_categ" type="text" name="category_name" placeholder="Nom catégorie">
 
                 <button type="submit" name="new_category">Nouvelle Catégorie</button>
+                
+                <input type="hidden" name="csrf_token" value="<?php echo $token; ?>">
+
 
             </form>
 
@@ -225,6 +240,8 @@ require('process/adminProcess.php');
                     <input type='text' name='sub_category_name' placeholder='Modifier sous-catégorie'>
                 
                     <button type='submit' name='update_sub_categorie'>Modifier</button>
+                    <input type='hidden' name='csrf_token' value='$token'>
+
 
                 </form>
 
@@ -233,6 +250,9 @@ require('process/adminProcess.php');
                     <input type='text' name='id' value='" . $subCategory['id'] . "' hidden>
 
                     <button type='submit' name='delete'>Supprimer</button>
+
+                    <input type='hidden' name='csrf_token' value='$token'>
+
 
                 </form>
                         
@@ -268,6 +288,8 @@ require('process/adminProcess.php');
                 </select>
 
                 <button type="submit" name="new_sub_category">Ajouter la sous-catégorie</button>
+
+                <input type="hidden" name="csrf_token" value="<?php echo $token; ?>">
 
             </form>
 
