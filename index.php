@@ -19,15 +19,14 @@ $offre = new Offre;
 
                 <p>Nomme une Étoile. </p>
                 <p>C'est le plus beau cadeau de l'univers!</p>
-
-                <a id="bttn" href="certificate.php">Acheter maintenant</a>
-
+                <a id="bttn" href="certificate.php">Commander</a>
 
         </div>
 
         <div class="right">
             <a href="certificate.php"><img id="star-certificate" src="./public/img/certificat4.png" alt="certificat"></a>
         </div>
+        
     </section>
 
 

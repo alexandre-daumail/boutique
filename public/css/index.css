@@ -76,7 +76,8 @@
 }
 
 #stars-map {
-  height: 450px;
+  height: auto;
+  width: 100%;
 }
 
 .constellation-2 {

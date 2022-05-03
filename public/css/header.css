@@ -26,7 +26,7 @@ header {
 }
 
 /* logo site */
-header > img {
+header > a > img {
   height: 150px;
 }
 
@@ -55,17 +55,10 @@ header > nav > a > img {
 
 @media screen and (max-width: 900px) {
 
-  header > nav > a{
+  header > a > img {
     display: none;
   }
-  .icon-header {
-    flex-direction: row;
-  }
 
-  header > a {
-    flex-grow: 2;
-    align-items: center;
-  }
   
 }
 /* ________________________________________________________________________________________________________________ */

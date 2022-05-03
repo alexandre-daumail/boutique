@@ -102,3 +102,9 @@ footer .container {
   justify-content: flex-start;
   margin-left: 30px;
 }
+
+@media screen and (max-width: 500px){
+  footer .container {
+    flex-direction: column;
+  }
+}
