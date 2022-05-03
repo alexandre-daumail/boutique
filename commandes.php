@@ -1,22 +1,43 @@
 <?php
 
 $title = "Mes Commandes";
-$css = "profil";
+$css = "commandes";
 
 require_once('process/header.php');
-require_once('process/profilManager.php');
 
+$insert = new Order();
+$commandes = $insert->getOrder($_SESSION['current_session']['user']['id']);
 
 ?>
 
 <main>
 
-    <section>
 
         <h1>Mes Commandes</h1>
 
+        <?php
 
-    </section>
+            foreach ($commandes as $commande) {
+
+        ?>
+
+        <div class="order">
+
+            
+                
+            <div>
+                <h2>Commande n°<?=$commande['code'] ?> : </h2>
+                <p><?= $commande['status'] ?><p>
+
+
+                <a href="facture.php">Télécharger le reçu</a>
+            </div>
+
+        </div>
+
+        
+        <?php } ?>
+
 
 </main>
 

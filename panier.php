@@ -23,7 +23,7 @@ require('process/actionsPanier.php');
             <table class="tbl-cart" cellpadding="10" cellspacing="1">
 
                 <tbody>
-                    
+
                     <tr>
                         <th style="text-align:left;">Code</th>
                         <th style="text-align:left;">Article</th>
@@ -73,10 +73,16 @@ require('process/actionsPanier.php');
 
             </table>
 
-        <?php
+            <?php
+
+            if (!isset($_SESSION['current_session'])) {
+                echo "<p> Veuillez vous <a href='inscription.php'>inscrire</a> et vous <a href='connexion.php'>connecter</a> afin de passer commande.</p>";
+            } else {
+                echo "<a href='checkout.php'>Commander</a>";
+            }
 
         } else {
-        ?>
+            ?>
 
             <div class="no-records">Votre panier est vide</div>
 

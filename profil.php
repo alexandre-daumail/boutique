@@ -4,6 +4,12 @@ $title = "Mon profil";
 $css = "profil";
 
 require_once('process/header.php');
+
+if (!isset($_SESSION['current_session'])) {
+    header('Location: index.php');
+    exit;
+}
+
 require_once('process/profilManager.php');
 
 
@@ -12,8 +18,10 @@ require_once('process/profilManager.php');
 
 <main>
 
+    <a href="commandes.php">Historique d'achats<img src="public/img/icon/ordering.jpg" alt="icône représentant le lien d'historique d'achats'" title="Mes Commandes"></a>
+    
     <section>
-
+    
         <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" id="1">
 
             <fieldset>
@@ -53,8 +61,8 @@ require_once('process/profilManager.php');
                     <input type="submit" name="submit"  value="Modifier informations">
                     <input type="submit" name="delete" value="Supprimer Votre Compte">
 
-                </div>
 
+                <h7>Dernière modification le : <?= $_SESSION['current_session']['user']['updated_at']; ?></h6>
             </fieldset>
 
         </form>
@@ -62,8 +70,6 @@ require_once('process/profilManager.php');
     </section>
 
     <aside>
-        <h6>Compte créé le : <?= $_SESSION['current_session']['user']['created_at']; ?></h6>
-        <h6>Dernière modification le : <?= $_SESSION['current_session']['user']['updated_at']; ?></h6>
     </aside>
 
 </main>

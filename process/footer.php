@@ -42,18 +42,15 @@
                     <div class="nav_footer">
 
                         <div class="titre-footer">
-                            <h3>Navigation</h3>
+                            <h3>En savoir plus</h3>
                         </div>
 
                         <div class="under-title">
                             <ul>
 
-                                <li><a href="../index.php">Accueil</a></li>
-                                <li><a href="../authenticate.php">Mon Compte</a></li>
-                                <li><a href="#">Informations</a></li>
-                                <li><a href="#">Nos Etoiles</a></li>
-                                <li><a href="../boutique/offres.php">Nos Offres</a></li>
-                                <li><a href="../boutique/certificate.php">Créer un Certificat</a></li>
+                                <li><a href="apropos.php">Informations</a></li>
+                                <li><a href="stars.php">Nos étoiles</a></li>
+                                <li><a href="contact.php">Nous contacter</a></li>
 
                             </ul>
                         </div>
