@@ -13,9 +13,10 @@ require('classes/Offre.php');
 require('classes/Orders.php');
 
 
-function test($var){
+function test($var)
+{
     echo '<pre>';
-        var_dump($var);
+    var_dump($var);
     echo '</pre>';
 }
 
@@ -37,107 +38,71 @@ function test($var){
 
 
     <title><?= $title ?></title>
-    
+
 </head>
 
 <body>
 
     <header>
 
-        <img src="public/img/logo-header.png" alt="logo du site Novashop">
-        
+        <a href="index.php"><img src="public/img/logo-header.png" alt="logo du site Novashop"></a>
+
         <nav>
-            
-            <div class="button-area">
 
-                <div class="logo2">
-                    <a href="index.php">Accueil</a>
-                    <img src="public/img/logo2.png" alt="logo">
-                </div>
+            <a href="index.php">Accueil<img src="public/img/logo2.png" alt="logo"></a>
 
-                <div class="logo2">
-                    <a href="offres.php">Certificats</a>
-                    <img src="public/img/logo2.png" alt="logo">
-                </div>
+            <a href="articles.php">Boutique<img src="public/img/logo2.png" alt="logo"></a>
 
-                <div class="logo2">
-                    <a href="articles.php">Boutique</a>
-                    <img src="public/img/logo2.png" alt="logo">
-                </div>
 
-                <div class="logo2">
-                    <a href="apropos.php">Information</a>
-                    <img src="public/img/logo2.png" alt="logo">
-                </div>
+            <?php
 
-                <div class="logo2">
-                    <a href="stars.php">Étoiles</a>
-                    <img src="public/img/logo2.png" alt="logo">
-                </div>  
+            if (isset($_SESSION['current_session']) && $_SESSION['current_session']['user']['id_droit'] == 1337) {
+                echo '<a href="admin.php">Admin<img src="public/img/logo2.png" alt="logo"></a>';
+            }
 
-                <div class="logo2">
-                    <a href="contact.php">Contact</a>
-                    <img src="public/img/logo2.png" alt="logo">
-                </div>
+            ?>
 
-                <?php
+            <!-- Lorque l'utilisateur est connecté, afficher les liens de compte utlisateur -->
+            <?php
 
-                if (isset($_SESSION['current_session']) && $_SESSION['current_session']['status'] == 1 && $_SESSION['current_session']['user']['id_droit'] == 1337 ){
-                   echo '<div class="logo2">
-                    <a href="admin.php">Admin</a>
-                    <img src="public/img/logo2.png" alt="logo">
-                </div>';
-                }
+            if (isset($_SESSION['current_session']) && $_SESSION['current_session']['status'] == 1) {
 
-                ?>
-                
-                <div class="icon-header">
-                                
-                    <a href="panier.php"><img src="public/img/icon/Vectorcart.png" alt="logo du panier" title="Panier"></a>
-                    
-                    <!-- Lorque l'utilisateur est connecté, afficher les liens de compte utlisateur -->
-                    <?php
-                    
-                    if (isset($_SESSION['current_session']) && $_SESSION['current_session']['status'] == 1 ){
+            ?>
 
-                    ?>
-                    
-                    <a href="profil.php">
-                        <img src="public/img/icon/Vectoraccount.png" alt="logo-myaccount">
-                    </a>
+                <a href="profil.php">Profil
+                <img src="public/img/logo2.png" alt="logo">
+                </a>
 
-                    <a href="logout.php">                        
-                        <img src="public/img/icon/logout.png" alt="logout logo">
-                    </a>
+                <a href="logout.php">Déconnexion
+                <img src="public/img/logo2.png" alt="logo">
+                </a>
 
-                    <a href="commandes.php">
-                        <img src="public/img/icon/ordering.jpg" alt="icône représentant le lien d'historique d'achats'" title="Mes Commandes">
-                    </a>
-                            
-                    <?php
+            <?php
 
-                    } else {
+            } else {
 
-                    ?>
-                        <a href="inscription.php">
-                            <img src="public/img/icon/Vectorsignup.png" alt="icône représentant le lien d'inscription" title="Inscription">
-                        </a>
+            ?>
+                <a href="inscription.php">Inscription
+                <img src="public/img/logo2.png" alt="logo">
+                </a>
 
-                        <a href="connexion.php">
-                            <img src="public/img/icon/Vectoraccount.png" alt="icône représentant le lien de connexion" title="Connexion">
-                        </a>
-                    
-                    <?php
-                    }
+                <a href="connexion.php">Connexion
+                <img src="public/img/logo2.png" alt="logo">
+                </a>
 
-                    ?>
+            <?php
+            }
 
-                </div>
+            if (isset($_SESSION['cart_item'])) {
+                echo '<a href="panier.php" >Panier &#9989;<img src="public/img/logo2.png" alt="logo" ></a>';
+            } else {
+                echo '<a href="panier.php" >Panier<img src="public/img/logo2.png" alt="logo" ></a>';
+            }
+            ?>
 
-            </div>
+        </nav>
 
-            
-            <!-- <div class="search-area">
+        <!-- <div class="search-area">
 
                 <form class="searchbox" action="http://thecodeblock.com">
                     <input type="search" placeholder="Search" />
@@ -145,7 +110,5 @@ function test($var){
                 </form>
 
             </div> -->
-
-        </nav>
 
     </header>

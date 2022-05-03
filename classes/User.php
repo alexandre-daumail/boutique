@@ -41,7 +41,6 @@ class User extends Dbh
         $statement->bindValue(':email', $data['email'], PDO::PARAM_STR);
         $statement->bindValue(':password', $password, PDO::PARAM_STR);
         $statement->bindValue(':created_at', $timestamps, PDO::PARAM_STR);
-        $statement->bindValue(':civilite', $data['civilite'], PDO::PARAM_STR);
 
         $result = $statement->execute();
 
