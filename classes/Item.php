@@ -122,6 +122,26 @@ class Item extends Dbh
 
     }
 
+    // public function searchItem()
+    // {
+
+    //     $sth = $this->DbHandler()->prepare("SELECT name FROM items BY id DESC");
+
+    //     if(isset($_GET['search']) AND !empty($_GET['search'])) {
+            
+    //         $q = htmlspecialchars($_GET['search']);
+
+    //         $sth = $this->DbHandler()->prepare("SELECT name FROM items WHERE name LIKE "%'.$q.'%" ORDER BY id DESC");
+
+    //         if($sth->rowCount() == 0) {
+
+    //             $sth = $this->DbHandler()->prepare("SELECT name FROM items WHERE CONCAT(name, description) LIKE "%'.$q.'%" ORDER BY id DESC");
+    //         }
+                
+    //     }
+
+    // }
+
 
 
 }

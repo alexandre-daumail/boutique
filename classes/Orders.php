@@ -21,13 +21,27 @@ class Order extends Dbh
     public function getOrder($id_user)
     {
 
-        $sth = $this->DbHandler()->prepare("SELECT * FROM orders INNER JOIN utilisateurs ON orders.id_user = utilisateurs.id WHERE id_user = :id_user;");
+        $sth = $this->DbHandler()->prepare("SELECT * FROM orders WHERE id_user = :id_user; ASC by id");
 
         $sth->execute([':id_user' => $id_user]);
 
         $req = $sth->fetchAll(PDO::FETCH_ASSOC);
 
         return $req;
+    }
+
+    public function displayOrder($code)
+    {
+
+        $sth = $this->DbHandler()->prepare("SELECT * FROM orders INNER JOIN utilisateurs ON orders.id_user = utilisateurs.id WHERE code = :code;");
+
+        $sth->execute([':code' => $code]);
+
+        $req = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+        return $req;
+
+
     }
 
 }
