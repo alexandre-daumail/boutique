@@ -93,6 +93,12 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  border-radius: 44px;
+  background: #89A0C8;
+  box-shadow:  14px -14px 9px #60708c, -14px 14px 9px #b2d0ff;
+  background-image: url(https://images8.alphacoders.com/601/thumb-1920-601973.jpg);
+
+
 }
 
 #star-certificate {
