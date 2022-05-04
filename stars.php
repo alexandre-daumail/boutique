@@ -32,7 +32,7 @@ $pages = $star->totalPages();
         $registre = $star->getStars($start);
 
     } else {
-
+        $currentPage = 1;
         $registre = $star->getStars(0);
     }
 
