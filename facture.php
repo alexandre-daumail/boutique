@@ -59,38 +59,18 @@ if ($quantity == 2){
 
 if ($quantity == 3){
 
-    $mot = " x 2";
+    list($content1, $content2, $content3) = explode(PHP_EOL, $content);
 
-    if (strpos($content, $mot) !== false){
+    $pdf->Cell(200,10,'- ' . utf8_decode($content1));
+    $pdf->Ln(13);
+    $pdf->Cell(200,10,'- ' . utf8_decode($content2));
+    $pdf->Ln(13);
+    $pdf->Cell(200,10,'- ' . utf8_decode($content3));
+    $pdf->Ln((30));
+    $pdf->Cell(200,10, '_____________________________________________________');
+    $pdf->Ln(10);
+    $pdf->Cell(200,10, 'Prix total : '. $array[0]['totalPrice'] . '$');
 
-        list($content1, $content2, $content3) = explode(PHP_EOL, $content);
-
-        $pdf->Cell(200,10,'- ' . utf8_decode($content1));
-        $pdf->Ln(13);
-        $pdf->Cell(200,10,'- ' . utf8_decode($content2));
-        $pdf->Ln(13);
-        $pdf->Cell(200,10,'- ' . utf8_decode($content3));
-        $pdf->Ln((30));
-        $pdf->Cell(200,10, '_____________________________________________________');
-        $pdf->Ln(10);
-        $pdf->Cell(200,10, 'Prix total : '. $array[0]['totalPrice'] . '$');
-
-    }
-
-    else {
-
-        list($content1, $content2) = explode(PHP_EOL, $content);
-
-        $pdf->Cell(200,10,'- ' . utf8_decode($content1));
-        $pdf->Ln(13);
-        $pdf->Cell(200,10,'- ' . utf8_decode($content2));
-        $pdf->Ln((30));
-        $pdf->Cell(200,10, '_____________________________________________________');
-        $pdf->Ln(10);
-        $pdf->Cell(200,10, 'Prix total : '. $array[0]['totalPrice'] . '$');
-
-    }
-    
     }
 
 if ($quantity == 4){
