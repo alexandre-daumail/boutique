@@ -47,12 +47,10 @@ else {
             $item_price = $item["quantity"] * $item["price"];
             ?>
 
-            <?php $content=$item["name"];
+            <?php $content=$item["name"] . " x " . $item['quantity'] . " : $ " . $item_price . ".00";
             array_push($array, $content);?>
     
-            <p><?php echo $content;?>&nbsp;x&nbsp;<?= $item["quantity"]; ?></p>
-    
-
+            <p><?php echo $content;?></p>
             <?php
     
             $total_quantity += $item["quantity"];
@@ -88,15 +86,11 @@ if(isset($_POST) AND !empty($_POST) ) {
 
                         $code=htmlspecialchars($_POST['code']);
                         $crypt=htmlspecialchars($_POST['crypt']);
-
                         $rand = rand();
                         $time = date("Y-m-d");
-                        $content = implode("/n", $array);
+                        $content = implode(PHP_EOL,$array);
                         $insert->insertOrder($content, $total_price, $total_quantity, $time, $rand, $_SESSION['current_session']['user']['id']);
                         unset($_SESSION["cart_item"]);
-
-                        echo '<div class="success"><p>Carte accepté. Redirection...</p></div>';
-
                         $_SESSION['crypt'] = 123;
 
                         header('Location:validation.php');

@@ -56,19 +56,17 @@ body nav ul {
   #product-grid {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
-  .product-item {
-    background-color: white;
+  form {
     padding: 30px;
     width: 400px;
     height: 450px;
-    margin: 40px;
-    display: flex;
+    margin: 20px;
     border-radius: 44px;
-background: #89A0C8;
-box-shadow:  14px -14px 9px #60708c,
-             -14px 14px 9px #b2d0ff;
+    background: #89A0C8;
+    box-shadow:  14px -14px 9px #60708c, -14px 14px 9px #b2d0ff;
   }
 
   .product-image {
@@ -81,12 +79,18 @@ box-shadow:  14px -14px 9px #60708c,
     max-width: 45%;
     display: block;
     margin: auto;
+    max-height: 97%;
     
   }
 
   .product-title {
     text-align: center;
     font-size: 17px;
+  }
+
+
+  .product-title:hover {
+    color: #fff;
   }
 
  .product-price {
@@ -98,4 +102,27 @@ box-shadow:  14px -14px 9px #60708c,
  .cart-action {
    margin: 0px 40px;
  }
+
+ .btnAddAction {
+
+  width: 67%;
+    padding: 10px;
+    font-weight: 200;
+    font-size: 20px;
+    margin-bottom: 20px;
+    line-height: 17px;
+    text-align: center;
+    border: 1px solid #192b4bcc;
+    border-radius: 25px;
+    background-color: #192b4bcc;
+    color: white;
+    transition: all 0.2s;
+ }
+
+ .product-quantity {
+  max-width: 64px;
+ }
+
+
+
 

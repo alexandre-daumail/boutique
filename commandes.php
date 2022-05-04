@@ -29,8 +29,10 @@ $commandes = $insert->getOrder($_SESSION['current_session']['user']['id']);
                 <h2>Commande n°<?=$commande['code'] ?> : </h2>
                 <p><?= $commande['status'] ?><p>
 
-
-                <a href="facture.php">Télécharger le reçu</a>
+                <form action="facture.php" method="post">
+                    <input type="text" name="code" value=<?= $commande["code"] ?> hidden/>
+                    <button type="submit" >Télécharger le reçu</button>
+            </form>
             </div>
 
         </div>

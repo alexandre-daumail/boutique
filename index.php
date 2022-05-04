@@ -10,25 +10,23 @@ $offre = new Offre;
 
 <main>
 
-
-    <section class="hero">
+    <section>
 
         <div class="left">
 
             <h2>Achetez une Étoile dans le Ciel !<h2>
 
-                <p>Nomme une Étoile. </p>
-                <p>C'est le plus beau cadeau de l'univers!</p>
-                <a id="bttn" href="certificate.php">Commander</a>
+                    <p>Nomme une Étoile. </p>
+                    <p>C'est le plus beau cadeau de l'univers!</p>
+                    <a href="certificate.php">Commander</a>
 
         </div>
 
         <div class="right">
             <a href="certificate.php"><img id="star-certificate" src="./public/img/certificat4.png" alt="certificat"></a>
         </div>
-        
-    </section>
 
+    </section>
 
     <!-- <section class="promo-card">
 
@@ -73,45 +71,35 @@ $offre = new Offre;
 
     </section> -->
 
-    <section class="constellation">
+    <article>
 
-        <div class="constellation-1">
 
-            <h3>Raisons d'acheter une étoile</h3>
+        <h3>Pourquoi acheter une étoile ?</h3>
 
-            <p>
-                Raison d'acheter une étoile
-                Dans notre galaxie, il y a plus de 100 milliards d'étoiles.
-                Nous sommes sûrs que chacun d'entre nous a un proche qui mérite un cadeau unique et original.
+        <p>Dans notre galaxie, il y a plus de 100 milliards d'étoiles. Chacun d'entre nous a un proche qui mérite un cadeau unique et original. </p>
+       
 
-                Peut-être avez-vous vécu des moments de la vie qui ne devraient jamais être oubliés - et c'est une excellente occasion de nommer une étoile et de les rendre inoubliables.
+        <p>Peut-être avez-vous vécu des moments de la vie qui ne devraient jamais être oubliés - et c'est une excellente occasion de nommer une étoile et de les rendre inoubliables.</p>
 
-                Regardez le ciel nocturne, pensez aux personnes que vous aimez et nous sommes convaincus que tout le monde peut trouver une raison de créer un cadeau magnifique et attentionné pour ses proches.
-            </p>
+        <p>Regardez le ciel nocturne, pensez aux personnes que vous aimez et nous sommes convaincus que tout le monde peut trouver une raison de créer un cadeau magnifique et attentionné pour ses proches.</p>
 
-        </div>
+    </article>
 
-        <div class="constellation-2">
+    <article>
 
-            <div class="constellation-3">
+        <h3>Achetez une étoile dans n'importe quelle constellation !</h3>
 
-                <h3>Achetez une étoila dans n'importe qu'elle constellation</h3>
+        
+        <p>Nous offrons à nos clients uniquement le nom d'étoiles facilement visibles. </p>
 
-                <p>
-                    Nous offrons à nos clients uniquement le nom d'étoiles facilement visibles. Si vous n'êtes pas satisfait de l'étoile que vous avez nommée, vous pouvez nous demander de nommer n'importe quelle autre étoile pour vous. Vous avez également le droit de demander un remboursement complet de votre achat. Vous pouvez facilement trouver les étoiles que vous souhaitez adopter dans notre registre, et nous vous enverrons votre certificat d'enregistrement de nom d'étoile et votre carte des étoiles immédiatement après l'achat. Nous pouvons également vous les envoyer par e-mail sous forme de copies numériques si vous en avez besoin immédiatement.
-                </p>
+        <p>Si vous n'êtes pas satisfait de l'étoile que vous avez nommée, vous pouvez nous demander de nommer n'importe quelle autre étoile pour vous. Vous avez également le droit de demander un remboursement complet de votre achat. </p>
 
-            </div>
+        <p>Vous pouvez facilement trouver les étoiles que vous souhaitez adopter dans notre registre, et nous vous enverrons votre certificat d'enregistrement de nom d'étoile et votre carte des étoiles immédiatement après l'achat. Nous pouvons également vous les envoyer par e-mail sous forme de copies numériques si vous en avez besoin immédiatement.</p>
+        
 
-            <div class="constellation-4">
+        <img id="stars-map" src="./public/img/IMG_0096-removebg-preview.png" alt="Image d'une sélection de certificats">
 
-                <img id="stars-map" src="./public/img/IMG_0096-removebg-preview.png" alt="">
-
-            </div>
-
-        </div>
-
-    </section>
+    </article>
 
 </main>
 
