@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 28 avr. 2022 à 12:01
--- Version du serveur :  5.7.31
--- Version de PHP : 7.3.21
+-- Hôte : 127.0.0.1
+-- Généré le : mer. 04 mai 2022 à 08:44
+-- Version du serveur : 10.4.22-MariaDB
+-- Version de PHP : 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,12 +27,10 @@ SET time_zone = "+00:00";
 -- Structure de la table `category`
 --
 
-DROP TABLE IF EXISTS `category`;
-CREATE TABLE IF NOT EXISTS `category` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `category_name` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `category` (
+  `id` int(11) NOT NULL,
+  `category_name` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `category`
@@ -44,7 +42,7 @@ INSERT INTO `category` (`id`, `category_name`) VALUES
 (4, 'Jouets'),
 (5, 'Collections'),
 (6, 'Livres'),
-(7, 'Consommables');
+(7, 'Gourmandises');
 
 -- --------------------------------------------------------
 
@@ -52,11 +50,9 @@ INSERT INTO `category` (`id`, `category_name`) VALUES
 -- Structure de la table `droits`
 --
 
-DROP TABLE IF EXISTS `droits`;
-CREATE TABLE IF NOT EXISTS `droits` (
+CREATE TABLE `droits` (
   `id` int(11) NOT NULL,
-  `nom` varchar(80) NOT NULL,
-  PRIMARY KEY (`id`)
+  `nom` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -73,17 +69,15 @@ INSERT INTO `droits` (`id`, `nom`) VALUES
 -- Structure de la table `items`
 --
 
-DROP TABLE IF EXISTS `items`;
-CREATE TABLE IF NOT EXISTS `items` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `items` (
+  `id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL,
   `description` text NOT NULL,
   `price` int(11) NOT NULL,
   `sub_category_id` int(11) NOT NULL,
   `code` varchar(255) NOT NULL,
-  `image` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4;
+  `image` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `items`
@@ -121,16 +115,14 @@ INSERT INTO `items` (`id`, `name`, `description`, `price`, `sub_category_id`, `c
 -- Structure de la table `offres`
 --
 
-DROP TABLE IF EXISTS `offres`;
-CREATE TABLE IF NOT EXISTS `offres` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `offres` (
+  `id` int(11) NOT NULL,
   `titre` varchar(255) NOT NULL,
   `description` varchar(500) NOT NULL,
   `prix` int(11) NOT NULL,
-  `topOffre` int(1) NOT NULL DEFAULT '0',
-  `status` int(1) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+  `topOffre` int(1) NOT NULL DEFAULT 0,
+  `status` int(1) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `offres`
@@ -146,15 +138,13 @@ INSERT INTO `offres` (`id`, `titre`, `description`, `prix`, `topOffre`, `status`
 -- Structure de la table `stars`
 --
 
-DROP TABLE IF EXISTS `stars`;
-CREATE TABLE IF NOT EXISTS `stars` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `stars` (
+  `id` int(11) NOT NULL,
   `reference` varchar(10) DEFAULT NULL,
   `coordonnees` varchar(31) DEFAULT NULL,
   `constellation` varchar(16) DEFAULT NULL,
-  `nom` varchar(35) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=205 DEFAULT CHARSET=utf8;
+  `nom` varchar(35) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `stars`
@@ -372,13 +362,11 @@ INSERT INTO `stars` (`id`, `reference`, `coordonnees`, `constellation`, `nom`) V
 -- Structure de la table `sub_category`
 --
 
-DROP TABLE IF EXISTS `sub_category`;
-CREATE TABLE IF NOT EXISTS `sub_category` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `sub_category` (
+  `id` int(11) NOT NULL,
   `sub_category_name` varchar(30) NOT NULL,
-  `category_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
+  `category_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `sub_category`
@@ -403,8 +391,7 @@ INSERT INTO `sub_category` (`id`, `sub_category_name`, `category_id`) VALUES
 (17, 'Pins', 5),
 (18, 'Médaillons', 5),
 (19, 'Puériculture', 6),
-(20, 'Etudes et publications', 6),
-(23, 'Gourmandises', 7);
+(20, 'Etudes et publications', 6);
 
 -- --------------------------------------------------------
 
@@ -412,31 +399,116 @@ INSERT INTO `sub_category` (`id`, `sub_category_name`, `category_id`) VALUES
 -- Structure de la table `utilisateurs`
 --
 
-DROP TABLE IF EXISTS `utilisateurs`;
-CREATE TABLE IF NOT EXISTS `utilisateurs` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `utilisateurs` (
+  `id` int(11) NOT NULL,
   `login` varchar(255) NOT NULL,
   `prénom` varchar(255) NOT NULL,
   `nom` varchar(255) NOT NULL,
-  `civilité` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `status` int(1) NOT NULL DEFAULT '1',
+  `status` int(1) NOT NULL DEFAULT 1,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
-  `id_droit` int(11) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+  `id_droit` int(11) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `utilisateurs`
 --
 
-INSERT INTO `utilisateurs` (`id`, `login`, `prénom`, `nom`, `civilité`, `email`, `password`, `status`, `created_at`, `updated_at`, `id_droit`) VALUES
-(3, 'Utilisateur supprimé', 'pendule', 'test', 'mme', 'nouvelleadresse@gmail.com', '$2y$10$VQR72ILQ4eWYSx85/rEMy.p9DUtPvndbNBzX3VwrdI42eKo3v86Ju', 0, '2022-04-11 10:50:10', '0000-00-00 00:00:00', 1),
-(4, 'utilisateur', 'azeaze', 'azeaze', 'mme', 'aze@g.c', '$2y$10$cTB78YF3dr7euKxSV3SXfuQtHuNmBXThqn7ehNMnFUVjJvFt7BJSy', 1, '2022-04-12 14:21:23', '2022-04-13 15:40:49', 1),
-(5, 'admin', 'admin', 'admin', 'mr', 'admin@gmail.com', '$2y$10$5dfqJVSSna2iVISzU1wMw.ZCB9MpWQhJGH8BP7NaXWev7JsScr0vm', 1, '2022-04-20 16:41:29', '0000-00-00 00:00:00', 1),
-(6, 'test11', 'azeaze', 'dqqsd', 'mme', 'test@gmail.com', '$2y$10$WMClojFXBxnLUfFFghWJn.s.JCIjbZ7yBgyeU/OnmnIMzNOAMSQdW', 1, '2022-04-20 17:22:41', '0000-00-00 00:00:00', 1);
+INSERT INTO `utilisateurs` (`id`, `login`, `prénom`, `nom`, `email`, `password`, `status`, `created_at`, `updated_at`, `id_droit`) VALUES
+(0, 'admin', 'admin', 'admin', 'admin@live.fr', '$2y$10$5dfqJVSSna2iVISzU1wMw.ZCB9MpWQhJGH8BP7NaXWev7JsScr0vm', 1, '2022-04-20 16:41:29', '2022-04-26 10:33:07', 1337),
+(3, 'Utilisateur supprimé', 'pendule', 'test', 'nouvelleadresse@gmail.com', '$2y$10$VQR72ILQ4eWYSx85/rEMy.p9DUtPvndbNBzX3VwrdI42eKo3v86Ju', 0, '2022-04-11 10:50:10', '0000-00-00 00:00:00', 1),
+(4, 'utilisateur', 'azeaze', 'azeaze', 'aze@g.c', '$2y$10$cTB78YF3dr7euKxSV3SXfuQtHuNmBXThqn7ehNMnFUVjJvFt7BJSy', 1, '2022-04-12 14:21:23', '2022-04-13 15:40:49', 1337),
+(5, 'admin', 'admin', 'admin', 'admin@gmail.com', '$2y$10$5dfqJVSSna2iVISzU1wMw.ZCB9MpWQhJGH8BP7NaXWev7JsScr0vm', 1, '2022-04-20 16:41:29', '0000-00-00 00:00:00', 1),
+(6, 'test11', 'azeaze', 'dqqsd', 'test@gmail.com', '$2y$10$WMClojFXBxnLUfFFghWJn.s.JCIjbZ7yBgyeU/OnmnIMzNOAMSQdW', 1, '2022-04-20 17:22:41', '0000-00-00 00:00:00', 1),
+(7, 'azeaze', 'azeaez', 'azeaze', 'azeaazeazea@gco.m', '$2y$10$OKCPh0FYLJv9139I11pVBuSS13m4rTGsrX/tikgN0WyWdw5tj9ulK', 1, '2022-05-04 08:43:22', '0000-00-00 00:00:00', 1);
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `droits`
+--
+ALTER TABLE `droits`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `items`
+--
+ALTER TABLE `items`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `offres`
+--
+ALTER TABLE `offres`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `stars`
+--
+ALTER TABLE `stars`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `sub_category`
+--
+ALTER TABLE `sub_category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `utilisateurs`
+--
+ALTER TABLE `utilisateurs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `category`
+--
+ALTER TABLE `category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT pour la table `items`
+--
+ALTER TABLE `items`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT pour la table `offres`
+--
+ALTER TABLE `offres`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT pour la table `stars`
+--
+ALTER TABLE `stars`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=205;
+
+--
+-- AUTO_INCREMENT pour la table `sub_category`
+--
+ALTER TABLE `sub_category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT pour la table `utilisateurs`
+--
+ALTER TABLE `utilisateurs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
