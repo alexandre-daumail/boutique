@@ -28,7 +28,6 @@ $quantity = $array[0]['totalQuantity'];
 $image1 = "public/img/NOVASHOP.png";
 
 
-$titre = "facture du " . $date;
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',16);
@@ -42,6 +41,20 @@ $pdf->Cell(200,10, 'Commande de ' . $name);
 $pdf->Ln(5);
 $pdf->Cell(200,10, '_____________________________________________________');
 $pdf->Ln(15);
+
+
+if ($quantity == 1){
+
+    list($content1) = explode(PHP_EOL, $content);
+
+    $pdf->Cell(200,10,'- ' . utf8_decode($content1));
+    $pdf->Ln((30));
+    $pdf->Cell(200,10, '_____________________________________________________');
+    $pdf->Ln(10);
+    $pdf->Cell(200,10, 'Prix total : '. $array[0]['totalPrice'] . '$');
+
+    }
+
 
 if ($quantity == 2){
 
