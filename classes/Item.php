@@ -56,15 +56,13 @@ class Item extends Dbh
     {
         foreach ($product_array as $array) {
                 
-            echo '<div class="product-item">
-
-                    <form method="post" action="articles.php?action=add&code=' . $array["code"] . '">
+            echo '<form method="post" action="articles.php?action=add&code=' . $array["code"] . '">
 
                         <div class="product-image"><img src="' . $array["image"]. '"></div>
 
                         <div class="product-tile-footer">
 
-                            <div class="product-title">' . $array["name"]. '</div>
+                            <div class="product-title"><a href="article.php?code=' . $array["code"] . '">' . $array["name"]. '</a></div>
 
                             <div class="product-price">' . $array["price"] . '€ </div>
 
@@ -75,9 +73,7 @@ class Item extends Dbh
 
                         </div>
 
-                    </form>
-
-                </div>';
+                </form>';
         }
 
     }

@@ -14,9 +14,9 @@ require('process/actionsPanier.php');
 
         <div class="txt-heading">Votre Panier</div>
 
-        <a id="btnEmpty" href="panier.php?action=empty">Vider le panier</a>
         <?php
         if (isset($_SESSION["cart_item"])) {
+            echo '<a id="btnEmpty" href="panier.php?action=empty">Vider le panier</a>';
             $total_quantity = 0;
             $total_price = 0;
         ?>
