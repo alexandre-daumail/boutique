@@ -28,7 +28,7 @@ class User extends Dbh
      */
     public function register(array $data): bool
     {
-        $statement = $this->DbHandler()->prepare("INSERT INTO `utilisateurs` (prénom, nom, email, password, created_at, login, civilité) VALUES (:first_name, :last_name, :email, :password, :created_at, :login, :civilite)");
+        $statement = $this->DbHandler()->prepare("INSERT INTO `utilisateurs` (prénom, nom, email, password, created_at, login) VALUES (:first_name, :last_name, :email, :password, :created_at, :login)");
 
         //#Defaults....
         $timestamps = date('Y-m-d H:i:s');
